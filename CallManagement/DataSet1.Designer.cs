@@ -32,6 +32,12 @@ namespace CallManagement {
         
         private CallRecieverDataTable tableCallReciever;
         
+        private global::System.Data.DataRelation relationCalls_CallType;
+        
+        private global::System.Data.DataRelation relationCalls_CallingContact;
+        
+        private global::System.Data.DataRelation relationCalls_CallReciever;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -266,6 +272,9 @@ namespace CallManagement {
                     this.tableCallReciever.InitVars();
                 }
             }
+            this.relationCalls_CallType = this.Relations["Calls_CallType"];
+            this.relationCalls_CallingContact = this.Relations["Calls_CallingContact"];
+            this.relationCalls_CallReciever = this.Relations["Calls_CallReciever"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -284,6 +293,18 @@ namespace CallManagement {
             base.Tables.Add(this.tableCallingContact);
             this.tableCallReciever = new CallRecieverDataTable();
             base.Tables.Add(this.tableCallReciever);
+            this.relationCalls_CallType = new global::System.Data.DataRelation("Calls_CallType", new global::System.Data.DataColumn[] {
+                        this.tableCalls.TypeIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCallType.IDColumn}, false);
+            this.Relations.Add(this.relationCalls_CallType);
+            this.relationCalls_CallingContact = new global::System.Data.DataRelation("Calls_CallingContact", new global::System.Data.DataColumn[] {
+                        this.tableCalls.CallContactIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCallingContact.IDColumn}, false);
+            this.Relations.Add(this.relationCalls_CallingContact);
+            this.relationCalls_CallReciever = new global::System.Data.DataRelation("Calls_CallReciever", new global::System.Data.DataColumn[] {
+                        this.tableCalls.ReceiverIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCallReciever.IDColumn}, false);
+            this.Relations.Add(this.relationCalls_CallReciever);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1762,6 +1783,39 @@ namespace CallManagement {
             public void SetModifiedDateNull() {
                 this[this.tableCalls.ModifiedDateColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CallTypeRow[] GetCallTypeRows() {
+                if ((this.Table.ChildRelations["Calls_CallType"] == null)) {
+                    return new CallTypeRow[0];
+                }
+                else {
+                    return ((CallTypeRow[])(base.GetChildRows(this.Table.ChildRelations["Calls_CallType"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CallingContactRow[] GetCallingContactRows() {
+                if ((this.Table.ChildRelations["Calls_CallingContact"] == null)) {
+                    return new CallingContactRow[0];
+                }
+                else {
+                    return ((CallingContactRow[])(base.GetChildRows(this.Table.ChildRelations["Calls_CallingContact"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CallRecieverRow[] GetCallRecieverRows() {
+                if ((this.Table.ChildRelations["Calls_CallReciever"] == null)) {
+                    return new CallRecieverRow[0];
+                }
+                else {
+                    return ((CallRecieverRow[])(base.GetChildRows(this.Table.ChildRelations["Calls_CallReciever"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1802,6 +1856,17 @@ namespace CallManagement {
                 }
                 set {
                     this[this.tableCallType.DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CallsRow CallsRow {
+                get {
+                    return ((CallsRow)(this.GetParentRow(this.Table.ParentRelations["Calls_CallType"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Calls_CallType"]);
                 }
             }
             
@@ -1877,6 +1942,17 @@ namespace CallManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CallsRow CallsRow {
+                get {
+                    return ((CallsRow)(this.GetParentRow(this.Table.ParentRelations["Calls_CallingContact"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Calls_CallingContact"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNameNull() {
                 return this.IsNull(this.tableCallingContact.NameColumn);
             }
@@ -1938,6 +2014,17 @@ namespace CallManagement {
                 }
                 set {
                     this[this.tableCallReciever.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CallsRow CallsRow {
+                get {
+                    return ((CallsRow)(this.GetParentRow(this.Table.ParentRelations["Calls_CallReciever"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Calls_CallReciever"]);
                 }
             }
             
