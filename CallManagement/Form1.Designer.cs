@@ -41,7 +41,6 @@ namespace CallManagement
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bsCalls = new System.Windows.Forms.BindingSource(this.components);
@@ -62,7 +61,6 @@ namespace CallManagement
             this.colModifiedDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.callsTableAdapter = new CallManagement.DataSet1TableAdapters.CallsTableAdapter();
             this.callTypeTableAdapter = new CallManagement.DataSet1TableAdapters.CallTypeTableAdapter();
             this.callRecieverTableAdapter = new CallManagement.DataSet1TableAdapters.CallRecieverTableAdapter();
@@ -82,7 +80,6 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.callsCallingContactBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -101,7 +98,6 @@ namespace CallManagement
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(1308, 158);
-            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // barButtonItem2
             // 
@@ -166,17 +162,8 @@ namespace CallManagement
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Dock = System.Windows.Forms.DockStyle.None;
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(117, 468);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1179, 27);
-            // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.ribbonStatusBar1);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 158);
@@ -197,7 +184,7 @@ namespace CallManagement
             this.repositoryItemLookUpEdit1,
             this.repositoryItemLookUpEdit2,
             this.repositoryItemLookUpEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1284, 452);
+            this.gridControl1.Size = new System.Drawing.Size(1284, 476);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -261,8 +248,8 @@ namespace CallManagement
             // 
             // callsCallTypeBindingSource
             // 
-            this.callsCallTypeBindingSource.DataMember = "Calls_CallType";
-            this.callsCallTypeBindingSource.DataSource = this.bsCalls;
+            this.callsCallTypeBindingSource.DataMember = "CallType";
+            this.callsCallTypeBindingSource.DataSource = this.dataSet1;
             // 
             // colReceiverId
             // 
@@ -284,8 +271,8 @@ namespace CallManagement
             // 
             // callsCallRecieverBindingSource
             // 
-            this.callsCallRecieverBindingSource.DataMember = "Calls_CallReciever";
-            this.callsCallRecieverBindingSource.DataSource = this.bsCalls;
+            this.callsCallRecieverBindingSource.DataMember = "CallReciever";
+            this.callsCallRecieverBindingSource.DataSource = this.dataSet1;
             // 
             // colCallContactId
             // 
@@ -307,8 +294,8 @@ namespace CallManagement
             // 
             // callsCallingContactBindingSource
             // 
-            this.callsCallingContactBindingSource.DataMember = "Calls_CallingContact";
-            this.callsCallingContactBindingSource.DataSource = this.bsCalls;
+            this.callsCallingContactBindingSource.DataMember = "CallingContact";
+            this.callsCallingContactBindingSource.DataSource = this.dataSet1;
             // 
             // colNotes
             // 
@@ -329,8 +316,7 @@ namespace CallManagement
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1308, 500);
             this.Root.TextVisible = false;
@@ -340,17 +326,9 @@ namespace CallManagement
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1288, 456);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1288, 480);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.ribbonStatusBar1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 456);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1288, 24);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(93, 13);
             // 
             // callsTableAdapter
             // 
@@ -377,7 +355,6 @@ namespace CallManagement
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
-            this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -395,7 +372,6 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.callsCallingContactBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,8 +413,6 @@ namespace CallManagement
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit3;
         private System.Windows.Forms.BindingSource callsCallingContactBindingSource;
         private DataSet1TableAdapters.CallingContactTableAdapter callingContactTableAdapter;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }
 
