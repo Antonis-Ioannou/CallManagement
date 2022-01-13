@@ -52,19 +52,21 @@ namespace CallManagement
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.callsCallTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colReceiverId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.callsCallRecieverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colCallContactId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.callsCallingContactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colNotes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colModifiedDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.callsTableAdapter = new CallManagement.DataSet1TableAdapters.CallsTableAdapter();
             this.callTypeTableAdapter = new CallManagement.DataSet1TableAdapters.CallTypeTableAdapter();
-            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.callsCallRecieverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.callRecieverTableAdapter = new CallManagement.DataSet1TableAdapters.CallRecieverTableAdapter();
-            this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.callsCallingContactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.callingContactTableAdapter = new CallManagement.DataSet1TableAdapters.CallingContactTableAdapter();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -74,12 +76,13 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.callsCallTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.callsCallRecieverBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.callsCallingContactBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -98,6 +101,7 @@ namespace CallManagement
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(1308, 158);
+            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // barButtonItem2
             // 
@@ -164,6 +168,7 @@ namespace CallManagement
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.ribbonStatusBar1);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 158);
@@ -184,7 +189,7 @@ namespace CallManagement
             this.repositoryItemLookUpEdit1,
             this.repositoryItemLookUpEdit2,
             this.repositoryItemLookUpEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1284, 476);
+            this.gridControl1.Size = new System.Drawing.Size(1284, 452);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -257,6 +262,21 @@ namespace CallManagement
             this.colReceiverId.Visible = true;
             this.colReceiverId.VisibleIndex = 3;
             // 
+            // repositoryItemLookUpEdit2
+            // 
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit2.DataSource = this.callsCallRecieverBindingSource;
+            this.repositoryItemLookUpEdit2.DisplayMember = "Name";
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            this.repositoryItemLookUpEdit2.ValueMember = "ID";
+            // 
+            // callsCallRecieverBindingSource
+            // 
+            this.callsCallRecieverBindingSource.DataMember = "Calls_CallReciever";
+            this.callsCallRecieverBindingSource.DataSource = this.bsCalls;
+            // 
             // colCallContactId
             // 
             this.colCallContactId.ColumnEdit = this.repositoryItemLookUpEdit3;
@@ -264,6 +284,21 @@ namespace CallManagement
             this.colCallContactId.Name = "colCallContactId";
             this.colCallContactId.Visible = true;
             this.colCallContactId.VisibleIndex = 4;
+            // 
+            // repositoryItemLookUpEdit3
+            // 
+            this.repositoryItemLookUpEdit3.AutoHeight = false;
+            this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit3.DataSource = this.callsCallingContactBindingSource;
+            this.repositoryItemLookUpEdit3.DisplayMember = "Name";
+            this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
+            this.repositoryItemLookUpEdit3.ValueMember = "ID";
+            // 
+            // callsCallingContactBindingSource
+            // 
+            this.callsCallingContactBindingSource.DataMember = "Calls_CallingContact";
+            this.callsCallingContactBindingSource.DataSource = this.bsCalls;
             // 
             // colNotes
             // 
@@ -284,7 +319,8 @@ namespace CallManagement
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
+            this.layoutControlItem1,
+            this.layoutControlItem2});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1308, 500);
             this.Root.TextVisible = false;
@@ -294,7 +330,7 @@ namespace CallManagement
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1288, 480);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1288, 456);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -306,43 +342,29 @@ namespace CallManagement
             // 
             this.callTypeTableAdapter.ClearBeforeFill = true;
             // 
-            // repositoryItemLookUpEdit2
-            // 
-            this.repositoryItemLookUpEdit2.AutoHeight = false;
-            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit2.DataSource = this.callsCallRecieverBindingSource;
-            this.repositoryItemLookUpEdit2.DisplayMember = "Name";
-            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
-            this.repositoryItemLookUpEdit2.ValueMember = "ID";
-            // 
-            // callsCallRecieverBindingSource
-            // 
-            this.callsCallRecieverBindingSource.DataMember = "Calls_CallReciever";
-            this.callsCallRecieverBindingSource.DataSource = this.bsCalls;
-            // 
             // callRecieverTableAdapter
             // 
             this.callRecieverTableAdapter.ClearBeforeFill = true;
             // 
-            // repositoryItemLookUpEdit3
-            // 
-            this.repositoryItemLookUpEdit3.AutoHeight = false;
-            this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit3.DataSource = this.callsCallingContactBindingSource;
-            this.repositoryItemLookUpEdit3.DisplayMember = "Name";
-            this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
-            this.repositoryItemLookUpEdit3.ValueMember = "ID";
-            // 
-            // callsCallingContactBindingSource
-            // 
-            this.callsCallingContactBindingSource.DataMember = "Calls_CallingContact";
-            this.callsCallingContactBindingSource.DataSource = this.bsCalls;
-            // 
             // callingContactTableAdapter
             // 
             this.callingContactTableAdapter.ClearBeforeFill = true;
+            // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.Dock = System.Windows.Forms.DockStyle.None;
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(117, 468);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1179, 20);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.ribbonStatusBar1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 456);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(1288, 24);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(93, 13);
             // 
             // Form1
             // 
@@ -353,6 +375,7 @@ namespace CallManagement
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
+            this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -364,12 +387,13 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.callsCallTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.callsCallRecieverBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.callsCallingContactBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,6 +435,8 @@ namespace CallManagement
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit3;
         private System.Windows.Forms.BindingSource callsCallingContactBindingSource;
         private DataSet1TableAdapters.CallingContactTableAdapter callingContactTableAdapter;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }
 
