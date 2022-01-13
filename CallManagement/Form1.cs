@@ -88,5 +88,11 @@ namespace CallManagement
             Form formCallReciever = new CallReciever();
             formCallReciever.Show();
         }
+
+        private void gridView1_RowCountChanged(object sender, EventArgs e)
+        {
+            barStaticItem1.Caption = "Total Rows: " + gridView1.RowCount.ToString();
+            barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.CallType.Select(x => x.ID = 1).ToString(); ;
+        }
     }
 }
