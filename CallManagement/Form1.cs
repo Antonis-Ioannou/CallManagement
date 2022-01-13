@@ -22,6 +22,12 @@ namespace CallManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.CallingContact' table. You can move, or remove it, as needed.
+            this.callingContactTableAdapter.Fill(this.dataSet1.CallingContact);
+            // TODO: This line of code loads data into the 'dataSet1.CallReciever' table. You can move, or remove it, as needed.
+            this.callRecieverTableAdapter.Fill(this.dataSet1.CallReciever);
+            // TODO: This line of code loads data into the 'dataSet1.CallType' table. You can move, or remove it, as needed.
+            this.callTypeTableAdapter.Fill(this.dataSet1.CallType);
             GetConnectionString();
 
             if (string.IsNullOrEmpty(ConnectionString))
