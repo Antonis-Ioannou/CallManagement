@@ -221,9 +221,12 @@ namespace CallManagement
             this.colNotes,
             this.colModifiedDate});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colCreationDate, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
             // 
             // colCallsId
@@ -246,7 +249,7 @@ namespace CallManagement
             this.colTypeId.FieldName = "TypeId";
             this.colTypeId.Name = "colTypeId";
             this.colTypeId.Visible = true;
-            this.colTypeId.VisibleIndex = 2;
+            this.colTypeId.VisibleIndex = 1;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -269,7 +272,7 @@ namespace CallManagement
             this.colReceiverId.FieldName = "ReceiverId";
             this.colReceiverId.Name = "colReceiverId";
             this.colReceiverId.Visible = true;
-            this.colReceiverId.VisibleIndex = 3;
+            this.colReceiverId.VisibleIndex = 2;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -292,7 +295,7 @@ namespace CallManagement
             this.colCallContactId.FieldName = "CallContactId";
             this.colCallContactId.Name = "colCallContactId";
             this.colCallContactId.Visible = true;
-            this.colCallContactId.VisibleIndex = 4;
+            this.colCallContactId.VisibleIndex = 3;
             // 
             // repositoryItemLookUpEdit3
             // 
@@ -314,14 +317,14 @@ namespace CallManagement
             this.colNotes.FieldName = "Notes";
             this.colNotes.Name = "colNotes";
             this.colNotes.Visible = true;
-            this.colNotes.VisibleIndex = 5;
+            this.colNotes.VisibleIndex = 4;
             // 
             // colModifiedDate
             // 
             this.colModifiedDate.FieldName = "ModifiedDate";
             this.colModifiedDate.Name = "colModifiedDate";
             this.colModifiedDate.Visible = true;
-            this.colModifiedDate.VisibleIndex = 6;
+            this.colModifiedDate.VisibleIndex = 5;
             // 
             // Root
             // 
