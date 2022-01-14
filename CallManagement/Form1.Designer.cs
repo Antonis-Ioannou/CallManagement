@@ -69,11 +69,11 @@ namespace CallManagement
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -198,6 +198,7 @@ namespace CallManagement
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Load += new System.EventHandler(this.Form1_Load);
             // 
             // bsCalls
             // 
@@ -401,6 +402,12 @@ namespace CallManagement
             this.barStaticItem2.Id = 1;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
+            // barStaticItem3
+            // 
+            this.barStaticItem3.Caption = "barStaticItem3";
+            this.barStaticItem3.Id = 2;
+            this.barStaticItem3.Name = "barStaticItem3";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -433,12 +440,6 @@ namespace CallManagement
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 636);
             // 
-            // barStaticItem3
-            // 
-            this.barStaticItem3.Caption = "barStaticItem3";
-            this.barStaticItem3.Id = 2;
-            this.barStaticItem3.Name = "barStaticItem3";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,6 +454,7 @@ namespace CallManagement
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

@@ -22,6 +22,23 @@ namespace CallManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //---Set the state, position and size when the form loads---//
+            if (Properties.Settings.Default.F1Size.Width == 0 || Properties.Settings.Default.F1Size.Height == 0)
+            {
+                // first start
+                // optional: add default values
+            }
+            else
+            {
+                this.WindowState = Properties.Settings.Default.F1State;
+
+                // we don't want a minimized window at startup
+                if (this.WindowState == FormWindowState.Minimized) this.WindowState = FormWindowState.Normal;
+
+                this.Location = Properties.Settings.Default.F1Location;
+                this.Size = Properties.Settings.Default.F1Size;
+            }
+
             // TODO: This line of code loads data into the 'dataSet1.CallingContact' table. You can move, or remove it, as needed.
             this.callingContactTableAdapter.Fill(this.dataSet1.CallingContact);
             // TODO: This line of code loads data into the 'dataSet1.CallReciever' table. You can move, or remove it, as needed.
@@ -94,6 +111,26 @@ namespace CallManagement
             barStaticItem1.Caption = "Total Rows: " + gridView1.RowCount.ToString();
             barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
             barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
+        }
+
+        private void Form1_Closing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.F1State = this.WindowState;
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                // save location and size if the state is normal
+                Properties.Settings.Default.F1Location = this.Location;
+                Properties.Settings.Default.F1Size = this.Size;
+            }
+            else
+            {
+                // save the RestoreBounds if the form is minimized or maximized!
+                Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
+                Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
+            }
+
+            // don't forget to save the settings
+            Properties.Settings.Default.Save();
         }
     }
 }
