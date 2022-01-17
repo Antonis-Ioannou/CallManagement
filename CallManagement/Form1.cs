@@ -114,13 +114,16 @@ namespace CallManagement
             formCallReciever.Show();
         }
 
+        //---Status bar info---//
         private void gridView1_RowCountChanged(object sender, EventArgs e)
         {
-            barStaticItem1.Caption = "Total Rows: " + gridView1.RowCount.ToString();
+            //barStaticItem1.Caption = "Total Rows: " + gridView1.RowCount.ToString(); 
+            barStaticItem1.Caption = "Total Rows: " + dataSet1.Calls.Count();
             barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
             barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
         }
 
+        //---Saving position and size of window---//
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.F1State = this.WindowState;
@@ -141,6 +144,7 @@ namespace CallManagement
             Properties.Settings.Default.Save();
         }
 
+        //---Save grid layout--//
         private void gridView1_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
         {
             gridView1.SaveLayoutToXml(savedLayout);
