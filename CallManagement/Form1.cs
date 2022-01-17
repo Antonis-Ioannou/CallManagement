@@ -15,7 +15,7 @@ namespace CallManagement
     {
         public static string ConnectionString = string.Empty;
         static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
-        string savedLayout = Path.Combine(path, @"gridLayout.xml");
+        string customLayout = Path.Combine(path, @"gridLayout.xml");
 
         public Form1()
         {
@@ -25,9 +25,9 @@ namespace CallManagement
         private void Form1_Load(object sender, EventArgs e)
         {
             //---Load saved layout settings---//
-            if (File.Exists(savedLayout))
+            if (File.Exists(customLayout))
             {
-                gridView1.RestoreLayoutFromXml(savedLayout);
+                gridView1.RestoreLayoutFromXml(customLayout);
             }
 
             //---Set the state, position and size when the form loads---//
@@ -147,7 +147,7 @@ namespace CallManagement
         //---Save grid layout--//
         private void gridView1_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
         {
-            gridView1.SaveLayoutToXml(savedLayout);
+            gridView1.SaveLayoutToXml(customLayout);
         }
 
         //---Reset layout to default---//
@@ -157,7 +157,7 @@ namespace CallManagement
             if (dialogResult == DialogResult.Yes)
             {
                 gridView1.RestoreLayoutFromXml(path + @"\defaultLayout.xml");
-                gridView1.SaveLayoutToXml(savedLayout);
+                gridView1.SaveLayoutToXml(customLayout);
             }
         }
     }
