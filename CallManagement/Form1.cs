@@ -14,6 +14,8 @@ namespace CallManagement
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static string ConnectionString = string.Empty;
+        static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+        string savedLayout = Path.Combine(path, @"gridLayout.xml");
 
         public Form1()
         {
@@ -22,6 +24,12 @@ namespace CallManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //---Load saved layout settings---//
+            if (File.Exists(savedLayout))
+            {
+                gridView1.RestoreLayoutFromXml(savedLayout);
+            }
+
             //---Set the state, position and size when the form loads---//
             if (Properties.Settings.Default.F1Size.Width == 0 || Properties.Settings.Default.F1Size.Height == 0)
             {
@@ -68,7 +76,7 @@ namespace CallManagement
 
         private void GetConnectionString()
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+            
             string fullPath = Path.Combine(path, @"conStr.xml");
 
             if (!Directory.Exists(path))
@@ -131,6 +139,11 @@ namespace CallManagement
 
             // don't forget to save the settings
             Properties.Settings.Default.Save();
+        }
+
+        private void gridView1_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
+        {
+            gridView1.SaveLayoutToXml(savedLayout);
         }
     }
 }
