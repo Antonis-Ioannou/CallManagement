@@ -36,11 +36,14 @@ namespace CallManagement
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bsCalls = new System.Windows.Forms.BindingSource(this.components);
@@ -101,9 +104,10 @@ namespace CallManagement
             this.barButtonItem2,
             this.barButtonItem1,
             this.barButtonItem3,
-            this.barButtonItem4});
+            this.barButtonItem4,
+            this.barButtonItem5});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.MaxItemId = 10;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -138,13 +142,24 @@ namespace CallManagement
             this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
             this.barButtonItem4.Name = "barButtonItem4";
             // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Reset Layout";
+            this.barButtonItem5.Id = 8;
+            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Calls";
             // 
@@ -171,6 +186,17 @@ namespace CallManagement
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
             // layoutControl1
             // 
@@ -526,6 +552,9 @@ namespace CallManagement
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraBars.BarStaticItem barStaticItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }
 

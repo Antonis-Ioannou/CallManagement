@@ -149,5 +149,16 @@ namespace CallManagement
         {
             gridView1.SaveLayoutToXml(savedLayout);
         }
+
+        //---Reset layout to default---//
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore Default Layout? Your saved layout will be deleted!", "Restore Default Layout",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                gridView1.RestoreLayoutFromXml(path + @"\defaultLayout.xml");
+                gridView1.SaveLayoutToXml(savedLayout);
+            }
+        }
     }
 }
