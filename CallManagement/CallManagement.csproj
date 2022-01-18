@@ -79,6 +79,18 @@
     <Compile Include="Crud Operations\CreateNewEntry.Designer.cs">
       <DependentUpon>CreateNewEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crud Operations\DeleteEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crud Operations\DeleteEntry.Designer.cs">
+      <DependentUpon>DeleteEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crud Operations\EditEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crud Operations\EditEntry.Designer.cs">
+      <DependentUpon>EditEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -112,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Crud Operations\CreateNewEntry.resx">
       <DependentUpon>CreateNewEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crud Operations\DeleteEntry.resx">
+      <DependentUpon>DeleteEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crud Operations\EditEntry.resx">
+      <DependentUpon>EditEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
