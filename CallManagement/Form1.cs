@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CallManagement.Crud_Operations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -159,6 +160,12 @@ namespace CallManagement
                 gridView1.RestoreLayoutFromXml(path + @"\defaultLayout.xml");
                 gridView1.SaveLayoutToXml(customLayout);
             }
+        }
+
+        private void createNewEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form createNewEntry = new CreateNewEntry();
+            createNewEntry.Show();
         }
     }
 }
