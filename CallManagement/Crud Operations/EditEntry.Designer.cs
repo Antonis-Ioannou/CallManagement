@@ -29,47 +29,62 @@ namespace CallManagement.Crud_Operations
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.comboBoxEdit4 = new DevExpress.XtraEditors.DateEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.comboBoxEdit4 = new DevExpress.XtraEditors.DateEdit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new CallManagement.DataSet1();
+            this.callsTableAdapter1 = new CallManagement.DataSet1TableAdapters.CallsTableAdapter();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.comboBoxEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.comboBoxEdit3 = new DevExpress.XtraEditors.LookUpEdit();
+            this.callsCallRecieverBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.callRecieverTableAdapter = new CallManagement.DataSet1TableAdapters.CallRecieverTableAdapter();
+            this.callsCallingContactBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.callingContactTableAdapter = new CallManagement.DataSet1TableAdapters.CallingContactTableAdapter();
+            this.callsCallTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.callTypeTableAdapter = new CallManagement.DataSet1TableAdapters.CallTypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callsCallRecieverBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callsCallingContactBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callsCallTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.comboBoxEdit3);
-            this.layoutControl1.Controls.Add(this.comboBoxEdit2);
-            this.layoutControl1.Controls.Add(this.comboBoxEdit1);
             this.layoutControl1.Controls.Add(this.comboBoxEdit4);
+            this.layoutControl1.Controls.Add(this.comboBoxEdit1);
+            this.layoutControl1.Controls.Add(this.comboBoxEdit2);
+            this.layoutControl1.Controls.Add(this.comboBoxEdit3);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -77,6 +92,43 @@ namespace CallManagement.Crud_Operations
             this.layoutControl1.Size = new System.Drawing.Size(800, 450);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(12, 132);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(776, 22);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.Text = "Submit Changes";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "Notes", true));
+            this.textEdit1.Location = new System.Drawing.Point(93, 108);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(695, 20);
+            this.textEdit1.StyleController = this.layoutControl1;
+            this.textEdit1.TabIndex = 8;
+            // 
+            // comboBoxEdit4
+            // 
+            this.comboBoxEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "CreationDate", true));
+            this.comboBoxEdit4.EditValue = null;
+            this.comboBoxEdit4.Location = new System.Drawing.Point(93, 84);
+            this.comboBoxEdit4.Name = "comboBoxEdit4";
+            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit4.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit4.Properties.DisplayFormat.FormatString = "";
+            this.comboBoxEdit4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.comboBoxEdit4.Properties.EditFormat.FormatString = "";
+            this.comboBoxEdit4.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.comboBoxEdit4.Properties.MaskSettings.Set("mask", "");
+            this.comboBoxEdit4.Size = new System.Drawing.Size(695, 20);
+            this.comboBoxEdit4.StyleController = this.layoutControl1;
+            this.comboBoxEdit4.TabIndex = 7;
             // 
             // Root
             // 
@@ -93,16 +145,6 @@ namespace CallManagement.Crud_Operations
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(800, 450);
             this.Root.TextVisible = false;
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(93, 12);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(695, 20);
-            this.comboBoxEdit1.StyleController = this.layoutControl1;
-            this.comboBoxEdit1.TabIndex = 4;
             // 
             // layoutControlItem1
             // 
@@ -121,16 +163,6 @@ namespace CallManagement.Crud_Operations
             this.emptySpaceItem1.Size = new System.Drawing.Size(780, 284);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // comboBoxEdit2
-            // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(93, 36);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(695, 20);
-            this.comboBoxEdit2.StyleController = this.layoutControl1;
-            this.comboBoxEdit2.TabIndex = 5;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.comboBoxEdit2;
@@ -139,16 +171,6 @@ namespace CallManagement.Crud_Operations
             this.layoutControlItem2.Size = new System.Drawing.Size(780, 24);
             this.layoutControlItem2.Text = "CallingContact";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(69, 13);
-            // 
-            // comboBoxEdit3
-            // 
-            this.comboBoxEdit3.Location = new System.Drawing.Point(93, 60);
-            this.comboBoxEdit3.Name = "comboBoxEdit3";
-            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit3.Size = new System.Drawing.Size(695, 20);
-            this.comboBoxEdit3.StyleController = this.layoutControl1;
-            this.comboBoxEdit3.TabIndex = 6;
             // 
             // layoutControlItem3
             // 
@@ -168,14 +190,6 @@ namespace CallManagement.Crud_Operations
             this.layoutControlItem4.Text = "CreationDate";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(93, 108);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(695, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 8;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.textEdit1;
@@ -184,15 +198,6 @@ namespace CallManagement.Crud_Operations
             this.layoutControlItem5.Size = new System.Drawing.Size(780, 24);
             this.layoutControlItem5.Text = "Notes";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(69, 13);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 132);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(776, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "Submit Changes";
             // 
             // layoutControlItem6
             // 
@@ -203,22 +208,94 @@ namespace CallManagement.Crud_Operations
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // comboBoxEdit4
+            // bindingSource1
             // 
-            this.comboBoxEdit4.EditValue = null;
-            this.comboBoxEdit4.Location = new System.Drawing.Point(93, 84);
-            this.comboBoxEdit4.Name = "comboBoxEdit4";
-            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.bindingSource1.DataMember = "Calls";
+            this.bindingSource1.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // callsTableAdapter1
+            // 
+            this.callsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "TypeId", true));
+            this.comboBoxEdit1.Location = new System.Drawing.Point(93, 12);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit4.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.comboBoxEdit1.Properties.DataSource = this.callsCallTypeBindingSource;
+            this.comboBoxEdit1.Properties.DisplayMember = "Description";
+            this.comboBoxEdit1.Properties.NullText = "";
+            this.comboBoxEdit1.Properties.PopupSizeable = false;
+            this.comboBoxEdit1.Properties.ValueMember = "ID";
+            this.comboBoxEdit1.Size = new System.Drawing.Size(695, 20);
+            this.comboBoxEdit1.StyleController = this.layoutControl1;
+            this.comboBoxEdit1.TabIndex = 4;
+            // 
+            // comboBoxEdit2
+            // 
+            this.comboBoxEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "CallContactId", true));
+            this.comboBoxEdit2.Location = new System.Drawing.Point(93, 36);
+            this.comboBoxEdit2.Name = "comboBoxEdit2";
+            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit4.Properties.DisplayFormat.FormatString = "";
-            this.comboBoxEdit4.Properties.EditFormat.FormatString = "";
-            this.comboBoxEdit4.Properties.Mask.EditMask = "";
-            this.comboBoxEdit4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.comboBoxEdit4.Size = new System.Drawing.Size(695, 20);
-            this.comboBoxEdit4.StyleController = this.layoutControl1;
-            this.comboBoxEdit4.TabIndex = 7;
+            this.comboBoxEdit2.Properties.DataSource = this.callsCallingContactBindingSource;
+            this.comboBoxEdit2.Properties.DisplayMember = "Name";
+            this.comboBoxEdit2.Properties.NullText = "";
+            this.comboBoxEdit2.Properties.PopupSizeable = false;
+            this.comboBoxEdit2.Properties.ValueMember = "ID";
+            this.comboBoxEdit2.Size = new System.Drawing.Size(695, 20);
+            this.comboBoxEdit2.StyleController = this.layoutControl1;
+            this.comboBoxEdit2.TabIndex = 5;
+            // 
+            // comboBoxEdit3
+            // 
+            this.comboBoxEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "ReceiverId", true));
+            this.comboBoxEdit3.Location = new System.Drawing.Point(93, 60);
+            this.comboBoxEdit3.Name = "comboBoxEdit3";
+            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit3.Properties.DataSource = this.callsCallRecieverBindingSource;
+            this.comboBoxEdit3.Properties.DisplayMember = "Name";
+            this.comboBoxEdit3.Properties.NullText = "";
+            this.comboBoxEdit3.Properties.PopupSizeable = false;
+            this.comboBoxEdit3.Properties.ValueMember = "ID";
+            this.comboBoxEdit3.Size = new System.Drawing.Size(695, 20);
+            this.comboBoxEdit3.StyleController = this.layoutControl1;
+            this.comboBoxEdit3.TabIndex = 6;
+            // 
+            // callsCallRecieverBindingSource
+            // 
+            this.callsCallRecieverBindingSource.DataMember = "Calls_CallReciever";
+            this.callsCallRecieverBindingSource.DataSource = this.bindingSource1;
+            // 
+            // callRecieverTableAdapter
+            // 
+            this.callRecieverTableAdapter.ClearBeforeFill = true;
+            // 
+            // callsCallingContactBindingSource
+            // 
+            this.callsCallingContactBindingSource.DataMember = "Calls_CallingContact";
+            this.callsCallingContactBindingSource.DataSource = this.bindingSource1;
+            // 
+            // callingContactTableAdapter
+            // 
+            this.callingContactTableAdapter.ClearBeforeFill = true;
+            // 
+            // callsCallTypeBindingSource
+            // 
+            this.callsCallTypeBindingSource.DataMember = "Calls_CallType";
+            this.callsCallTypeBindingSource.DataSource = this.bindingSource1;
+            // 
+            // callTypeTableAdapter
+            // 
+            this.callTypeTableAdapter.ClearBeforeFill = true;
             // 
             // EditEntry
             // 
@@ -228,22 +305,28 @@ namespace CallManagement.Crud_Operations
             this.Controls.Add(this.layoutControl1);
             this.Name = "EditEntry";
             this.Text = "EditEntry";
+            this.Load += new System.EventHandler(this.EditEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callsCallRecieverBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callsCallingContactBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callsCallTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,9 +335,6 @@ namespace CallManagement.Crud_Operations
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -265,5 +345,17 @@ namespace CallManagement.Crud_Operations
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.DateEdit comboBoxEdit4;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private DataSet1 dataSet1;
+        private DataSet1TableAdapters.CallsTableAdapter callsTableAdapter1;
+        private DevExpress.XtraEditors.LookUpEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.LookUpEdit comboBoxEdit2;
+        private DevExpress.XtraEditors.LookUpEdit comboBoxEdit3;
+        private System.Windows.Forms.BindingSource callsCallRecieverBindingSource;
+        private DataSet1TableAdapters.CallRecieverTableAdapter callRecieverTableAdapter;
+        private System.Windows.Forms.BindingSource callsCallingContactBindingSource;
+        private DataSet1TableAdapters.CallingContactTableAdapter callingContactTableAdapter;
+        private System.Windows.Forms.BindingSource callsCallTypeBindingSource;
+        private DataSet1TableAdapters.CallTypeTableAdapter callTypeTableAdapter;
     }
 }

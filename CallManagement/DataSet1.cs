@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace CallManagement.DataSet1TableAdapters {
+    
+    
+    public partial class CallRecieverTableAdapter {
+    }
+}

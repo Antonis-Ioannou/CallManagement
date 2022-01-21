@@ -167,5 +167,12 @@ namespace CallManagement
             Form createNewEntry = new CreateNewEntry();
             createNewEntry.Show();
         }
+
+        private void openEntryForm(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int selectedId = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle,"CallsId");
+            EditEntry editEntry = new EditEntry(selectedId);
+            editEntry.Show();
+        }
     }
 }
