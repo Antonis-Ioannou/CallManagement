@@ -164,15 +164,25 @@ namespace CallManagement
 
         private void createNewEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form createNewEntry = new CreateNewEntry();
-            createNewEntry.Show();
+            //int selectedId = dataSet1.Calls.Select(x => x.CallsId).Max();
+            //CreateNewEntry createEntry = new CreateNewEntry(selectedId);
+            //createEntry.Show();
+
+            //Δουλεύει!!!
+            EditEntry createEntry = new EditEntry(-1);
+            createEntry.Show();
         }
 
-        private void openEntryForm(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void editEntryForm(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int selectedId = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle,"CallsId");
             EditEntry editEntry = new EditEntry(selectedId);
             editEntry.Show();
+        }
+
+        private void refreshData(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
