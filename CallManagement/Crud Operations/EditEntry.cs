@@ -34,9 +34,11 @@ namespace CallManagement.Crud_Operations
             // TODO: This line of code loads data into the 'dataSet1.Calls' table. You can move, or remove it, as needed.
             this.callsTableAdapter1.FillByCallId(this.dataSet1.Calls, SelectedId);
 
+            //---------------peirama---------------------//
             //check if last row is null
             //var lastEntry = new SqlCommand ("SELECT * from Calls WHERE CallsId = (SELECT max(CallsId) FROM Calls )");
             //var lastEntry = dataSet1.Calls.Select(y=>y.CallsId).Last();
+            //---------------peirama---------------------//
 
             //create new row
             DataSet1.CallsRow newCall;

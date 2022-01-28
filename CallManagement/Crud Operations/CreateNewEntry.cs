@@ -33,10 +33,11 @@ namespace CallManagement.Crud_Operations
             this.callingContactTableAdapter.Fill(this.dataSet1.CallingContact);
             // TODO: This line of code loads data into the 'dataSet1.CallType' table. You can move, or remove it, as needed.
             this.callTypeTableAdapter.Fill(this.dataSet1.CallType);
+
+            //---------------peirama---------------------//
             // TODO: This line of code loads data into the 'dataSet1.Calls' table. You can move, or remove it, as needed.
             //this.callsTableAdapter1.FillByCallId(this.dataSet1.Calls, SelectedId);
-
-            
+            //---------------peirama---------------------//
         }
 
         private void createEntry(object sender, EventArgs e)

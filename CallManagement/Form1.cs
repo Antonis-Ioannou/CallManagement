@@ -119,9 +119,9 @@ namespace CallManagement
         private void gridView1_RowCountChanged(object sender, EventArgs e)
         {
             //barStaticItem1.Caption = "Total Rows: " + gridView1.RowCount.ToString(); 
-            barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + dataSet1.Calls.Count();
-            barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
-            barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
+            //barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + dataSet1.Calls.Count();
+            //barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
+            //barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
         }
 
         //---Saving position and size of window---//
@@ -164,11 +164,20 @@ namespace CallManagement
 
         private void createNewEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //---------------peirama---------------------//
+            //create new row
+            //DataSet1.CallsRow newCall;
+            //newCall = dataSet1.Calls.NewCallsRow();
+            //this.dataSet1.Calls.Rows.Add(newCall);
+            //this.bsCalls.EndEdit();
+            //this.callsTableAdapter1.Update(dataSet1.Calls);
+
             //int selectedId = dataSet1.Calls.Select(x => x.CallsId).Max();
             //CreateNewEntry createEntry = new CreateNewEntry(selectedId);
             //createEntry.Show();
+            //---------------peirama---------------------//
 
-            //Δουλεύει!!!
+            //Δουλεύει
             EditEntry createEntry = new EditEntry(-1);
             createEntry.Show();
         }
@@ -183,6 +192,15 @@ namespace CallManagement
         private void refreshData(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void deleteEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
+            callsTableAdapter.deleteSelectedRow(selectedRow);
+            //this.bindingSource1.EndEdit();
+            //this.callsTableAdapter1.Update(dataSet1.Calls);
+            MessageBox.Show("Delete successful!");
         }
     }
 }
