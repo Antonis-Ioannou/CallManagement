@@ -196,11 +196,20 @@ namespace CallManagement
 
         private void deleteEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
-            callsTableAdapter.deleteSelectedRow(selectedRow);
-            //this.bindingSource1.EndEdit();
-            //this.callsTableAdapter1.Update(dataSet1.Calls);
-            MessageBox.Show("Delete successful!");
+            string warning = "Are you sure you want to delete this entry?";
+            string title = "Delete Entry";
+            var buttons = MessageBoxButtons.YesNo;
+            var icon = MessageBoxIcon.Warning;
+
+            DialogResult dialogResult = MessageBox.Show(warning,title,buttons,icon);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
+                callsTableAdapter.deleteSelectedRow(selectedRow);
+                //this.bindingSource1.EndEdit();
+                //this.callsTableAdapter1.Update(dataSet1.Calls);
+                MessageBox.Show("Delete successful!");
+            }
         }
     }
 }
