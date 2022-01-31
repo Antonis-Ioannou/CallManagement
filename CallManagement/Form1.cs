@@ -210,6 +210,8 @@ namespace CallManagement
                 MessageBox.Show("Delete successful!");
             }
 
+            FillTableAdapter();
+
             //FillTableAdapter();
             //gridView1.RefreshData();
             //----------Δουλεύει----------//
