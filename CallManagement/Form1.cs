@@ -77,7 +77,6 @@ namespace CallManagement
 
         private void GetConnectionString()
         {
-            
             string fullPath = Path.Combine(path, @"conStr.xml");
 
             if (!Directory.Exists(path))
@@ -211,9 +210,6 @@ namespace CallManagement
             }
 
             FillTableAdapter();
-
-            //FillTableAdapter();
-            //gridView1.RefreshData();
             //----------Δουλεύει----------//
 
 
