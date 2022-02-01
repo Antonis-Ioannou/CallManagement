@@ -97,6 +97,11 @@ namespace CallManagement
             this.skinDropDownButtonItem2 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinDropDownButtonItem3 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinBarSubItem2 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.skinBarSubItem3 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.skinPaletteDropDownButtonItem3 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinPaletteDropDownButtonItem4 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -142,9 +147,14 @@ namespace CallManagement
             this.skinDropDownButtonItem1,
             this.skinDropDownButtonItem2,
             this.skinBarSubItem1,
-            this.skinPaletteDropDownButtonItem2});
+            this.skinPaletteDropDownButtonItem2,
+            this.skinDropDownButtonItem3,
+            this.skinBarSubItem2,
+            this.skinBarSubItem3,
+            this.skinPaletteDropDownButtonItem3,
+            this.skinPaletteDropDownButtonItem4});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 30;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -596,9 +606,6 @@ namespace CallManagement
             // 
             this.barSubItem3.Caption = "&Language Settings";
             this.barSubItem3.Id = 16;
-            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barToggleSwitchItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barToggleSwitchItem2)});
             this.barSubItem3.Name = "barSubItem3";
             // 
             // barSubItem4
@@ -606,8 +613,8 @@ namespace CallManagement
             this.barSubItem4.Caption = "&Skin Settings";
             this.barSubItem4.Id = 17;
             this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinDropDownButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinPaletteDropDownButtonItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinPaletteDropDownButtonItem4)});
             this.barSubItem4.Name = "barSubItem4";
             // 
             // barToggleSwitchItem1
@@ -647,6 +654,33 @@ namespace CallManagement
             // 
             this.skinPaletteDropDownButtonItem2.Id = 24;
             this.skinPaletteDropDownButtonItem2.Name = "skinPaletteDropDownButtonItem2";
+            // 
+            // skinDropDownButtonItem3
+            // 
+            this.skinDropDownButtonItem3.Id = 25;
+            this.skinDropDownButtonItem3.Name = "skinDropDownButtonItem3";
+            // 
+            // skinBarSubItem2
+            // 
+            this.skinBarSubItem2.Caption = "Skin List";
+            this.skinBarSubItem2.Id = 26;
+            this.skinBarSubItem2.Name = "skinBarSubItem2";
+            // 
+            // skinBarSubItem3
+            // 
+            this.skinBarSubItem3.Caption = "&Skin List";
+            this.skinBarSubItem3.Id = 27;
+            this.skinBarSubItem3.Name = "skinBarSubItem3";
+            // 
+            // skinPaletteDropDownButtonItem3
+            // 
+            this.skinPaletteDropDownButtonItem3.Id = 28;
+            this.skinPaletteDropDownButtonItem3.Name = "skinPaletteDropDownButtonItem3";
+            // 
+            // skinPaletteDropDownButtonItem4
+            // 
+            this.skinPaletteDropDownButtonItem4.Id = 29;
+            this.skinPaletteDropDownButtonItem4.Name = "skinPaletteDropDownButtonItem4";
             // 
             // Form1
             // 
@@ -754,6 +788,11 @@ namespace CallManagement
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem2;
         private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem2;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem3;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem2;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem3;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem3;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem4;
     }
 }
 
