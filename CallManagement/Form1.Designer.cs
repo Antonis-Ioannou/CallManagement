@@ -102,6 +102,10 @@ namespace CallManagement
             this.skinBarSubItem3 = new DevExpress.XtraBars.SkinBarSubItem();
             this.skinPaletteDropDownButtonItem3 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.skinPaletteDropDownButtonItem4 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
+            this.barToggleSwitchItem3 = new DevExpress.XtraBars.BarToggleSwitchItem();
+            this.barToggleSwitchItem4 = new DevExpress.XtraBars.BarToggleSwitchItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -152,9 +156,13 @@ namespace CallManagement
             this.skinBarSubItem2,
             this.skinBarSubItem3,
             this.skinPaletteDropDownButtonItem3,
-            this.skinPaletteDropDownButtonItem4});
+            this.skinPaletteDropDownButtonItem4,
+            this.barCheckItem1,
+            this.barCheckItem2,
+            this.barToggleSwitchItem3,
+            this.barToggleSwitchItem4});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 30;
+            this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -606,6 +614,9 @@ namespace CallManagement
             // 
             this.barSubItem3.Caption = "&Language Settings";
             this.barSubItem3.Id = 16;
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barToggleSwitchItem3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barToggleSwitchItem4)});
             this.barSubItem3.Name = "barSubItem3";
             // 
             // barSubItem4
@@ -681,6 +692,30 @@ namespace CallManagement
             // 
             this.skinPaletteDropDownButtonItem4.Id = 29;
             this.skinPaletteDropDownButtonItem4.Name = "skinPaletteDropDownButtonItem4";
+            // 
+            // barCheckItem1
+            // 
+            this.barCheckItem1.Caption = "&English";
+            this.barCheckItem1.Id = 30;
+            this.barCheckItem1.Name = "barCheckItem1";
+            // 
+            // barCheckItem2
+            // 
+            this.barCheckItem2.Caption = "&Ελληνικά";
+            this.barCheckItem2.Id = 31;
+            this.barCheckItem2.Name = "barCheckItem2";
+            // 
+            // barToggleSwitchItem3
+            // 
+            this.barToggleSwitchItem3.Caption = "&English";
+            this.barToggleSwitchItem3.Id = 32;
+            this.barToggleSwitchItem3.Name = "barToggleSwitchItem3";
+            // 
+            // barToggleSwitchItem4
+            // 
+            this.barToggleSwitchItem4.Caption = "&Ελληνικά";
+            this.barToggleSwitchItem4.Id = 33;
+            this.barToggleSwitchItem4.Name = "barToggleSwitchItem4";
             // 
             // Form1
             // 
@@ -793,6 +828,10 @@ namespace CallManagement
         private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem3;
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem3;
         private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem4;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem2;
+        private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem3;
+        private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem4;
     }
 }
 
