@@ -3,6 +3,7 @@ using DevExpress.UserSkins;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CallManagement
@@ -17,6 +18,9 @@ namespace CallManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en");
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
             Application.Run(new Form1());
         }
     }

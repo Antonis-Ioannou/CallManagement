@@ -39,15 +39,15 @@ namespace CallManagement
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.skinBarSubItem3 = new DevExpress.XtraBars.SkinBarSubItem();
             this.skinPaletteDropDownButtonItem4 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCallTypes = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCallingContact = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCallReceiver = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiResetLayout = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCreateEntry = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiEditEntry = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiDeleteEntry = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRefreshData = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barToggleSwitchItem1 = new DevExpress.XtraBars.BarToggleSwitchItem();
@@ -62,16 +62,16 @@ namespace CallManagement
             this.skinPaletteDropDownButtonItem3 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageManageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageLayout = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -128,25 +128,20 @@ namespace CallManagement
             // 
             // ribbonControl1
             // 
-            resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
             this.ribbonControl1.ApplicationButtonDropDownControl = this.applicationMenu1;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.ExpandCollapseItem.ImageOptions.ImageIndex = ((int)(resources.GetObject("ribbonControl1.ExpandCollapseItem.ImageOptions.ImageIndex")));
-            this.ribbonControl1.ExpandCollapseItem.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("ribbonControl1.ExpandCollapseItem.ImageOptions.LargeImageIndex")));
-            this.ribbonControl1.ExpandCollapseItem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonControl1.ExpandCollapseItem.ImageOptions.SvgImage")));
-            this.ribbonControl1.ExpandCollapseItem.SearchTags = resources.GetString("ribbonControl1.ExpandCollapseItem.SearchTags");
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.barButtonItem2,
-            this.barButtonItem1,
-            this.barButtonItem3,
+            this.bbiCallTypes,
+            this.bbiCallingContact,
+            this.bbiCallReceiver,
             this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
-            this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9,
+            this.bbiResetLayout,
+            this.bbiCreateEntry,
+            this.bbiEditEntry,
+            this.bbiDeleteEntry,
+            this.bbiRefreshData,
             this.barSubItem1,
             this.barSubItem2,
             this.barSubItem3,
@@ -167,12 +162,13 @@ namespace CallManagement
             this.barCheckItem2,
             this.barToggleSwitchItem3,
             this.barToggleSwitchItem4});
+            resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
             this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
-            this.ribbonPage2,
-            this.ribbonPage3});
+            this.ribbonPageCalls,
+            this.ribbonPageManageCalls,
+            this.ribbonPageLayout});
             // 
             // applicationMenu1
             // 
@@ -186,9 +182,6 @@ namespace CallManagement
             // 
             resources.ApplyResources(this.barSubItem3, "barSubItem3");
             this.barSubItem3.Id = 16;
-            this.barSubItem3.ImageOptions.ImageIndex = ((int)(resources.GetObject("barSubItem3.ImageOptions.ImageIndex")));
-            this.barSubItem3.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barSubItem3.ImageOptions.LargeImageIndex")));
-            this.barSubItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barSubItem3.ImageOptions.SvgImage")));
             this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barToggleSwitchItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barToggleSwitchItem4)});
@@ -198,27 +191,18 @@ namespace CallManagement
             // 
             resources.ApplyResources(this.barToggleSwitchItem3, "barToggleSwitchItem3");
             this.barToggleSwitchItem3.Id = 32;
-            this.barToggleSwitchItem3.ImageOptions.ImageIndex = ((int)(resources.GetObject("barToggleSwitchItem3.ImageOptions.ImageIndex")));
-            this.barToggleSwitchItem3.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barToggleSwitchItem3.ImageOptions.LargeImageIndex")));
-            this.barToggleSwitchItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barToggleSwitchItem3.ImageOptions.SvgImage")));
             this.barToggleSwitchItem3.Name = "barToggleSwitchItem3";
             // 
             // barToggleSwitchItem4
             // 
             resources.ApplyResources(this.barToggleSwitchItem4, "barToggleSwitchItem4");
             this.barToggleSwitchItem4.Id = 33;
-            this.barToggleSwitchItem4.ImageOptions.ImageIndex = ((int)(resources.GetObject("barToggleSwitchItem4.ImageOptions.ImageIndex")));
-            this.barToggleSwitchItem4.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barToggleSwitchItem4.ImageOptions.LargeImageIndex")));
-            this.barToggleSwitchItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barToggleSwitchItem4.ImageOptions.SvgImage")));
             this.barToggleSwitchItem4.Name = "barToggleSwitchItem4";
             // 
             // barSubItem4
             // 
             resources.ApplyResources(this.barSubItem4, "barSubItem4");
             this.barSubItem4.Id = 17;
-            this.barSubItem4.ImageOptions.ImageIndex = ((int)(resources.GetObject("barSubItem4.ImageOptions.ImageIndex")));
-            this.barSubItem4.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barSubItem4.ImageOptions.LargeImageIndex")));
-            this.barSubItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barSubItem4.ImageOptions.SvgImage")));
             this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.skinPaletteDropDownButtonItem4)});
@@ -226,210 +210,155 @@ namespace CallManagement
             // 
             // skinBarSubItem3
             // 
-            resources.ApplyResources(this.skinBarSubItem3, "skinBarSubItem3");
             this.skinBarSubItem3.AllowSerializeChildren = DevExpress.Utils.DefaultBoolean.False;
+            resources.ApplyResources(this.skinBarSubItem3, "skinBarSubItem3");
             this.skinBarSubItem3.Id = 27;
-            this.skinBarSubItem3.ImageOptions.ImageIndex = ((int)(resources.GetObject("skinBarSubItem3.ImageOptions.ImageIndex")));
-            this.skinBarSubItem3.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("skinBarSubItem3.ImageOptions.LargeImageIndex")));
-            this.skinBarSubItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("skinBarSubItem3.ImageOptions.SvgImage")));
             this.skinBarSubItem3.Name = "skinBarSubItem3";
             // 
             // skinPaletteDropDownButtonItem4
             // 
-            resources.ApplyResources(this.skinPaletteDropDownButtonItem4, "skinPaletteDropDownButtonItem4");
             this.skinPaletteDropDownButtonItem4.Id = 29;
             this.skinPaletteDropDownButtonItem4.Name = "skinPaletteDropDownButtonItem4";
             // 
-            // barButtonItem2
+            // bbiCallTypes
             // 
-            resources.ApplyResources(this.barButtonItem2, "barButtonItem2");
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem2.ImageOptions.ImageIndex")));
-            this.barButtonItem2.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem2.ImageOptions.LargeImageIndex")));
-            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.formCallTypes);
+            resources.ApplyResources(this.bbiCallTypes, "bbiCallTypes");
+            this.bbiCallTypes.Id = 2;
+            this.bbiCallTypes.Name = "bbiCallTypes";
+            this.bbiCallTypes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.formCallTypes);
             // 
-            // barButtonItem1
+            // bbiCallingContact
             // 
-            resources.ApplyResources(this.barButtonItem1, "barButtonItem1");
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem1.ImageOptions.ImageIndex")));
-            this.barButtonItem1.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem1.ImageOptions.LargeImageIndex")));
-            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.formCallingContact);
+            resources.ApplyResources(this.bbiCallingContact, "bbiCallingContact");
+            this.bbiCallingContact.Id = 5;
+            this.bbiCallingContact.Name = "bbiCallingContact";
+            this.bbiCallingContact.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.formCallingContact);
             // 
-            // barButtonItem3
+            // bbiCallReceiver
             // 
-            resources.ApplyResources(this.barButtonItem3, "barButtonItem3");
-            this.barButtonItem3.Id = 6;
-            this.barButtonItem3.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem3.ImageOptions.ImageIndex")));
-            this.barButtonItem3.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem3.ImageOptions.LargeImageIndex")));
-            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.formCallReciever);
+            resources.ApplyResources(this.bbiCallReceiver, "bbiCallReceiver");
+            this.bbiCallReceiver.Id = 6;
+            this.bbiCallReceiver.Name = "bbiCallReceiver";
+            this.bbiCallReceiver.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.formCallReciever);
             // 
             // barButtonItem4
             // 
             resources.ApplyResources(this.barButtonItem4, "barButtonItem4");
             this.barButtonItem4.Id = 7;
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem4.ImageOptions.ImageIndex")));
             this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem4.ImageOptions.LargeImageIndex")));
-            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
             this.barButtonItem4.Name = "barButtonItem4";
             // 
-            // barButtonItem5
+            // bbiResetLayout
             // 
-            resources.ApplyResources(this.barButtonItem5, "barButtonItem5");
-            this.barButtonItem5.Id = 8;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem5.ImageOptions.ImageIndex")));
-            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.barButtonItem5.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem5.ImageOptions.LargeImageIndex")));
-            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            resources.ApplyResources(this.bbiResetLayout, "bbiResetLayout");
+            this.bbiResetLayout.Id = 8;
+            this.bbiResetLayout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.bbiResetLayout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.bbiResetLayout.Name = "bbiResetLayout";
+            this.bbiResetLayout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
-            // barButtonItem6
+            // bbiCreateEntry
             // 
-            resources.ApplyResources(this.barButtonItem6, "barButtonItem6");
-            this.barButtonItem6.Id = 10;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem6.ImageOptions.ImageIndex")));
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem6.ImageOptions.LargeImageIndex")));
-            this.barButtonItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem6.ImageOptions.SvgImage")));
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.createNewEntry);
+            resources.ApplyResources(this.bbiCreateEntry, "bbiCreateEntry");
+            this.bbiCreateEntry.Id = 10;
+            this.bbiCreateEntry.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.bbiCreateEntry.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.bbiCreateEntry.Name = "bbiCreateEntry";
+            this.bbiCreateEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.createNewEntry);
             // 
-            // barButtonItem7
+            // bbiEditEntry
             // 
-            resources.ApplyResources(this.barButtonItem7, "barButtonItem7");
-            this.barButtonItem7.Id = 11;
-            this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.barButtonItem7.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem7.ImageOptions.ImageIndex")));
-            this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
-            this.barButtonItem7.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem7.ImageOptions.LargeImageIndex")));
-            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editEntryForm);
+            resources.ApplyResources(this.bbiEditEntry, "bbiEditEntry");
+            this.bbiEditEntry.Id = 11;
+            this.bbiEditEntry.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
+            this.bbiEditEntry.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.bbiEditEntry.Name = "bbiEditEntry";
+            this.bbiEditEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editEntryForm);
             // 
-            // barButtonItem8
+            // bbiDeleteEntry
             // 
-            resources.ApplyResources(this.barButtonItem8, "barButtonItem8");
-            this.barButtonItem8.Id = 12;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem8.ImageOptions.ImageIndex")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem8.ImageOptions.LargeImageIndex")));
-            this.barButtonItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteEntry);
+            resources.ApplyResources(this.bbiDeleteEntry, "bbiDeleteEntry");
+            this.bbiDeleteEntry.Id = 12;
+            this.bbiDeleteEntry.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.bbiDeleteEntry.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.bbiDeleteEntry.Name = "bbiDeleteEntry";
+            this.bbiDeleteEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteEntry);
             // 
-            // barButtonItem9
+            // bbiRefreshData
             // 
-            resources.ApplyResources(this.barButtonItem9, "barButtonItem9");
-            this.barButtonItem9.Id = 13;
-            this.barButtonItem9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
-            this.barButtonItem9.ImageOptions.ImageIndex = ((int)(resources.GetObject("barButtonItem9.ImageOptions.ImageIndex")));
-            this.barButtonItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
-            this.barButtonItem9.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barButtonItem9.ImageOptions.LargeImageIndex")));
-            this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshData);
+            resources.ApplyResources(this.bbiRefreshData, "bbiRefreshData");
+            this.bbiRefreshData.Id = 13;
+            this.bbiRefreshData.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.bbiRefreshData.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.bbiRefreshData.Name = "bbiRefreshData";
+            this.bbiRefreshData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshData);
             // 
             // barSubItem1
             // 
             resources.ApplyResources(this.barSubItem1, "barSubItem1");
             this.barSubItem1.Id = 14;
-            this.barSubItem1.ImageOptions.ImageIndex = ((int)(resources.GetObject("barSubItem1.ImageOptions.ImageIndex")));
-            this.barSubItem1.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barSubItem1.ImageOptions.LargeImageIndex")));
-            this.barSubItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barSubItem1.ImageOptions.SvgImage")));
             this.barSubItem1.Name = "barSubItem1";
             // 
             // barSubItem2
             // 
             resources.ApplyResources(this.barSubItem2, "barSubItem2");
             this.barSubItem2.Id = 15;
-            this.barSubItem2.ImageOptions.ImageIndex = ((int)(resources.GetObject("barSubItem2.ImageOptions.ImageIndex")));
-            this.barSubItem2.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barSubItem2.ImageOptions.LargeImageIndex")));
-            this.barSubItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barSubItem2.ImageOptions.SvgImage")));
             this.barSubItem2.Name = "barSubItem2";
             // 
             // barToggleSwitchItem1
             // 
             resources.ApplyResources(this.barToggleSwitchItem1, "barToggleSwitchItem1");
             this.barToggleSwitchItem1.Id = 18;
-            this.barToggleSwitchItem1.ImageOptions.ImageIndex = ((int)(resources.GetObject("barToggleSwitchItem1.ImageOptions.ImageIndex")));
-            this.barToggleSwitchItem1.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barToggleSwitchItem1.ImageOptions.LargeImageIndex")));
-            this.barToggleSwitchItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barToggleSwitchItem1.ImageOptions.SvgImage")));
             this.barToggleSwitchItem1.Name = "barToggleSwitchItem1";
             // 
             // barToggleSwitchItem2
             // 
             resources.ApplyResources(this.barToggleSwitchItem2, "barToggleSwitchItem2");
             this.barToggleSwitchItem2.Id = 19;
-            this.barToggleSwitchItem2.ImageOptions.ImageIndex = ((int)(resources.GetObject("barToggleSwitchItem2.ImageOptions.ImageIndex")));
-            this.barToggleSwitchItem2.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barToggleSwitchItem2.ImageOptions.LargeImageIndex")));
-            this.barToggleSwitchItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barToggleSwitchItem2.ImageOptions.SvgImage")));
             this.barToggleSwitchItem2.Name = "barToggleSwitchItem2";
             // 
             // skinPaletteDropDownButtonItem1
             // 
-            resources.ApplyResources(this.skinPaletteDropDownButtonItem1, "skinPaletteDropDownButtonItem1");
             this.skinPaletteDropDownButtonItem1.Id = 20;
             this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
             // 
             // skinDropDownButtonItem1
             // 
-            resources.ApplyResources(this.skinDropDownButtonItem1, "skinDropDownButtonItem1");
             this.skinDropDownButtonItem1.Id = 21;
             this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
             // 
             // skinDropDownButtonItem2
             // 
-            resources.ApplyResources(this.skinDropDownButtonItem2, "skinDropDownButtonItem2");
             this.skinDropDownButtonItem2.Id = 22;
             this.skinDropDownButtonItem2.Name = "skinDropDownButtonItem2";
             // 
             // skinBarSubItem1
             // 
-            resources.ApplyResources(this.skinBarSubItem1, "skinBarSubItem1");
             this.skinBarSubItem1.AllowSerializeChildren = DevExpress.Utils.DefaultBoolean.False;
+            resources.ApplyResources(this.skinBarSubItem1, "skinBarSubItem1");
             this.skinBarSubItem1.Id = 23;
-            this.skinBarSubItem1.ImageOptions.ImageIndex = ((int)(resources.GetObject("skinBarSubItem1.ImageOptions.ImageIndex")));
-            this.skinBarSubItem1.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("skinBarSubItem1.ImageOptions.LargeImageIndex")));
-            this.skinBarSubItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("skinBarSubItem1.ImageOptions.SvgImage")));
             this.skinBarSubItem1.Name = "skinBarSubItem1";
             // 
             // skinPaletteDropDownButtonItem2
             // 
-            resources.ApplyResources(this.skinPaletteDropDownButtonItem2, "skinPaletteDropDownButtonItem2");
             this.skinPaletteDropDownButtonItem2.Id = 24;
             this.skinPaletteDropDownButtonItem2.Name = "skinPaletteDropDownButtonItem2";
             // 
             // skinDropDownButtonItem3
             // 
-            resources.ApplyResources(this.skinDropDownButtonItem3, "skinDropDownButtonItem3");
             this.skinDropDownButtonItem3.Id = 25;
             this.skinDropDownButtonItem3.Name = "skinDropDownButtonItem3";
             // 
             // skinBarSubItem2
             // 
-            resources.ApplyResources(this.skinBarSubItem2, "skinBarSubItem2");
             this.skinBarSubItem2.AllowSerializeChildren = DevExpress.Utils.DefaultBoolean.False;
+            resources.ApplyResources(this.skinBarSubItem2, "skinBarSubItem2");
             this.skinBarSubItem2.Id = 26;
-            this.skinBarSubItem2.ImageOptions.ImageIndex = ((int)(resources.GetObject("skinBarSubItem2.ImageOptions.ImageIndex")));
-            this.skinBarSubItem2.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("skinBarSubItem2.ImageOptions.LargeImageIndex")));
-            this.skinBarSubItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("skinBarSubItem2.ImageOptions.SvgImage")));
             this.skinBarSubItem2.Name = "skinBarSubItem2";
             // 
             // skinPaletteDropDownButtonItem3
             // 
-            resources.ApplyResources(this.skinPaletteDropDownButtonItem3, "skinPaletteDropDownButtonItem3");
             this.skinPaletteDropDownButtonItem3.Id = 28;
             this.skinPaletteDropDownButtonItem3.Name = "skinPaletteDropDownButtonItem3";
             // 
@@ -437,117 +366,99 @@ namespace CallManagement
             // 
             resources.ApplyResources(this.barCheckItem1, "barCheckItem1");
             this.barCheckItem1.Id = 30;
-            this.barCheckItem1.ImageOptions.ImageIndex = ((int)(resources.GetObject("barCheckItem1.ImageOptions.ImageIndex")));
-            this.barCheckItem1.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barCheckItem1.ImageOptions.LargeImageIndex")));
-            this.barCheckItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barCheckItem1.ImageOptions.SvgImage")));
             this.barCheckItem1.Name = "barCheckItem1";
             // 
             // barCheckItem2
             // 
             resources.ApplyResources(this.barCheckItem2, "barCheckItem2");
             this.barCheckItem2.Id = 31;
-            this.barCheckItem2.ImageOptions.ImageIndex = ((int)(resources.GetObject("barCheckItem2.ImageOptions.ImageIndex")));
-            this.barCheckItem2.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barCheckItem2.ImageOptions.LargeImageIndex")));
-            this.barCheckItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barCheckItem2.ImageOptions.SvgImage")));
             this.barCheckItem2.Name = "barCheckItem2";
             // 
-            // ribbonPage1
+            // ribbonPageCalls
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup3});
-            this.ribbonPage1.Name = "ribbonPage1";
-            resources.ApplyResources(this.ribbonPage1, "ribbonPage1");
+            this.ribbonPageCalls.Name = "ribbonPageCalls";
+            resources.ApplyResources(this.ribbonPageCalls, "ribbonPageCalls");
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiCallingContact);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             resources.ApplyResources(this.ribbonPageGroup1, "ribbonPageGroup1");
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bbiCallTypes);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             resources.ApplyResources(this.ribbonPageGroup2, "ribbonPageGroup2");
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.ItemLinks.Add(this.bbiCallReceiver);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             resources.ApplyResources(this.ribbonPageGroup3, "ribbonPageGroup3");
             // 
-            // ribbonPage2
+            // ribbonPageManageCalls
             // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageManageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6,
             this.ribbonPageGroup7,
             this.ribbonPageGroup8,
             this.ribbonPageGroup4});
-            this.ribbonPage2.Name = "ribbonPage2";
-            resources.ApplyResources(this.ribbonPage2, "ribbonPage2");
+            this.ribbonPageManageCalls.Name = "ribbonPageManageCalls";
+            resources.ApplyResources(this.ribbonPageManageCalls, "ribbonPageManageCalls");
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup6.ItemLinks.Add(this.bbiCreateEntry);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             resources.ApplyResources(this.ribbonPageGroup6, "ribbonPageGroup6");
             // 
             // ribbonPageGroup7
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup7.ItemLinks.Add(this.bbiEditEntry);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             resources.ApplyResources(this.ribbonPageGroup7, "ribbonPageGroup7");
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup8.ItemLinks.Add(this.bbiDeleteEntry);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             resources.ApplyResources(this.ribbonPageGroup8, "ribbonPageGroup8");
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup4.ItemLinks.Add(this.bbiRefreshData);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             resources.ApplyResources(this.ribbonPageGroup4, "ribbonPageGroup4");
             // 
-            // ribbonPage3
+            // ribbonPageLayout
             // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageLayout.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5});
-            this.ribbonPage3.Name = "ribbonPage3";
-            resources.ApplyResources(this.ribbonPage3, "ribbonPage3");
+            this.ribbonPageLayout.Name = "ribbonPageLayout";
+            resources.ApplyResources(this.ribbonPageLayout, "ribbonPageLayout");
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup5.ItemLinks.Add(this.bbiResetLayout);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             resources.ApplyResources(this.ribbonPageGroup5, "ribbonPageGroup5");
             // 
             // layoutControl1
             // 
-            resources.ApplyResources(this.layoutControl1, "layoutControl1");
             this.layoutControl1.Controls.Add(this.gridControl1);
+            resources.ApplyResources(this.layoutControl1, "layoutControl1");
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
             // 
             // gridControl1
             // 
-            resources.ApplyResources(this.gridControl1, "gridControl1");
             this.gridControl1.DataSource = this.bsCalls;
-            this.gridControl1.EmbeddedNavigator.AccessibleDescription = resources.GetString("gridControl1.EmbeddedNavigator.AccessibleDescription");
-            this.gridControl1.EmbeddedNavigator.AccessibleName = resources.GetString("gridControl1.EmbeddedNavigator.AccessibleName");
-            this.gridControl1.EmbeddedNavigator.AllowHtmlTextInToolTip = ((DevExpress.Utils.DefaultBoolean)(resources.GetObject("gridControl1.EmbeddedNavigator.AllowHtmlTextInToolTip")));
-            this.gridControl1.EmbeddedNavigator.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("gridControl1.EmbeddedNavigator.Anchor")));
-            this.gridControl1.EmbeddedNavigator.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gridControl1.EmbeddedNavigator.BackgroundImage")));
-            this.gridControl1.EmbeddedNavigator.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("gridControl1.EmbeddedNavigator.BackgroundImageLayout")));
-            this.gridControl1.EmbeddedNavigator.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("gridControl1.EmbeddedNavigator.ImeMode")));
-            this.gridControl1.EmbeddedNavigator.MaximumSize = ((System.Drawing.Size)(resources.GetObject("gridControl1.EmbeddedNavigator.MaximumSize")));
-            this.gridControl1.EmbeddedNavigator.TextLocation = ((DevExpress.XtraEditors.NavigatorButtonsTextLocation)(resources.GetObject("gridControl1.EmbeddedNavigator.TextLocation")));
-            this.gridControl1.EmbeddedNavigator.ToolTip = resources.GetString("gridControl1.EmbeddedNavigator.ToolTip");
-            this.gridControl1.EmbeddedNavigator.ToolTipIconType = ((DevExpress.Utils.ToolTipIconType)(resources.GetObject("gridControl1.EmbeddedNavigator.ToolTipIconType")));
-            this.gridControl1.EmbeddedNavigator.ToolTipTitle = resources.GetString("gridControl1.EmbeddedNavigator.ToolTipTitle");
+            resources.ApplyResources(this.gridControl1, "gridControl1");
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.ribbonControl1;
             this.gridControl1.Name = "gridControl1";
@@ -571,7 +482,6 @@ namespace CallManagement
             // 
             // gridView1
             // 
-            resources.ApplyResources(this.gridView1, "gridView1");
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colCallsId,
             this.colCreationDate,
@@ -592,22 +502,22 @@ namespace CallManagement
             // 
             // colCallsId
             // 
-            resources.ApplyResources(this.colCallsId, "colCallsId");
             this.colCallsId.FieldName = "CallsId";
             this.colCallsId.Name = "colCallsId";
+            resources.ApplyResources(this.colCallsId, "colCallsId");
             // 
             // colCreationDate
             // 
-            resources.ApplyResources(this.colCreationDate, "colCreationDate");
             this.colCreationDate.FieldName = "CreationDate";
             this.colCreationDate.Name = "colCreationDate";
+            resources.ApplyResources(this.colCreationDate, "colCreationDate");
             // 
             // colTypeId
             // 
-            resources.ApplyResources(this.colTypeId, "colTypeId");
             this.colTypeId.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.colTypeId.FieldName = "TypeId";
             this.colTypeId.Name = "colTypeId";
+            resources.ApplyResources(this.colTypeId, "colTypeId");
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -626,10 +536,10 @@ namespace CallManagement
             // 
             // colReceiverId
             // 
-            resources.ApplyResources(this.colReceiverId, "colReceiverId");
             this.colReceiverId.ColumnEdit = this.repositoryItemLookUpEdit2;
             this.colReceiverId.FieldName = "ReceiverId";
             this.colReceiverId.Name = "colReceiverId";
+            resources.ApplyResources(this.colReceiverId, "colReceiverId");
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -648,10 +558,10 @@ namespace CallManagement
             // 
             // colCallContactId
             // 
-            resources.ApplyResources(this.colCallContactId, "colCallContactId");
             this.colCallContactId.ColumnEdit = this.repositoryItemLookUpEdit3;
             this.colCallContactId.FieldName = "CallContactId";
             this.colCallContactId.Name = "colCallContactId";
+            resources.ApplyResources(this.colCallContactId, "colCallContactId");
             // 
             // repositoryItemLookUpEdit3
             // 
@@ -670,19 +580,18 @@ namespace CallManagement
             // 
             // colNotes
             // 
-            resources.ApplyResources(this.colNotes, "colNotes");
             this.colNotes.FieldName = "Notes";
             this.colNotes.Name = "colNotes";
+            resources.ApplyResources(this.colNotes, "colNotes");
             // 
             // colModifiedDate
             // 
-            resources.ApplyResources(this.colModifiedDate, "colModifiedDate");
             this.colModifiedDate.FieldName = "ModifiedDate";
             this.colModifiedDate.Name = "colModifiedDate";
+            resources.ApplyResources(this.colModifiedDate, "colModifiedDate");
             // 
             // Root
             // 
-            resources.ApplyResources(this.Root, "Root");
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -693,7 +602,6 @@ namespace CallManagement
             // 
             // layoutControlItem1
             // 
-            resources.ApplyResources(this.layoutControlItem1, "layoutControlItem1");
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
@@ -753,51 +661,42 @@ namespace CallManagement
             // 
             resources.ApplyResources(this.barStaticItem1, "barStaticItem1");
             this.barStaticItem1.Id = 0;
-            this.barStaticItem1.ImageOptions.ImageIndex = ((int)(resources.GetObject("barStaticItem1.ImageOptions.ImageIndex")));
-            this.barStaticItem1.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barStaticItem1.ImageOptions.LargeImageIndex")));
-            this.barStaticItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barStaticItem1.ImageOptions.SvgImage")));
             this.barStaticItem1.Name = "barStaticItem1";
             // 
             // barStaticItem2
             // 
             resources.ApplyResources(this.barStaticItem2, "barStaticItem2");
             this.barStaticItem2.Id = 1;
-            this.barStaticItem2.ImageOptions.ImageIndex = ((int)(resources.GetObject("barStaticItem2.ImageOptions.ImageIndex")));
-            this.barStaticItem2.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barStaticItem2.ImageOptions.LargeImageIndex")));
-            this.barStaticItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barStaticItem2.ImageOptions.SvgImage")));
             this.barStaticItem2.Name = "barStaticItem2";
             // 
             // barStaticItem3
             // 
             resources.ApplyResources(this.barStaticItem3, "barStaticItem3");
             this.barStaticItem3.Id = 2;
-            this.barStaticItem3.ImageOptions.ImageIndex = ((int)(resources.GetObject("barStaticItem3.ImageOptions.ImageIndex")));
-            this.barStaticItem3.ImageOptions.LargeImageIndex = ((int)(resources.GetObject("barStaticItem3.ImageOptions.LargeImageIndex")));
-            this.barStaticItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barStaticItem3.ImageOptions.SvgImage")));
             this.barStaticItem3.Name = "barStaticItem3";
             // 
             // barDockControlTop
             // 
-            resources.ApplyResources(this.barDockControlTop, "barDockControlTop");
             this.barDockControlTop.CausesValidation = false;
+            resources.ApplyResources(this.barDockControlTop, "barDockControlTop");
             this.barDockControlTop.Manager = this.barManager1;
             // 
             // barDockControlBottom
             // 
-            resources.ApplyResources(this.barDockControlBottom, "barDockControlBottom");
             this.barDockControlBottom.CausesValidation = false;
+            resources.ApplyResources(this.barDockControlBottom, "barDockControlBottom");
             this.barDockControlBottom.Manager = this.barManager1;
             // 
             // barDockControlLeft
             // 
-            resources.ApplyResources(this.barDockControlLeft, "barDockControlLeft");
             this.barDockControlLeft.CausesValidation = false;
+            resources.ApplyResources(this.barDockControlLeft, "barDockControlLeft");
             this.barDockControlLeft.Manager = this.barManager1;
             // 
             // barDockControlRight
             // 
-            resources.ApplyResources(this.barDockControlRight, "barDockControlRight");
             this.barDockControlRight.CausesValidation = false;
+            resources.ApplyResources(this.barDockControlRight, "barDockControlRight");
             this.barDockControlRight.Manager = this.barManager1;
             // 
             // labelControl1
@@ -845,7 +744,7 @@ namespace CallManagement
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageCalls;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
@@ -862,10 +761,10 @@ namespace CallManagement
         private DevExpress.XtraGrid.Columns.GridColumn colCallContactId;
         private DevExpress.XtraGrid.Columns.GridColumn colNotes;
         private DevExpress.XtraGrid.Columns.GridColumn colModifiedDate;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem bbiCallTypes;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem bbiCallingContact;
+        private DevExpress.XtraBars.BarButtonItem bbiCallReceiver;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
@@ -886,17 +785,17 @@ namespace CallManagement
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraBars.BarStaticItem barStaticItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem bbiResetLayout;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.BarButtonItem bbiCreateEntry;
+        private DevExpress.XtraBars.BarButtonItem bbiEditEntry;
+        private DevExpress.XtraBars.BarButtonItem bbiDeleteEntry;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageManageCalls;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageLayout;
+        private DevExpress.XtraBars.BarButtonItem bbiRefreshData;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
         private DevExpress.XtraBars.BarSubItem barSubItem3;
