@@ -41,11 +41,11 @@ namespace CallManagement.Crud_Operations
             //---------------peirama---------------------//
 
             //create new row
-            DataSet1.CallsRow newCall;
-            newCall = dataSet1.Calls.NewCallsRow();
-            this.dataSet1.Calls.Rows.Add(newCall);
-            this.bindingSource1.EndEdit();
-            this.callsTableAdapter1.Update(dataSet1.Calls);
+            //DataSet1.CallsRow newCall;
+            //newCall = dataSet1.Calls.NewCallsRow();
+            //this.dataSet1.Calls.Rows.Add(newCall);
+            //this.bindingSource1.EndEdit();
+            //this.callsTableAdapter1.Update(dataSet1.Calls);
         }
 
         private void saveChanges(object sender, EventArgs e)
