@@ -24,6 +24,9 @@ namespace CallManagement
         public Form1()
         {
             InitializeComponent();
+            //load skin
+            //SkinHelper.InitSkinGalleryDropDown(skinList);
+            //UserLookAndFeel.Default.SkinName = Settings.Default[skinList.Caption].ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -63,6 +66,18 @@ namespace CallManagement
             {
                 Form formLogin = new Login();
                 formLogin.ShowDialog();
+            }
+
+            //----------load saved skin/palette----------//
+            var settings = Properties.Settings.Default;
+            if (!String.IsNullOrEmpty(settings.SkinName))
+            {
+                if (!String.IsNullOrEmpty(settings.SkinName))
+                {
+                    UserLookAndFeel.Default.SetSkinStyle(settings.SkinName, settings.PaletteName);
+                }
+                else
+                    UserLookAndFeel.Default.SetSkinStyle(settings.SkinName);
             }
 
             GetConnectionString();
@@ -142,8 +157,15 @@ namespace CallManagement
                 Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
                 Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
             }
+            //save skin
+            var settings = Properties.Settings.Default;
+            settings.SkinName = UserLookAndFeel.Default.SkinName;
+            settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
+            //Settings.Default[skinList.Caption] = UserLookAndFeel.Default.SkinName;
+            settings.Save();
+
             // don't forget to save the settings
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
         }
 
         //---Save grid layout--//

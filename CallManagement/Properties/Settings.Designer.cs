@@ -58,5 +58,29 @@ namespace CallManagement.Properties {
                 this["F1Size"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SkinName {
+            get {
+                return ((string)(this["SkinName"]));
+            }
+            set {
+                this["SkinName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PaletteName {
+            get {
+                return ((string)(this["PaletteName"]));
+            }
+            set {
+                this["PaletteName"] = value;
+            }
+        }
     }
 }

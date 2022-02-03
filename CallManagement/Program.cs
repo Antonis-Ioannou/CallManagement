@@ -44,7 +44,9 @@ namespace CallManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //
+            //enable skins
+            //BonusSkins.Register();
+            //SkinManager.EnableFormSkins();
             ChangeCulture();
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureString);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureString);
