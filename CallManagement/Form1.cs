@@ -1,4 +1,7 @@
 ﻿using CallManagement.Crud_Operations;
+using CallManagement.Properties;
+using DevExpress.LookAndFeel;
+using DevExpress.XtraBars.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,7 +126,7 @@ namespace CallManagement
             //barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
         }
 
-        //---Saving position and size of window---//
+        //---Saving position, size of window and skin---//
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.F1State = this.WindowState;
@@ -139,7 +142,6 @@ namespace CallManagement
                 Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
                 Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
             }
-
             // don't forget to save the settings
             Properties.Settings.Default.Save();
         }
@@ -151,9 +153,9 @@ namespace CallManagement
         }
 
         //---Reset layout to default---//
-        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void resetLayoutDefault(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore Default Layout? Your saved layout will be deleted!", "Restore Default Layout",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore Default Layout? Your saved layout will be deleted!", "Restore Default Layout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
                 gridView1.RestoreLayoutFromXml(path + @"\defaultLayout.xml");
@@ -217,6 +219,96 @@ namespace CallManagement
             //DeleteEntryMessageBox deleteEntry = new DeleteEntryMessageBox();
             //deleteEntry.Show("hello",Color.DarkCyan);
             //------Custom messagebox------//
+        }
+
+        private void setGreek(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string setGreek = "el";
+
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                bool saveSuccess = true;
+                try
+                {
+                    xmlSerializer.Serialize(fs, setGreek);
+                }
+                catch
+                {
+                    saveSuccess = false;
+                }
+                finally
+                {
+                    if (saveSuccess)
+                    {
+                        MessageBox.Show("Greek selected. Need to restart application to apply new settings");
+                        string restartNow = "Restart application now?";
+                        string title = "Restart";
+                        var buttons = MessageBoxButtons.YesNo;
+                        var icon = MessageBoxIcon.Question;
+
+                        DialogResult dialogResult = MessageBox.Show(restartNow, title, buttons, icon);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            Application.Restart();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong....");
+                    }
+                }
+            }
+        }
+
+        private void setEnglish(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string setEnglish = "en";
+
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                bool saveSuccess = true;
+                try
+                {
+                    xmlSerializer.Serialize(fs, setEnglish);
+                }
+                catch
+                {
+                    saveSuccess = false;
+                }
+                finally
+                {
+                    if (saveSuccess)
+                    {
+                        MessageBox.Show("English selected. Need to restart application to apply new settings");
+                        string restartNow = "Restart application now?";
+                        string title = "Restart";
+                        var buttons = MessageBoxButtons.YesNo;
+                        var icon = MessageBoxIcon.Question;
+
+                        DialogResult dialogResult = MessageBox.Show(restartNow, title, buttons, icon);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            Application.Restart();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong....");
+                    }
+                }
+            }
         }
     }
 }
