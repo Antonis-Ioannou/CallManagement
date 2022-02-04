@@ -108,7 +108,6 @@ namespace CallManagement
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -246,7 +245,7 @@ namespace CallManagement
             this.bbiCreateEntry.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiCreateEntry.ImageOptions.Image")));
             this.bbiCreateEntry.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiCreateEntry.ImageOptions.LargeImage")));
             this.bbiCreateEntry.Name = "bbiCreateEntry";
-            this.bbiCreateEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.createNewEntry);
+            this.bbiCreateEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editEntryForm);
             // 
             // bbiEditEntry
             // 
@@ -700,16 +699,10 @@ namespace CallManagement
             resources.ApplyResources(this.barDockControlRight, "barDockControlRight");
             this.barDockControlRight.Manager = this.barManager1;
             // 
-            // labelControl1
-            // 
-            resources.ApplyResources(this.labelControl1, "labelControl1");
-            this.labelControl1.Name = "labelControl1";
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -821,7 +814,6 @@ namespace CallManagement
         private DevExpress.XtraBars.BarToggleSwitchItem barToggleSwitchItem4;
         private DevExpress.XtraBars.BarCheckItem bciEnglish;
         private DevExpress.XtraBars.BarCheckItem bciGreek;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
 

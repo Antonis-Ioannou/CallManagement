@@ -33,24 +33,22 @@ namespace CallManagement.Crud_Operations
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit4 = new DevExpress.XtraEditors.DateEdit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new CallManagement.DataSet1();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.callTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet11 = new CallManagement.DataSet1();
             this.comboBoxEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.callingContactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxEdit3 = new DevExpress.XtraEditors.LookUpEdit();
+            this.callRecieverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new CallManagement.DataSet1();
-            this.callTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet11 = new CallManagement.DataSet1();
-            this.callingContactBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.callRecieverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.callsTableAdapter1 = new CallManagement.DataSet1TableAdapters.CallsTableAdapter();
             this.callTypeTableAdapter = new CallManagement.DataSet1TableAdapters.CallTypeTableAdapter();
             this.callingContactTableAdapter = new CallManagement.DataSet1TableAdapters.CallingContactTableAdapter();
@@ -58,32 +56,28 @@ namespace CallManagement.Crud_Operations
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callingContactBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callRecieverBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.callTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.callingContactBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.callRecieverBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.comboBoxEdit4);
             this.layoutControl1.Controls.Add(this.comboBoxEdit1);
             this.layoutControl1.Controls.Add(this.comboBoxEdit2);
             this.layoutControl1.Controls.Add(this.comboBoxEdit3);
@@ -97,7 +91,7 @@ namespace CallManagement.Crud_Operations
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 132);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 108);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(776, 22);
             this.simpleButton1.StyleController = this.layoutControl1;
@@ -108,30 +102,21 @@ namespace CallManagement.Crud_Operations
             // textEdit1
             // 
             this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "Notes", true));
-            this.textEdit1.Location = new System.Drawing.Point(93, 108);
+            this.textEdit1.Location = new System.Drawing.Point(93, 84);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(695, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 8;
             // 
-            // comboBoxEdit4
+            // bindingSource1
             // 
-            this.comboBoxEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "CreationDate", true));
-            this.comboBoxEdit4.EditValue = null;
-            this.comboBoxEdit4.Location = new System.Drawing.Point(93, 84);
-            this.comboBoxEdit4.Name = "comboBoxEdit4";
-            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit4.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit4.Properties.DisplayFormat.FormatString = "";
-            this.comboBoxEdit4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.comboBoxEdit4.Properties.EditFormat.FormatString = "";
-            this.comboBoxEdit4.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.comboBoxEdit4.Properties.MaskSettings.Set("mask", "");
-            this.comboBoxEdit4.Size = new System.Drawing.Size(695, 20);
-            this.comboBoxEdit4.StyleController = this.layoutControl1;
-            this.comboBoxEdit4.TabIndex = 7;
+            this.bindingSource1.DataMember = "Calls";
+            this.bindingSource1.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBoxEdit1
             // 
@@ -149,6 +134,16 @@ namespace CallManagement.Crud_Operations
             this.comboBoxEdit1.StyleController = this.layoutControl1;
             this.comboBoxEdit1.TabIndex = 4;
             // 
+            // callTypeBindingSource
+            // 
+            this.callTypeBindingSource.DataMember = "CallType";
+            this.callTypeBindingSource.DataSource = this.dataSet11;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBoxEdit2
             // 
             this.comboBoxEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "CallContactId", true));
@@ -164,6 +159,11 @@ namespace CallManagement.Crud_Operations
             this.comboBoxEdit2.Size = new System.Drawing.Size(695, 20);
             this.comboBoxEdit2.StyleController = this.layoutControl1;
             this.comboBoxEdit2.TabIndex = 5;
+            // 
+            // callingContactBindingSource
+            // 
+            this.callingContactBindingSource.DataMember = "CallingContact";
+            this.callingContactBindingSource.DataSource = this.dataSet11;
             // 
             // comboBoxEdit3
             // 
@@ -181,6 +181,11 @@ namespace CallManagement.Crud_Operations
             this.comboBoxEdit3.StyleController = this.layoutControl1;
             this.comboBoxEdit3.TabIndex = 6;
             // 
+            // callRecieverBindingSource
+            // 
+            this.callRecieverBindingSource.DataMember = "CallReciever";
+            this.callRecieverBindingSource.DataSource = this.dataSet11;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -190,7 +195,6 @@ namespace CallManagement.Crud_Operations
             this.emptySpaceItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6});
             this.Root.Name = "Root";
@@ -209,9 +213,9 @@ namespace CallManagement.Crud_Operations
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 146);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 122);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(780, 284);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(780, 308);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -232,20 +236,10 @@ namespace CallManagement.Crud_Operations
             this.layoutControlItem3.Text = "CallReciever";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.comboBoxEdit4;
-            this.layoutControlItem4.CustomizationFormText = "ModifiedDate";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(780, 24);
-            this.layoutControlItem4.Text = "ModifiedDate";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(69, 13);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.textEdit1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(780, 24);
             this.layoutControlItem5.Text = "Notes";
@@ -254,41 +248,11 @@ namespace CallManagement.Crud_Operations
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.simpleButton1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(780, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Calls";
-            this.bindingSource1.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // callTypeBindingSource
-            // 
-            this.callTypeBindingSource.DataMember = "CallType";
-            this.callTypeBindingSource.DataSource = this.dataSet11;
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // callingContactBindingSource
-            // 
-            this.callingContactBindingSource.DataMember = "CallingContact";
-            this.callingContactBindingSource.DataSource = this.dataSet11;
-            // 
-            // callRecieverBindingSource
-            // 
-            this.callRecieverBindingSource.DataMember = "CallReciever";
-            this.callRecieverBindingSource.DataSource = this.dataSet11;
             // 
             // callsTableAdapter1
             // 
@@ -318,25 +282,22 @@ namespace CallManagement.Crud_Operations
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callingContactBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callRecieverBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.callTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.callingContactBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.callRecieverBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,12 +310,10 @@ namespace CallManagement.Crud_Operations
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.DateEdit comboBoxEdit4;
         private System.Windows.Forms.BindingSource bindingSource1;
         private DataSet1 dataSet1;
         private DataSet1TableAdapters.CallsTableAdapter callsTableAdapter1;

@@ -132,6 +132,9 @@
   <data name="bsiSkin.Caption" xml:space="preserve">
     <value>&amp;Skin Settings</value>
   </data>
+  <data name="skinList.Caption" xml:space="preserve">
+    <value>&amp;Skin List</value>
+  </data>
   <data name="bbiCallTypes.Caption" xml:space="preserve">
     <value>Call Types</value>
   </data>
@@ -470,17 +473,38 @@
         4dSxM6yYe/hN2EE2ILbWG/Dzm+//a3lT+e/xr/JHv42KIPwDHxb20BRI/sQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="skinList.Caption" xml:space="preserve">
-    <value>&amp;Skin List</value>
-  </data>
   <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="ribbonPageGroup1.Text" xml:space="preserve">
+    <value>ribbonPageGroup1</value>
+  </data>
+  <data name="ribbonPageGroup2.Text" xml:space="preserve">
+    <value>ribbonPageGroup2</value>
+  </data>
+  <data name="ribbonPageGroup3.Text" xml:space="preserve">
+    <value>ribbonPageGroup3</value>
   </data>
   <data name="ribbonPageCalls.Text" xml:space="preserve">
     <value>Calls</value>
   </data>
+  <data name="ribbonPageGroup6.Text" xml:space="preserve">
+    <value>ribbonPageGroup6</value>
+  </data>
+  <data name="ribbonPageGroup7.Text" xml:space="preserve">
+    <value>ribbonPageGroup7</value>
+  </data>
+  <data name="ribbonPageGroup8.Text" xml:space="preserve">
+    <value>ribbonPageGroup8</value>
+  </data>
+  <data name="ribbonPageGroup4.Text" xml:space="preserve">
+    <value>ribbonPageGroup4</value>
+  </data>
   <data name="ribbonPageManageCalls.Text" xml:space="preserve">
     <value>Manage Calls</value>
+  </data>
+  <data name="ribbonPageGroup5.Text" xml:space="preserve">
+    <value>ribbonPageGroup5</value>
   </data>
   <data name="ribbonPageLayout.Text" xml:space="preserve">
     <value>Layout</value>
@@ -498,31 +522,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ribbonControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ribbonPageGroup1.Text" xml:space="preserve">
-    <value>ribbonPageGroup1</value>
-  </data>
-  <data name="ribbonPageGroup2.Text" xml:space="preserve">
-    <value>ribbonPageGroup2</value>
-  </data>
-  <data name="ribbonPageGroup3.Text" xml:space="preserve">
-    <value>ribbonPageGroup3</value>
-  </data>
-  <data name="ribbonPageGroup6.Text" xml:space="preserve">
-    <value>ribbonPageGroup6</value>
-  </data>
-  <data name="ribbonPageGroup7.Text" xml:space="preserve">
-    <value>ribbonPageGroup7</value>
-  </data>
-  <data name="ribbonPageGroup8.Text" xml:space="preserve">
-    <value>ribbonPageGroup8</value>
-  </data>
-  <data name="ribbonPageGroup4.Text" xml:space="preserve">
-    <value>ribbonPageGroup4</value>
-  </data>
-  <data name="ribbonPageGroup5.Text" xml:space="preserve">
-    <value>ribbonPageGroup5</value>
+    <value>1</value>
   </data>
   <data name="barToggleSwitchItem3.Caption" xml:space="preserve">
     <value>&amp;English</value>
@@ -655,9 +655,6 @@
   <data name="colCreationDate.VisibleIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <metadata name="callsCallTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>401, 17</value>
-  </metadata>
   <data name="repositoryItemLookUpEdit1.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -665,36 +662,39 @@
   <data name="repositoryItemLookUpEdit1.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
+  <metadata name="callsCallTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>401, 17</value>
+  </metadata>
   <data name="colTypeId.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="colTypeId.VisibleIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <metadata name="callsCallRecieverBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>770, 17</value>
-  </metadata>
   <data name="repositoryItemLookUpEdit2.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="repositoryItemLookUpEdit2.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
+  <metadata name="callsCallRecieverBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>770, 17</value>
+  </metadata>
   <data name="colReceiverId.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="colReceiverId.VisibleIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <metadata name="callsCallingContactBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <data name="repositoryItemLookUpEdit3.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="repositoryItemLookUpEdit3.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
+  <metadata name="callsCallingContactBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <data name="colCallContactId.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -757,20 +757,8 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;layoutControl1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
-  <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
-  </metadata>
-  <metadata name="callsCallTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>401, 17</value>
-  </metadata>
-  <metadata name="callsCallRecieverBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>770, 17</value>
-  </metadata>
-  <metadata name="callsCallingContactBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <metadata name="callsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>253, 17</value>
   </metadata>
@@ -786,6 +774,15 @@
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>452, 56</value>
   </metadata>
+  <data name="barStaticItem1.Caption" xml:space="preserve">
+    <value>barStaticItem1</value>
+  </data>
+  <data name="barStaticItem2.Caption" xml:space="preserve">
+    <value>barStaticItem2</value>
+  </data>
+  <data name="barStaticItem3.Caption" xml:space="preserve">
+    <value>barStaticItem3</value>
+  </data>
   <data name="bar3.Text" xml:space="preserve">
     <value>Status bar</value>
   </data>
@@ -808,7 +805,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;barDockControlTop.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="barDockControlBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -829,7 +826,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;barDockControlBottom.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="barDockControlLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -850,7 +847,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;barDockControlLeft.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="barDockControlRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -871,7 +868,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;barDockControlRight.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -881,30 +878,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1308, 658</value>
-  </data>
-  <data name="labelControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>549, 107</value>
-  </data>
-  <data name="labelControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 13</value>
-  </data>
-  <data name="labelControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="labelControl1.Text" xml:space="preserve">
-    <value>hello</value>
-  </data>
-  <data name="&gt;&gt;labelControl1.Name" xml:space="preserve">
-    <value>labelControl1</value>
-  </data>
-  <data name="&gt;&gt;labelControl1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;labelControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>
@@ -1334,14 +1307,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonForm, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="barStaticItem1.Caption" xml:space="preserve">
-    <value>barStaticItem1</value>
-  </data>
-  <data name="barStaticItem2.Caption" xml:space="preserve">
-    <value>barStaticItem2</value>
-  </data>
-  <data name="barStaticItem3.Caption" xml:space="preserve">
-    <value>barStaticItem3</value>
   </data>
 </root>

@@ -24,9 +24,6 @@ namespace CallManagement
         public Form1()
         {
             InitializeComponent();
-            //load skin
-            //SkinHelper.InitSkinGalleryDropDown(skinList);
-            //UserLookAndFeel.Default.SkinName = Settings.Default[skinList.Caption].ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -53,13 +50,7 @@ namespace CallManagement
                 this.Location = Properties.Settings.Default.F1Location;
                 this.Size = Properties.Settings.Default.F1Size;
             }
-
-            // TODO: This line of code loads data into the 'dataSet1.CallingContact' table. You can move, or remove it, as needed.
-            this.callingContactTableAdapter.Fill(this.dataSet1.CallingContact);
-            // TODO: This line of code loads data into the 'dataSet1.CallReciever' table. You can move, or remove it, as needed.
-            this.callRecieverTableAdapter.Fill(this.dataSet1.CallReciever);
-            // TODO: This line of code loads data into the 'dataSet1.CallType' table. You can move, or remove it, as needed.
-            this.callTypeTableAdapter.Fill(this.dataSet1.CallType);
+                     
             GetConnectionString();
 
             if (string.IsNullOrEmpty(ConnectionString))
@@ -88,6 +79,15 @@ namespace CallManagement
         {
             if (!string.IsNullOrEmpty(ConnectionString))
             {
+                callingContactTableAdapter.Connection.ConnectionString = ConnectionString;
+                callingContactTableAdapter.Fill(this.dataSet1.CallingContact);
+
+                callRecieverTableAdapter.Connection.ConnectionString = ConnectionString;
+                callRecieverTableAdapter.Fill(this.dataSet1.CallReciever);
+
+                callTypeTableAdapter.Connection.ConnectionString = ConnectionString;
+                callTypeTableAdapter.Fill(this.dataSet1.CallType);
+
                 callsTableAdapter.Connection.ConnectionString = ConnectionString;
                 callsTableAdapter.Fill(dataSet1.Calls);
             }
@@ -137,8 +137,9 @@ namespace CallManagement
         {
             //barStaticItem1.Caption = "Total Rows: " + gridView1.RowCount.ToString(); 
             //barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + dataSet1.Calls.Count();
-            //barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
-            //barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
+            //barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + gridControl1
+            barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
+            barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
         }
 
         //---Saving position, size of window and skin---//
@@ -183,33 +184,23 @@ namespace CallManagement
                 gridView1.RestoreLayoutFromXml(path + @"\defaultLayout.xml");
                 gridView1.SaveLayoutToXml(customLayout);
             }
-        }
-
-        private void createNewEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            //---------------peirama---------------------//
-            //create new row
-            //DataSet1.CallsRow newCall;
-            //newCall = dataSet1.Calls.NewCallsRow();
-            //this.dataSet1.Calls.Rows.Add(newCall);
-            //this.bsCalls.EndEdit();
-            //this.callsTableAdapter1.Update(dataSet1.Calls);
-
-            //int selectedId = dataSet1.Calls.Select(x => x.CallsId).Max();
-            //CreateNewEntry createEntry = new CreateNewEntry(selectedId);
-            //createEntry.Show();
-            //---------------peirama---------------------//
-
-            //Δουλεύει
-            EditEntry createEntry = new EditEntry(-1);
-            createEntry.Show();
-        }
+        }      
 
         private void editEntryForm(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            int selectedId = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle,"CallsId");
+            int selectedId = -1;
+
+             if(gridView1.FocusedRowHandle >=0)                
+            selectedId = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle,"CallsId");
+
             EditEntry editEntry = new EditEntry(selectedId);
+            editEntry.ReloadDataEvent += EditEntry_ReloadDataEvent;
             editEntry.Show();
+        } 
+
+        private void EditEntry_ReloadDataEvent()
+        {
+            FillTableAdapter();
         }
 
         private void refreshData(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -80,18 +80,6 @@
     <Compile Include="CallTypes.Designer.cs">
       <DependentUpon>CallTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Crud Operations\CreateNewEntry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crud Operations\CreateNewEntry.Designer.cs">
-      <DependentUpon>CreateNewEntry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Crud Operations\DeleteEntry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Crud Operations\DeleteEntry.Designer.cs">
-      <DependentUpon>DeleteEntry.cs</DependentUpon>
-    </Compile>
     <Compile Include="Crud Operations\EditEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,12 +122,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CallTypes.resx">
       <DependentUpon>CallTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Crud Operations\CreateNewEntry.resx">
-      <DependentUpon>CreateNewEntry.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Crud Operations\DeleteEntry.resx">
-      <DependentUpon>DeleteEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Crud Operations\EditEntry.resx">
       <DependentUpon>EditEntry.cs</DependentUpon>

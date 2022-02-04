@@ -788,7 +788,37 @@
   <data name="labelControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
   </data>
-  <data name="labelControl1.Text" xml:space="preserve">
-    <value>Χαίρετε</value>
+  <data name="bbiCallingContact.Caption" xml:space="preserve">
+    <value>Καλών Κλήσης</value>
+  </data>
+  <data name="bbiCallReceiver.Caption" xml:space="preserve">
+    <value>Αποδέκτης Κλήσης</value>
+  </data>
+  <data name="bbiCallTypes.Caption" xml:space="preserve">
+    <value>Είδος Κλήσης</value>
+  </data>
+  <data name="ribbonPageCalls.Text" xml:space="preserve">
+    <value>Κλήσεις</value>
+  </data>
+  <data name="ribbonPageLayout.Text" xml:space="preserve">
+    <value>Διάταξη</value>
+  </data>
+  <data name="ribbonPageManageCalls.Text" xml:space="preserve">
+    <value>Διαχείρηση Κλήσεων</value>
+  </data>
+  <data name="bbiCreateEntry.Caption" xml:space="preserve">
+    <value>Δημιουργία Κλήσης</value>
+  </data>
+  <data name="bbiDeleteEntry.Caption" xml:space="preserve">
+    <value>Διαγραφή Κλήσης</value>
+  </data>
+  <data name="bbiEditEntry.Caption" xml:space="preserve">
+    <value>Επεξεργασία Κλήσης</value>
+  </data>
+  <data name="bbiRefreshData.Caption" xml:space="preserve">
+    <value>Ανανέωση Στοιχείων</value>
+  </data>
+  <data name="bbiResetLayout.Caption" xml:space="preserve">
+    <value>Επαναφορά Αρχικής Διάταξης</value>
   </data>
 </root>
