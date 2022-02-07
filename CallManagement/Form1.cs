@@ -136,8 +136,7 @@ namespace CallManagement
         private void gridView1_RowCountChanged(object sender, EventArgs e)
         {
             //barStaticItem1.Caption = "Total Rows: " + gridView1.RowCount.ToString(); 
-            //barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + dataSet1.Calls.Count();
-            //barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + gridControl1
+            barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + dataSet1.Calls.Count();
             barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
             barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
         }

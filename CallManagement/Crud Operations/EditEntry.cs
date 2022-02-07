@@ -62,9 +62,9 @@ namespace CallManagement.Crud_Operations
             drvCall.BeginEdit();
 
             if (SelectedId.Equals(-1))
-                drvCall.Row["CreationDate"] = DateTime.UtcNow;
+                drvCall.Row["CreationDate"] = DateTime.Now;
 
-            drvCall.Row["ModifiedDate"] = DateTime.UtcNow;
+            drvCall.Row["ModifiedDate"] = DateTime.Now;
             drvCall.EndEdit();
         }
 
@@ -83,5 +83,6 @@ namespace CallManagement.Crud_Operations
                 MessageBox.Show("Ooops, something went wrong");
             }
         }
+
     }
 }
