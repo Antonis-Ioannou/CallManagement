@@ -99,14 +99,12 @@ namespace CallManagement.Crud_Operations
                 //        editorsWithErrors.Add(be);
                 //}
 
-
                 //List<string> errors = new List<string>();
                 //errors.Add("Error 1");
                 //errors.Add("Error 2");
                 //errors.Add("Error 3");
                 //string errorMessage = string.Join("\n", errors.ToArray());
                 //MessageBox.Show(errorMessage);
-
 
                 var listOfErrors = this.dxErrorProvider.ContainerControl.Controls.Cast<Control>()
                                        .Select(c => this.dxErrorProvider.GetError(c))
@@ -116,9 +114,7 @@ namespace CallManagement.Crud_Operations
                     string.Join("\n - ", listOfErrors.ToArray()),
                     "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-
         }
 
         private void callTypeValidation(object sender, CancelEventArgs e)
