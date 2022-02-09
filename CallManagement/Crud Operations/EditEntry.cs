@@ -174,7 +174,12 @@ namespace CallManagement.Crud_Operations
                 }
                 else if (result == DialogResult.Yes)
                 {
-                    
+                    //--------------------//
+                    if (this.callType.Text != callType.Text)
+                    {
+
+                    }
+                    //--------------------//
                     saveChanges();
                     e.Cancel = true;
                 }
