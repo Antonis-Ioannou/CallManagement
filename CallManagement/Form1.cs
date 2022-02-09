@@ -193,6 +193,7 @@ namespace CallManagement
             selectedId = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle,"CallsId");
 
             EditEntry editEntry = new EditEntry(selectedId);
+            editEntry.Text = selectedId < 0 ? editEntry.Text = "Create Call" : editEntry.Text = "Edit Call";
             editEntry.ReloadDataEvent += EditEntry_ReloadDataEvent;
             editEntry.Show();
         } 

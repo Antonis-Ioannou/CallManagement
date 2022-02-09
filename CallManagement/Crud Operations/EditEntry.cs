@@ -89,32 +89,6 @@ namespace CallManagement.Crud_Operations
                     MessageBox.Show("Ooops, something went wrong");
                 }
             }
-            else
-            {
-                //List<BaseEdit> editorsWithErrors = new List<BaseEdit>();
-                //foreach (Control ctrl in layoutControl1.Controls)
-                //{
-                //    BaseEdit be = ctrl as BaseEdit;
-                //    if (be != null && be.ErrorText != string.Empty)
-                //        editorsWithErrors.Add(be);
-                //}
-
-                //List<string> errors = new List<string>();
-                //errors.Add("Error 1");
-                //errors.Add("Error 2");
-                //errors.Add("Error 3");
-                //string errorMessage = string.Join("\n", errors.ToArray());
-                //MessageBox.Show(errorMessage);
-
-                var listOfErrors = this.dxErrorProvider.ContainerControl.Controls.Cast<Control>()
-                                       .Select(c => this.dxErrorProvider.GetError(c))
-                                       .Where(s => !string.IsNullOrEmpty(s))
-                                       .ToList();
-                MessageBox.Show("Please correct validation errors:\n - " +
-                    string.Join("\n - ", listOfErrors.ToArray()),
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void callTypeValidation(object sender, CancelEventArgs e)
@@ -166,5 +140,87 @@ namespace CallManagement.Crud_Operations
                 this.dxErrorProvider.SetError(this.callReciever, "");
             }
         }
+
+        private void formClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (e.CloseReason == CloseReason.UserClosing)
+            //{
+            string warning = "Would you like to save before exit?";
+            string title = "Confirm exit";
+            var buttons = MessageBoxButtons.YesNoCancel;
+            var icon = MessageBoxIcon.Question;
+            DialogResult result = MessageBox.Show(warning, title, buttons, icon);
+
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+                else if (result == DialogResult.Yes)
+                {
+                    
+                    saveChanges(sender, e);
+                    e.Cancel = true;
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }
+
+
+
+//if (e.CloseReason == CloseReason.UserClosing)
+//{
+//    if (result != DialogResult.No)
+//    {
+//        e.Cancel = true;
+//    }
+//    else if (result != DialogResult.Yes)
+//    {
+//        if (this.ValidateChildren())
+//        {
+//            //Here the form is in valid state
+//            //Do what you need when the form is valid
+//            try
+//            {
+//                SetModifiedDate();
+//                this.bindingSource1.EndEdit();
+//                this.callsTableAdapter1.Update(dataSet1.Calls);
+//                this.ReloadDataEvent?.Invoke();
+//                this.Close();
+//            }
+//            catch (Exception)
+//            {
+//                MessageBox.Show("Ooops, something went wrong");
+//            }
+//        }
+//    }
+//}
+
+
+
+//else
+//{
+//    if (this.ValidateChildren())
+//    {
+//        //Here the form is in valid state
+//        //Do what you need when the form is valid
+//        try
+//        {
+//            SetModifiedDate();
+//            this.bindingSource1.EndEdit();
+//            this.callsTableAdapter1.Update(dataSet1.Calls);
+//            this.ReloadDataEvent?.Invoke();
+//            this.Close();
+//        }
+//        catch (Exception)
+//        {
+//            MessageBox.Show("Ooops, something went wrong");
+//        }
+//    }
+//}
