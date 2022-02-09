@@ -19,8 +19,8 @@ namespace CallManagement.Crud_Operations
     {
         public event ReloadGridData ReloadDataEvent;
 
-        private int _selectedId = 0;
         private bool saveSuccess = false;
+        private int _selectedId = 0;
         public int SelectedId { get => _selectedId; set => _selectedId = value; }
 
         public EditEntry(int id)
@@ -72,7 +72,6 @@ namespace CallManagement.Crud_Operations
             drvCall.EndEdit();
         }
 
-
         private void saveChanges()
         {
             if (this.ValidateChildren())
@@ -96,6 +95,11 @@ namespace CallManagement.Crud_Operations
                     this.Close();
                 }
             }
+        }
+
+        private void saveChangesBtn(object sender, EventArgs e)
+        {
+            saveChanges();
         }
 
         private void callTypeValidation(object sender, CancelEventArgs e)
@@ -179,11 +183,6 @@ namespace CallManagement.Crud_Operations
                     e.Cancel = true;
                 }
             }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            saveChanges();
         }
     }
 }

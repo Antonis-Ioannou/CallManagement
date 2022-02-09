@@ -479,18 +479,6 @@
   <data name="ribbonPageCalls.Text" xml:space="preserve">
     <value>Calls</value>
   </data>
-  <data name="ribbonPageGroup6.Text" xml:space="preserve">
-    <value>ribbonPageGroup6</value>
-  </data>
-  <data name="ribbonPageGroup7.Text" xml:space="preserve">
-    <value>ribbonPageGroup7</value>
-  </data>
-  <data name="ribbonPageGroup8.Text" xml:space="preserve">
-    <value>ribbonPageGroup8</value>
-  </data>
-  <data name="ribbonPageGroup4.Text" xml:space="preserve">
-    <value>ribbonPageGroup4</value>
-  </data>
   <data name="ribbonPageManageCalls.Text" xml:space="preserve">
     <value>Manage Calls</value>
   </data>
@@ -520,6 +508,18 @@
   </data>
   <data name="ribbonPageGroup3.Text" xml:space="preserve">
     <value>ribbonPageGroup3</value>
+  </data>
+  <data name="ribbonPageGroup6.Text" xml:space="preserve">
+    <value>ribbonPageGroup6</value>
+  </data>
+  <data name="ribbonPageGroup7.Text" xml:space="preserve">
+    <value>ribbonPageGroup7</value>
+  </data>
+  <data name="ribbonPageGroup8.Text" xml:space="preserve">
+    <value>ribbonPageGroup8</value>
+  </data>
+  <data name="ribbonPageGroup4.Text" xml:space="preserve">
+    <value>ribbonPageGroup4</value>
   </data>
   <data name="ribbonPageGroup5.Text" xml:space="preserve">
     <value>ribbonPageGroup5</value>

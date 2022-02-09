@@ -199,42 +199,11 @@ namespace CallManagement
                 gridView1.RestoreLayoutFromXml(path + @"\defaultLayout.xml");
                 gridView1.SaveLayoutToXml(customLayout);
             }
-        }       
-       
-        private void EditEntry_ReloadDataEvent()
-        {
-            FillTableAdapter();
         }
 
         private void refreshData(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FillTableAdapter();
-        }
-
-        private void deleteEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            //----------Δουλεύει----------//
-            string warning = "Are you sure you want to delete this entry?";
-            string title = "Delete Entry";
-            var buttons = MessageBoxButtons.YesNo;
-            var icon = MessageBoxIcon.Warning;
-
-            DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
-            if (dialogResult == DialogResult.Yes)
-            {
-                int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
-                callsTableAdapter.deleteSelectedRow(selectedRow);
-                MessageBox.Show("Delete successful!");
-            }
-
-            FillTableAdapter();
-            //----------Δουλεύει----------//
-
-
-            //------Custom messagebox------//
-            //DeleteEntryMessageBox deleteEntry = new DeleteEntryMessageBox();
-            //deleteEntry.Show("hello",Color.DarkCyan);
-            //------Custom messagebox------//
         }
 
         private void setGreek(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -327,6 +296,54 @@ namespace CallManagement
             }
         }
 
+        private void deleteEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //----------Δουλεύει----------//
+            string warning = "Are you sure you want to delete this entry?";
+            string title = "Delete Entry";
+            var buttons = MessageBoxButtons.YesNo;
+            var icon = MessageBoxIcon.Warning;
+
+            DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
+                callsTableAdapter.deleteSelectedRow(selectedRow);
+                MessageBox.Show("Delete successful!");
+            }
+
+            FillTableAdapter();
+            //----------Δουλεύει----------//
+
+
+            //------Custom messagebox------//
+            //DeleteEntryMessageBox deleteEntry = new DeleteEntryMessageBox();
+            //deleteEntry.Show("hello",Color.DarkCyan);
+            //------Custom messagebox------//
+        }
+
+        //----------//
+
+        private void OpenEditForm(int id)
+        {
+            var openedForm = Application.OpenForms.OfType<EditEntry>().Select(t => t).Where(t => t.SelectedId == id).FirstOrDefault();
+
+            if (openedForm != null)
+                openedForm.BringToFront();
+            else
+            {
+                EditEntry editEntry = new EditEntry(id);
+                editEntry.Text = id < 0 ? editEntry.Text = "Create Call" : editEntry.Text = "Edit Call";
+                editEntry.ReloadDataEvent += EditEntry_ReloadDataEvent;
+                editEntry.Show();
+            }
+        }
+
+        private void EditEntry_ReloadDataEvent()
+        {
+            FillTableAdapter();
+        }
+
         private void bbiCreateEntry_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenEditForm(-1);
@@ -340,19 +357,12 @@ namespace CallManagement
             OpenEditForm((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId"));
         }
 
-        private void OpenEditForm(int id)
+        private void dbClickEdit(object sender, EventArgs e)
         {
-            var openedForm = Application.OpenForms.OfType<EditEntry>().Where(t => t.SelectedId == id).Select(t => t).FirstOrDefault();
+            if (gridView1.IsGroupRow(gridView1.FocusedRowHandle))
+                return;
 
-            if (openedForm != null)
-                openedForm.BringToFront();
-            else
-            {
-                EditEntry editEntry = new EditEntry(id);
-                editEntry.Text = id < 0 ? editEntry.Text = "Create Call" : editEntry.Text = "Edit Call";
-                editEntry.ReloadDataEvent += EditEntry_ReloadDataEvent;
-                editEntry.Show();
-            }
+            OpenEditForm((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId"));
         }
     }
 }
