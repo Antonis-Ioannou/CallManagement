@@ -144,28 +144,44 @@ namespace CallManagement
         //---Saving position, size of window and skin---//
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.F1State = this.WindowState;
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                // save location and size if the state is normal
-                Properties.Settings.Default.F1Location = this.Location;
-                Properties.Settings.Default.F1Size = this.Size;
-            }
-            else
-            {
-                // save the RestoreBounds if the form is minimized or maximized!
-                Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
-                Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
-            }
-            //save skin
-            var settings = Properties.Settings.Default;
-            settings.SkinName = UserLookAndFeel.Default.SkinName;
-            settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
-            //Settings.Default[skinList.Caption] = UserLookAndFeel.Default.SkinName;
-            settings.Save();
+            string text = "Are yoy sure you want to exit?";
+            string title = "Exit application?";
+            var buttons = MessageBoxButtons.YesNo;
+            var icon = MessageBoxIcon.Question;
+            DialogResult result = MessageBox.Show(text,title, buttons, icon);
 
-            // don't forget to save the settings
-            Settings.Default.Save();
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (result == DialogResult.Yes)
+                {
+                    Properties.Settings.Default.F1State = this.WindowState;
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        // save location and size if the state is normal
+                        Properties.Settings.Default.F1Location = this.Location;
+                        Properties.Settings.Default.F1Size = this.Size;
+                    }
+                    else
+                    {
+                        // save the RestoreBounds if the form is minimized or maximized!
+                        Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
+                        Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
+                    }
+                    //save skin
+                    var settings = Properties.Settings.Default;
+                    settings.SkinName = UserLookAndFeel.Default.SkinName;
+                    settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
+                    //Settings.Default[skinList.Caption] = UserLookAndFeel.Default.SkinName;
+                    settings.Save();
+
+                    // don't forget to save the settings
+                    Settings.Default.Save();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         //---Save grid layout--//

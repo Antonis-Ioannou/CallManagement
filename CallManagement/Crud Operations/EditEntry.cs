@@ -143,13 +143,11 @@ namespace CallManagement.Crud_Operations
 
         private void formClosing(object sender, FormClosingEventArgs e)
         {
-            //if (e.CloseReason == CloseReason.UserClosing)
-            //{
-            string warning = "Would you like to save before exit?";
+            string text = "Would you like to save before exit?";
             string title = "Confirm exit";
             var buttons = MessageBoxButtons.YesNoCancel;
             var icon = MessageBoxIcon.Question;
-            DialogResult result = MessageBox.Show(warning, title, buttons, icon);
+            DialogResult result = MessageBox.Show(text, title, buttons, icon);
 
             if (e.CloseReason == CloseReason.UserClosing)
             {
