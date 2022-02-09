@@ -245,7 +245,7 @@ namespace CallManagement
             this.bbiCreateEntry.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiCreateEntry.ImageOptions.Image")));
             this.bbiCreateEntry.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiCreateEntry.ImageOptions.LargeImage")));
             this.bbiCreateEntry.Name = "bbiCreateEntry";
-            this.bbiCreateEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editEntryForm);
+            this.bbiCreateEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiCreateEntry_ItemClick);
             // 
             // bbiEditEntry
             // 
@@ -254,7 +254,7 @@ namespace CallManagement
             this.bbiEditEntry.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiEditEntry.ImageOptions.Image")));
             this.bbiEditEntry.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bbiEditEntry.ImageOptions.LargeImage")));
             this.bbiEditEntry.Name = "bbiEditEntry";
-            this.bbiEditEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editEntryForm);
+            this.bbiEditEntry.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEditEntry_ItemClick);
             // 
             // bbiDeleteEntry
             // 
@@ -466,6 +466,7 @@ namespace CallManagement
             this.repositoryItemLookUpEdit1,
             this.repositoryItemLookUpEdit2,
             this.repositoryItemLookUpEdit3});
+            this.gridControl1.ShowOnlyPredefinedDetails = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl1.Load += new System.EventHandler(this.Form1_Load);

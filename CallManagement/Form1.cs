@@ -199,21 +199,8 @@ namespace CallManagement
                 gridView1.RestoreLayoutFromXml(path + @"\defaultLayout.xml");
                 gridView1.SaveLayoutToXml(customLayout);
             }
-        }      
-
-        private void editEntryForm(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            int selectedId = -1;
-
-             if(gridView1.FocusedRowHandle >=0)                
-            selectedId = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle,"CallsId");
-
-            EditEntry editEntry = new EditEntry(selectedId);
-            editEntry.Text = selectedId < 0 ? editEntry.Text = "Create Call" : editEntry.Text = "Edit Call";
-            editEntry.ReloadDataEvent += EditEntry_ReloadDataEvent;
-            editEntry.Show();
-        } 
-
+        }       
+       
         private void EditEntry_ReloadDataEvent()
         {
             FillTableAdapter();
@@ -337,6 +324,34 @@ namespace CallManagement
                         MessageBox.Show("Something went wrong....");
                     }
                 }
+            }
+        }
+
+        private void bbiCreateEntry_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenEditForm(-1);
+        }
+
+        private void bbiEditEntry_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (gridView1.IsGroupRow(gridView1.FocusedRowHandle))
+                return;
+
+            OpenEditForm((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId"));
+        }
+
+        private void OpenEditForm(int id)
+        {
+            var openedForm = Application.OpenForms.OfType<EditEntry>().Where(t => t.SelectedId == id).Select(t => t).FirstOrDefault();
+
+            if (openedForm != null)
+                openedForm.BringToFront();
+            else
+            {
+                EditEntry editEntry = new EditEntry(id);
+                editEntry.Text = id < 0 ? editEntry.Text = "Create Call" : editEntry.Text = "Edit Call";
+                editEntry.ReloadDataEvent += EditEntry_ReloadDataEvent;
+                editEntry.Show();
             }
         }
     }

@@ -19,7 +19,9 @@ namespace CallManagement.Crud_Operations
     {
         public event ReloadGridData ReloadDataEvent;
 
-        private int SelectedId = 0;
+        private int _selectedId = 0;
+        private bool saveSuccess = false;
+        public int SelectedId { get => _selectedId; set => _selectedId = value; }
 
         public EditEntry(int id)
         {
@@ -70,7 +72,8 @@ namespace CallManagement.Crud_Operations
             drvCall.EndEdit();
         }
 
-        private void saveChanges(object sender, EventArgs e)
+
+        private void saveChanges()
         {
             if (this.ValidateChildren())
             {
@@ -81,12 +84,16 @@ namespace CallManagement.Crud_Operations
                     SetModifiedDate();
                     this.bindingSource1.EndEdit();
                     this.callsTableAdapter1.Update(dataSet1.Calls);
-                    this.ReloadDataEvent?.Invoke();
-                    this.Close();
+                    saveSuccess = true;
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Ooops, something went wrong");
+                }
+                finally
+                {
+                    this.ReloadDataEvent?.Invoke();
+                    this.Close();
                 }
             }
         }
@@ -143,6 +150,12 @@ namespace CallManagement.Crud_Operations
 
         private void formClosing(object sender, FormClosingEventArgs e)
         {
+            if (saveSuccess)
+            {
+                saveSuccess = false;
+                return;
+            }
+
             string text = "Would you like to save before exit?";
             string title = "Confirm exit";
             var buttons = MessageBoxButtons.YesNoCancel;
@@ -158,7 +171,7 @@ namespace CallManagement.Crud_Operations
                 else if (result == DialogResult.Yes)
                 {
                     
-                    saveChanges(sender, e);
+                    saveChanges();
                     e.Cancel = true;
                 }
                 else if (result == DialogResult.Cancel)
@@ -166,6 +179,11 @@ namespace CallManagement.Crud_Operations
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            saveChanges();
         }
     }
 }
