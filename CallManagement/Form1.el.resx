@@ -821,4 +821,7 @@
   <data name="bbiResetLayout.Caption" xml:space="preserve">
     <value>Επαναφορά Αρχικής Διάταξης</value>
   </data>
+  <data name="Form1.Text" xml:space="preserve">
+    <value>Διαχείρηση Κλήσεων</value>
+  </data>
 </root>
