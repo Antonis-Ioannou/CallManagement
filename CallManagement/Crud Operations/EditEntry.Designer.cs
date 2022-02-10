@@ -165,6 +165,7 @@ namespace CallManagement.Crud_Operations
             this.callingContact.Size = new System.Drawing.Size(695, 20);
             this.callingContact.StyleController = this.layoutControl1;
             this.callingContact.TabIndex = 5;
+            this.callingContact.Modified += new System.EventHandler(this.callingContactChanged);
             this.callingContact.Validating += new System.ComponentModel.CancelEventHandler(this.callingContactValidation);
             // 
             // callingContactBindingSource
@@ -188,6 +189,7 @@ namespace CallManagement.Crud_Operations
             this.callReciever.Size = new System.Drawing.Size(695, 20);
             this.callReciever.StyleController = this.layoutControl1;
             this.callReciever.TabIndex = 6;
+            this.callReciever.Modified += new System.EventHandler(this.callRecieverChanged);
             this.callReciever.Validating += new System.ComponentModel.CancelEventHandler(this.callRecieverValidation);
             // 
             // callRecieverBindingSource

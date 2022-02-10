@@ -158,6 +158,16 @@ namespace CallManagement.Crud_Operations
             dataChanged = true;
         }
 
+        private void callingContactChanged(object sender, EventArgs e)
+        {
+            dataChanged = true;
+        }
+
+        private void callRecieverChanged(object sender, EventArgs e)
+        {
+            dataChanged = true;
+        }
+
         private void formClosing(object sender, FormClosingEventArgs e)
         {
             if (saveSuccess)
