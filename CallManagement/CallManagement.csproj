@@ -80,6 +80,8 @@
     <Compile Include="CallTypes.Designer.cs">
       <DependentUpon>CallTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlDirtyTracker.cs" />
+    <Compile Include="ControlDirtyTrackerCollection.cs" />
     <Compile Include="Crud Operations\EditEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +114,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoreSophisticatedDirtyTracker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CallingContact.resx">
