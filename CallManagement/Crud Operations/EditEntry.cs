@@ -19,6 +19,7 @@ namespace CallManagement.Crud_Operations
     {
         public event ReloadGridData ReloadDataEvent;
 
+        private bool dataChanged = false;
         private bool saveSuccess = false;
         private int _selectedId = 0;
         public int SelectedId { get => _selectedId; set => _selectedId = value; }
@@ -152,6 +153,11 @@ namespace CallManagement.Crud_Operations
             }
         }
 
+        private void callTypeChanged(object sender, EventArgs e)
+        {
+            dataChanged = true;
+        }
+
         private void formClosing(object sender, FormClosingEventArgs e)
         {
             if (saveSuccess)
@@ -163,29 +169,39 @@ namespace CallManagement.Crud_Operations
             string text = "Would you like to save before exit?";
             string title = "Confirm exit";
             var buttons = MessageBoxButtons.YesNoCancel;
+            string text2 = "Confirm exit?";
+            string title2 = "Confirm exit";
+            var buttons2 = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Question;
-            DialogResult result = MessageBox.Show(text, title, buttons, icon);
+            
 
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                if (result == DialogResult.Cancel)
+                if (dataChanged)
                 {
-                    e.Cancel = true;
-                }
-                else if (result == DialogResult.Yes)
-                {
-                    //--------------------//
-                    if (this.callType.Text != callType.Text)
+                    DialogResult result = MessageBox.Show(text, title, buttons, icon);
+                    if (result == DialogResult.Cancel)
                     {
-
+                        e.Cancel = true;
                     }
-                    //--------------------//
-                    saveChanges();
-                    e.Cancel = true;
+                    else if (result == DialogResult.Yes)
+                    {
+                        saveChanges();
+                        dataChanged = false;
+                        e.Cancel = true;
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        e.Cancel = true;
+                    }
                 }
-                else if (result == DialogResult.Cancel)
+                else
                 {
-                    e.Cancel = true;
+                    DialogResult result2 = MessageBox.Show(text2, title2, buttons2, icon);
+                    if (result2 == DialogResult.No)
+                    {
+                        e.Cancel = true;
+                    }
                 }
             }
         }

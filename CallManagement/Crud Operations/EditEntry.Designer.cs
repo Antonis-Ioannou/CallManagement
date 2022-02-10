@@ -136,6 +136,7 @@ namespace CallManagement.Crud_Operations
             this.callType.Size = new System.Drawing.Size(695, 20);
             this.callType.StyleController = this.layoutControl1;
             this.callType.TabIndex = 4;
+            this.callType.Modified += new System.EventHandler(this.callTypeChanged);
             this.callType.Validating += new System.ComponentModel.CancelEventHandler(this.callTypeValidation);
             // 
             // callTypeBindingSource
