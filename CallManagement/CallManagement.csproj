@@ -123,6 +123,9 @@
     <EmbeddedResource Include="CallTypes.resx">
       <DependentUpon>CallTypes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Crud Operations\EditEntry.el.resx">
+      <DependentUpon>EditEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Crud Operations\EditEntry.resx">
       <DependentUpon>EditEntry.cs</DependentUpon>
     </EmbeddedResource>

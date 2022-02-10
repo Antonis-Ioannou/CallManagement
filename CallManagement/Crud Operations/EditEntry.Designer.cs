@@ -30,8 +30,9 @@ namespace CallManagement.Crud_Operations
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEntry));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.sbSubmitChanges = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new CallManagement.DataSet1();
@@ -43,11 +44,11 @@ namespace CallManagement.Crud_Operations
             this.callReciever = new DevExpress.XtraEditors.LookUpEdit();
             this.callRecieverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciCallType = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciCallingContact = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciCallReciever = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciNotes = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.callsTableAdapter1 = new CallManagement.DataSet1TableAdapters.CallsTableAdapter();
             this.callTypeTableAdapter = new CallManagement.DataSet1TableAdapters.CallTypeTableAdapter();
@@ -67,48 +68,39 @@ namespace CallManagement.Crud_Operations
             ((System.ComponentModel.ISupportInitialize)(this.callReciever.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.callRecieverBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciCallType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciCallingContact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciCallReciever)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton1);
+            this.layoutControl1.Controls.Add(this.sbSubmitChanges);
             this.layoutControl1.Controls.Add(this.textEdit1);
             this.layoutControl1.Controls.Add(this.callType);
             this.layoutControl1.Controls.Add(this.callingContact);
             this.layoutControl1.Controls.Add(this.callReciever);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.layoutControl1, "layoutControl1");
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 450);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
             // 
-            // simpleButton1
+            // sbSubmitChanges
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 108);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(776, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "Submit Changes";
-            this.simpleButton1.Click += new System.EventHandler(this.saveChangesBtn);
+            resources.ApplyResources(this.sbSubmitChanges, "sbSubmitChanges");
+            this.sbSubmitChanges.Name = "sbSubmitChanges";
+            this.sbSubmitChanges.StyleController = this.layoutControl1;
+            this.sbSubmitChanges.Click += new System.EventHandler(this.saveChangesBtn);
             // 
             // textEdit1
             // 
             this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "Notes", true));
-            this.textEdit1.Location = new System.Drawing.Point(93, 84);
+            resources.ApplyResources(this.textEdit1, "textEdit1");
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(695, 20);
             this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 8;
             // 
             // bindingSource1
             // 
@@ -123,19 +115,17 @@ namespace CallManagement.Crud_Operations
             // callType
             // 
             this.callType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "TypeId", true));
-            this.callType.Location = new System.Drawing.Point(93, 12);
+            resources.ApplyResources(this.callType, "callType");
             this.callType.Name = "callType";
             this.callType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("callType.Properties.Buttons"))))});
             this.callType.Properties.DataSource = this.callTypeBindingSource;
             this.callType.Properties.DisplayMember = "Description";
-            this.callType.Properties.NullText = "";
+            this.callType.Properties.NullText = resources.GetString("callType.Properties.NullText");
             this.callType.Properties.PopupSizeable = false;
             this.callType.Properties.ValidateOnEnterKey = true;
             this.callType.Properties.ValueMember = "ID";
-            this.callType.Size = new System.Drawing.Size(695, 20);
             this.callType.StyleController = this.layoutControl1;
-            this.callType.TabIndex = 4;
             this.callType.Modified += new System.EventHandler(this.callTypeChanged);
             this.callType.Validating += new System.ComponentModel.CancelEventHandler(this.callTypeValidation);
             // 
@@ -152,19 +142,17 @@ namespace CallManagement.Crud_Operations
             // callingContact
             // 
             this.callingContact.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "CallContactId", true));
-            this.callingContact.Location = new System.Drawing.Point(93, 36);
+            resources.ApplyResources(this.callingContact, "callingContact");
             this.callingContact.Name = "callingContact";
             this.callingContact.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("callingContact.Properties.Buttons"))))});
             this.callingContact.Properties.DataSource = this.callingContactBindingSource;
             this.callingContact.Properties.DisplayMember = "Name";
-            this.callingContact.Properties.NullText = "";
+            this.callingContact.Properties.NullText = resources.GetString("callingContact.Properties.NullText");
             this.callingContact.Properties.PopupSizeable = false;
             this.callingContact.Properties.ValidateOnEnterKey = true;
             this.callingContact.Properties.ValueMember = "ID";
-            this.callingContact.Size = new System.Drawing.Size(695, 20);
             this.callingContact.StyleController = this.layoutControl1;
-            this.callingContact.TabIndex = 5;
             this.callingContact.Modified += new System.EventHandler(this.callingContactChanged);
             this.callingContact.Validating += new System.ComponentModel.CancelEventHandler(this.callingContactValidation);
             // 
@@ -176,19 +164,17 @@ namespace CallManagement.Crud_Operations
             // callReciever
             // 
             this.callReciever.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "ReceiverId", true));
-            this.callReciever.Location = new System.Drawing.Point(93, 60);
+            resources.ApplyResources(this.callReciever, "callReciever");
             this.callReciever.Name = "callReciever";
             this.callReciever.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("callReciever.Properties.Buttons"))))});
             this.callReciever.Properties.DataSource = this.callRecieverBindingSource;
             this.callReciever.Properties.DisplayMember = "Name";
-            this.callReciever.Properties.NullText = "";
+            this.callReciever.Properties.NullText = resources.GetString("callReciever.Properties.NullText");
             this.callReciever.Properties.PopupSizeable = false;
             this.callReciever.Properties.ValidateOnEnterKey = true;
             this.callReciever.Properties.ValueMember = "ID";
-            this.callReciever.Size = new System.Drawing.Size(695, 20);
             this.callReciever.StyleController = this.layoutControl1;
-            this.callReciever.TabIndex = 6;
             this.callReciever.Modified += new System.EventHandler(this.callRecieverChanged);
             this.callReciever.Validating += new System.ComponentModel.CancelEventHandler(this.callRecieverValidation);
             // 
@@ -202,24 +188,24 @@ namespace CallManagement.Crud_Operations
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
+            this.lciCallType,
             this.emptySpaceItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem5,
+            this.lciCallingContact,
+            this.lciCallReciever,
+            this.lciNotes,
             this.layoutControlItem6});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(800, 450);
             this.Root.TextVisible = false;
             // 
-            // layoutControlItem1
+            // lciCallType
             // 
-            this.layoutControlItem1.Control = this.callType;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(780, 24);
-            this.layoutControlItem1.Text = "CallType";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(69, 13);
+            this.lciCallType.Control = this.callType;
+            this.lciCallType.Location = new System.Drawing.Point(0, 0);
+            this.lciCallType.Name = "lciCallType";
+            this.lciCallType.Size = new System.Drawing.Size(780, 24);
+            resources.ApplyResources(this.lciCallType, "lciCallType");
+            this.lciCallType.TextSize = new System.Drawing.Size(69, 13);
             // 
             // emptySpaceItem1
             // 
@@ -229,36 +215,36 @@ namespace CallManagement.Crud_Operations
             this.emptySpaceItem1.Size = new System.Drawing.Size(780, 308);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem2
+            // lciCallingContact
             // 
-            this.layoutControlItem2.Control = this.callingContact;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(780, 24);
-            this.layoutControlItem2.Text = "CallingContact";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(69, 13);
+            this.lciCallingContact.Control = this.callingContact;
+            this.lciCallingContact.Location = new System.Drawing.Point(0, 24);
+            this.lciCallingContact.Name = "lciCallingContact";
+            this.lciCallingContact.Size = new System.Drawing.Size(780, 24);
+            resources.ApplyResources(this.lciCallingContact, "lciCallingContact");
+            this.lciCallingContact.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // layoutControlItem3
+            // lciCallReciever
             // 
-            this.layoutControlItem3.Control = this.callReciever;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(780, 24);
-            this.layoutControlItem3.Text = "CallReciever";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(69, 13);
+            this.lciCallReciever.Control = this.callReciever;
+            this.lciCallReciever.Location = new System.Drawing.Point(0, 48);
+            this.lciCallReciever.Name = "lciCallReciever";
+            this.lciCallReciever.Size = new System.Drawing.Size(780, 24);
+            resources.ApplyResources(this.lciCallReciever, "lciCallReciever");
+            this.lciCallReciever.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // layoutControlItem5
+            // lciNotes
             // 
-            this.layoutControlItem5.Control = this.textEdit1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(780, 24);
-            this.layoutControlItem5.Text = "Notes";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(69, 13);
+            this.lciNotes.Control = this.textEdit1;
+            this.lciNotes.Location = new System.Drawing.Point(0, 72);
+            this.lciNotes.Name = "lciNotes";
+            this.lciNotes.Size = new System.Drawing.Size(780, 24);
+            resources.ApplyResources(this.lciNotes, "lciNotes");
+            this.lciNotes.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.simpleButton1;
+            this.layoutControlItem6.Control = this.sbSubmitChanges;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(780, 26);
@@ -287,13 +273,11 @@ namespace CallManagement.Crud_Operations
             // 
             // EditEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
             this.Name = "EditEntry";
-            this.Text = "EditEntry";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosing);
             this.Load += new System.EventHandler(this.EditEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -309,11 +293,11 @@ namespace CallManagement.Crud_Operations
             ((System.ComponentModel.ISupportInitialize)(this.callReciever.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.callRecieverBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciCallType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciCallingContact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciCallReciever)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciNotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -324,13 +308,13 @@ namespace CallManagement.Crud_Operations
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem lciCallType;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem lciCallingContact;
+        private DevExpress.XtraLayout.LayoutControlItem lciCallReciever;
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem lciNotes;
+        private DevExpress.XtraEditors.SimpleButton sbSubmitChanges;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private System.Windows.Forms.BindingSource bindingSource1;
         private DataSet1 dataSet1;
