@@ -199,10 +199,6 @@ namespace CallManagement.Crud_Operations
                         dataChanged = false;
                         e.Cancel = true;
                     }
-                    else if (result == DialogResult.Cancel)
-                    {
-                        e.Cancel = true;
-                    }
                 }
                 else
                 {
