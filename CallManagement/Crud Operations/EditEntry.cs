@@ -183,7 +183,6 @@ namespace CallManagement.Crud_Operations
             string title2 = "Confirm exit";
             var buttons2 = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Question;
-            
 
             if (e.CloseReason == CloseReason.UserClosing)
             {
