@@ -135,8 +135,16 @@ namespace CallManagement
         //---Status bar info---//
         private void gridView1_RowCountChanged(object sender, EventArgs e)
         {
-            //barStaticItem1.Caption = "Total Rows: " + gridView1.RowCount.ToString(); 
-            barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + dataSet1.Calls.Count();
+            //---current rows number on grid---//
+            int gridItems = gridControl1.DefaultView.DataRowCount;
+            barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + gridItems;
+
+            //---current displaed inbound/outbound calls---//
+            //int inBoundCalls = gridControl1.DefaultView.DataRowCount
+
+
+
+            //barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
             barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
             barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
         }
