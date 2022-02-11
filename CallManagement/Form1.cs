@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -137,7 +138,7 @@ namespace CallManagement
         {
             //---current rows number on grid---//
             int gridItems = gridControl1.DefaultView.DataRowCount;
-            barStaticItem1.Caption = "Σύνολο καταχωρήσεων: " + gridItems;
+            barStaticItem1.Caption = "Total calls: " + gridItems;
 
             //---current displaed inbound/outbound calls---//
             //int inBoundCalls = gridControl1.DefaultView.DataRowCount
@@ -145,8 +146,8 @@ namespace CallManagement
 
 
             //barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
-            barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
-            barStaticItem3.Caption = "Εξερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
+            barStaticItem2.Caption = "Inbound: " + "?";//dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
+            barStaticItem3.Caption = "Outbound: " + "?";//dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
         }
 
         //---Saving position, size of window and skin---//
@@ -248,7 +249,8 @@ namespace CallManagement
                         DialogResult dialogResult = MessageBox.Show(restartNow, title, buttons, icon);
                         if (dialogResult == DialogResult.Yes)
                         {
-                            Application.Restart();
+                            Process.Start(Application.ExecutablePath);
+                            Process.GetCurrentProcess().Kill();
                         }
                     }
                     else
@@ -293,7 +295,8 @@ namespace CallManagement
                         DialogResult dialogResult = MessageBox.Show(restartNow, title, buttons, icon);
                         if (dialogResult == DialogResult.Yes)
                         {
-                            Application.Restart();
+                            System.Diagnostics.Process.Start(Application.ExecutablePath);
+                            Process.GetCurrentProcess().Kill();
                         }
                     }
                     else
