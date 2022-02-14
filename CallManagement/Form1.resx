@@ -132,6 +132,9 @@
   <data name="bsiSkin.Caption" xml:space="preserve">
     <value>&amp;Skin Settings</value>
   </data>
+  <data name="skinList.Caption" xml:space="preserve">
+    <value>&amp;Skin List</value>
+  </data>
   <data name="bbiCallTypes.Caption" xml:space="preserve">
     <value>Call Types</value>
   </data>
@@ -470,17 +473,23 @@
         4dSxM6yYe/hN2EE2ILbWG/Dzm+//a3lT+e/xr/JHv42KIPwDHxb20BRI/sQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="skinList.Caption" xml:space="preserve">
-    <value>&amp;Skin List</value>
-  </data>
   <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="rpgActions.Text" xml:space="preserve">
+    <value>Actions</value>
   </data>
   <data name="ribbonPageManageCalls.Text" xml:space="preserve">
     <value>Manage Calls</value>
   </data>
+  <data name="rpgParameters.Text" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
   <data name="ribbonPageCalls.Text" xml:space="preserve">
     <value>Calls Parameters</value>
+  </data>
+  <data name="ribbonPageGroup5.Text" xml:space="preserve">
+    <value>ribbonPageGroup5</value>
   </data>
   <data name="ribbonPageLayout.Text" xml:space="preserve">
     <value>Layout</value>
@@ -499,15 +508,6 @@
   </data>
   <data name="&gt;&gt;ribbonControl1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="rpgParameters.Text" xml:space="preserve">
-    <value>Parameters</value>
-  </data>
-  <data name="rpgActions.Text" xml:space="preserve">
-    <value>Actions</value>
-  </data>
-  <data name="ribbonPageGroup5.Text" xml:space="preserve">
-    <value>ribbonPageGroup5</value>
   </data>
   <data name="barToggleSwitchItem3.Caption" xml:space="preserve">
     <value>&amp;English</value>
@@ -759,6 +759,15 @@
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>452, 56</value>
   </metadata>
+  <data name="barStaticItem1.Caption" xml:space="preserve">
+    <value>barStaticItem1</value>
+  </data>
+  <data name="barStaticItem2.Caption" xml:space="preserve">
+    <value>barStaticItem2</value>
+  </data>
+  <data name="barStaticItem3.Caption" xml:space="preserve">
+    <value>barStaticItem3</value>
+  </data>
   <data name="bar3.Text" xml:space="preserve">
     <value>Status bar</value>
   </data>
@@ -948,18 +957,6 @@
   <data name="&gt;&gt;bbiRefreshData.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;ribbonPageCalls.Name" xml:space="preserve">
-    <value>ribbonPageCalls</value>
-  </data>
-  <data name="&gt;&gt;ribbonPageCalls.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Ribbon.RibbonPage, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;rpgParameters.Name" xml:space="preserve">
-    <value>rpgParameters</value>
-  </data>
-  <data name="&gt;&gt;rpgParameters.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;ribbonPageManageCalls.Name" xml:space="preserve">
     <value>ribbonPageManageCalls</value>
   </data>
@@ -970,6 +967,18 @@
     <value>rpgActions</value>
   </data>
   <data name="&gt;&gt;rpgActions.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ribbonPageCalls.Name" xml:space="preserve">
+    <value>ribbonPageCalls</value>
+  </data>
+  <data name="&gt;&gt;ribbonPageCalls.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPage, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;rpgParameters.Name" xml:space="preserve">
+    <value>rpgParameters</value>
+  </data>
+  <data name="&gt;&gt;rpgParameters.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;ribbonPageLayout.Name" xml:space="preserve">
@@ -1253,14 +1262,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonForm, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="barStaticItem1.Caption" xml:space="preserve">
-    <value>barStaticItem1</value>
-  </data>
-  <data name="barStaticItem2.Caption" xml:space="preserve">
-    <value>barStaticItem2</value>
-  </data>
-  <data name="barStaticItem3.Caption" xml:space="preserve">
-    <value>barStaticItem3</value>
   </data>
 </root>

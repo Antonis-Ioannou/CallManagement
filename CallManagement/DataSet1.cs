@@ -7,9 +7,12 @@
     }
 }
 
-namespace CallManagement.DataSet1TableAdapters {
-    
-    
+namespace CallManagement.DataSet1TableAdapters
+{
+    partial class CallsTableAdapter
+    {
+    }
+
     public partial class CallRecieverTableAdapter {
     }
 }

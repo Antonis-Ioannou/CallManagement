@@ -328,6 +328,9 @@ namespace CallManagement
 
         private void deleteEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (gridView1.IsGroupRow(gridView1.FocusedRowHandle)
+               || gridView1.RowCount == 0)
+                return;
             //----------Δουλεύει----------//
             string warning = "Are you sure you want to delete this entry?";
             string title = "Delete Entry";
@@ -375,7 +378,8 @@ namespace CallManagement
 
         private void bbiEditEntry_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (gridView1.IsGroupRow(gridView1.FocusedRowHandle))
+            if (gridView1.IsGroupRow(gridView1.FocusedRowHandle)
+                || gridView1.RowCount == 0)
                 return;
 
             OpenEditForm((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId"));

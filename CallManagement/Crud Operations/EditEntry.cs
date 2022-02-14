@@ -37,15 +37,7 @@ namespace CallManagement.Crud_Operations
         }
 
         private void EditEntry_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dataSet1.CallingContact' table. You can move, or remove it, as needed.
-            this.callingContactTableAdapter.Fill(this.dataSet1.CallingContact);
-            // TODO: This line of code loads data into the 'dataSet1.CallType' table. You can move, or remove it, as needed.
-            this.callTypeTableAdapter.Fill(this.dataSet1.CallType);
-            // TODO: This line of code loads data into the 'dataSet1.CallReciever' table. You can move, or remove it, as needed.
-            this.callRecieverTableAdapter.Fill(this.dataSet1.CallReciever);
-            // TODO: This line of code loads data into the 'dataSet1.Calls' table. You can move, or remove it, as needed.
-            this.callsTableAdapter1.Fill(this.dataSet1.Calls);
+        {           
             FillTableAdapters();
         }
 
@@ -104,7 +96,7 @@ namespace CallManagement.Crud_Operations
             }
         }
 
-        private void saveChangesBtn(object sender, EventArgs e)
+        private void saveBtn(object sender, EventArgs e)
         {
             if (ValidateChildren())
                 saveChanges();

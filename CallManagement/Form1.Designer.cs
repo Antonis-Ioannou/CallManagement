@@ -47,10 +47,10 @@ namespace CallManagement
             this.bbiEditEntry = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDeleteEntry = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRefreshData = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgParameters = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageManageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgActions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rpgParameters = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageLayout = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barToggleSwitchItem3 = new DevExpress.XtraBars.BarToggleSwitchItem();
@@ -269,21 +269,6 @@ namespace CallManagement
             this.bbiRefreshData.Name = "bbiRefreshData";
             this.bbiRefreshData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshData);
             // 
-            // ribbonPageCalls
-            // 
-            this.ribbonPageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgParameters});
-            this.ribbonPageCalls.Name = "ribbonPageCalls";
-            resources.ApplyResources(this.ribbonPageCalls, "ribbonPageCalls");
-            // 
-            // rpgParameters
-            // 
-            this.rpgParameters.ItemLinks.Add(this.bbiCallingContact);
-            this.rpgParameters.ItemLinks.Add(this.bbiCallTypes);
-            this.rpgParameters.ItemLinks.Add(this.bbiCallReceiver);
-            this.rpgParameters.Name = "rpgParameters";
-            resources.ApplyResources(this.rpgParameters, "rpgParameters");
-            // 
             // ribbonPageManageCalls
             // 
             this.ribbonPageManageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -299,6 +284,21 @@ namespace CallManagement
             this.rpgActions.ItemLinks.Add(this.bbiRefreshData);
             this.rpgActions.Name = "rpgActions";
             resources.ApplyResources(this.rpgActions, "rpgActions");
+            // 
+            // ribbonPageCalls
+            // 
+            this.ribbonPageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpgParameters});
+            this.ribbonPageCalls.Name = "ribbonPageCalls";
+            resources.ApplyResources(this.ribbonPageCalls, "ribbonPageCalls");
+            // 
+            // rpgParameters
+            // 
+            this.rpgParameters.ItemLinks.Add(this.bbiCallingContact);
+            this.rpgParameters.ItemLinks.Add(this.bbiCallTypes);
+            this.rpgParameters.ItemLinks.Add(this.bbiCallReceiver);
+            this.rpgParameters.Name = "rpgParameters";
+            resources.ApplyResources(this.rpgParameters, "rpgParameters");
             // 
             // ribbonPageLayout
             // 
