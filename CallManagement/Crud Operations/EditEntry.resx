@@ -122,7 +122,7 @@
     <value>12, 108</value>
   </data>
   <data name="sbSubmitChanges.Size" type="System.Drawing.Size, System.Drawing">
-    <value>776, 22</value>
+    <value>862, 22</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="sbSubmitChanges.TabIndex" type="System.Int32, mscorlib">
@@ -144,16 +144,16 @@
     <value>4</value>
   </data>
   <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>319, 50</value>
   </metadata>
   <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
+    <value>823, 17</value>
   </metadata>
   <data name="textEdit1.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 84</value>
   </data>
   <data name="textEdit1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>695, 20</value>
+    <value>781, 20</value>
   </data>
   <data name="textEdit1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -180,14 +180,14 @@
   <metadata name="callTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>514, 17</value>
   </metadata>
-  <metadata name="dataSet11.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>408, 17</value>
+  <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>823, 17</value>
   </metadata>
   <data name="callType.Properties.NullText" xml:space="preserve">
     <value />
   </data>
   <data name="callType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>695, 20</value>
+    <value>781, 20</value>
   </data>
   <data name="callType.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -211,13 +211,16 @@
     <value>Combo</value>
   </data>
   <metadata name="callingContactBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>858, 17</value>
+    <value>298, 16</value>
+  </metadata>
+  <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>823, 17</value>
   </metadata>
   <data name="callingContact.Properties.NullText" xml:space="preserve">
     <value />
   </data>
   <data name="callingContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>695, 20</value>
+    <value>781, 20</value>
   </data>
   <data name="callingContact.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -241,13 +244,16 @@
     <value>Combo</value>
   </data>
   <metadata name="callRecieverBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>460, 58</value>
+  </metadata>
+  <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>823, 17</value>
   </metadata>
   <data name="callReciever.Properties.NullText" xml:space="preserve">
     <value />
   </data>
   <data name="callReciever.Size" type="System.Drawing.Size, System.Drawing">
-    <value>695, 20</value>
+    <value>781, 20</value>
   </data>
   <data name="callReciever.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -269,22 +275,10 @@
     <value>Fill</value>
   </data>
   <data name="layoutControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="lciCallType.Text" xml:space="preserve">
-    <value>CallType</value>
-  </data>
-  <data name="lciCallingContact.Text" xml:space="preserve">
-    <value>CallingContact</value>
-  </data>
-  <data name="lciCallReciever.Text" xml:space="preserve">
-    <value>CallReciever</value>
-  </data>
-  <data name="lciNotes.Text" xml:space="preserve">
-    <value>Notes</value>
+    <value>0, 158</value>
   </data>
   <data name="layoutControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>886, 319</value>
   </data>
   <data name="layoutControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -304,29 +298,108 @@
   <data name="&gt;&gt;layoutControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lciCallType.Text" xml:space="preserve">
+    <value>CallType</value>
+  </data>
+  <data name="lciCallingContact.Text" xml:space="preserve">
+    <value>CallingContact</value>
+  </data>
+  <data name="lciCallReciever.Text" xml:space="preserve">
+    <value>CallReciever</value>
+  </data>
+  <data name="lciNotes.Text" xml:space="preserve">
+    <value>Notes</value>
+  </data>
   <metadata name="callsTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>253, 17</value>
+    <value>687, 103</value>
   </metadata>
   <metadata name="callTypeTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>689, 17</value>
+    <value>851, 71</value>
   </metadata>
   <metadata name="callingContactTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1066, 17</value>
+    <value>1014, 82</value>
   </metadata>
   <metadata name="callRecieverTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>211, 56</value>
+    <value>652, 71</value>
   </metadata>
   <metadata name="dxErrorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>399, 56</value>
+    <value>19, 16</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>153</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>886, 501</value>
+  </data>
+  <data name="ribbonStatusBar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 477</value>
+  </data>
+  <data name="bbiDelete.Caption" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <assembly alias="DevExpress.Data.v21.2" name="DevExpress.Data.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="bbiDelete.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIxLjIsIFZlcnNpb249MjEuMi40
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAD4DAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
+        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
+        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
+        Y2U9InByZXNlcnZlIiBpZD0iTGF5ZXJfMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAg
+        MzIgMzIiPg0KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLkJsYWNre2ZpbGw6IzczNzM3NDt9Cgku
+        WWVsbG93e2ZpbGw6I0ZDQjAxQjt9CgkuR3JlZW57ZmlsbDojMTI5QzQ5O30KCS5CbHVle2ZpbGw6IzM4
+        N0NCNzt9CgkuUmVke2ZpbGw6I0QwMjEyNzt9CgkuV2hpdGV7ZmlsbDojRkZGRkZGO30KCS5zdDB7b3Bh
+        Y2l0eTowLjU7fQoJLnN0MXtvcGFjaXR5OjAuNzU7fQoJLnN0MntvcGFjaXR5OjAuMjU7fQoJLnN0M3tk
+        aXNwbGF5Om5vbmU7ZmlsbDojNzM3Mzc0O30KPC9zdHlsZT4NCiAgPHBhdGggZD0iTTE4LjgsMTZsOC45
+        LTguOWMwLjQtMC40LDAuNC0xLDAtMS40bC0xLjQtMS40Yy0wLjQtMC40LTEtMC40LTEuNCwwTDE2LDEz
+        LjJMNy4xLDQuM2MtMC40LTAuNC0xLTAuNC0xLjQsMCAgTDQuMyw1LjdjLTAuNCwwLjQtMC40LDEsMCwx
+        LjRsOC45LDguOWwtOC45LDguOWMtMC40LDAuNC0wLjQsMSwwLDEuNGwxLjQsMS40YzAuNCwwLjQsMSww
+        LjQsMS40LDBsOC45LTguOWw4LjksOC45ICBjMC40LDAuNCwxLDAuNCwxLjQsMGwxLjQtMS40YzAuNC0w
+        LjQsMC40LTEsMC0xLjRMMTguOCwxNnoiIGNsYXNzPSJSZWQiIC8+DQo8L3N2Zz4L
+</value>
+  </data>
+  <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ribbonPage1.Text" xml:space="preserve">
+    <value>ribbonPage1</value>
+  </data>
+  <data name="ribbonControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>886, 158</value>
+  </data>
+  <data name="&gt;&gt;ribbonControl1.Name" xml:space="preserve">
+    <value>ribbonControl1</value>
+  </data>
+  <data name="&gt;&gt;ribbonControl1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonControl, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ribbonControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ribbonControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ribbonStatusBar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>886, 24</value>
+  </data>
+  <data name="&gt;&gt;ribbonStatusBar1.Name" xml:space="preserve">
+    <value>ribbonStatusBar1</value>
+  </data>
+  <data name="&gt;&gt;ribbonStatusBar1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonStatusBar, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ribbonStatusBar1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ribbonStatusBar1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>EditEntry</value>
@@ -337,23 +410,11 @@
   <data name="&gt;&gt;bindingSource1.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataSet1.Name" xml:space="preserve">
-    <value>dataSet1</value>
-  </data>
-  <data name="&gt;&gt;dataSet1.Type" xml:space="preserve">
-    <value>CallManagement.DataSet1, DataSet1.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;callTypeBindingSource.Name" xml:space="preserve">
     <value>callTypeBindingSource</value>
   </data>
   <data name="&gt;&gt;callTypeBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataSet11.Name" xml:space="preserve">
-    <value>dataSet11</value>
-  </data>
-  <data name="&gt;&gt;dataSet11.Type" xml:space="preserve">
-    <value>CallManagement.DataSet1, DataSet1.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;callingContactBindingSource.Name" xml:space="preserve">
     <value>callingContactBindingSource</value>
@@ -439,10 +500,49 @@
   <data name="&gt;&gt;dxErrorProvider.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider, DevExpress.XtraEditors.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;bbiDelete.Name" xml:space="preserve">
+    <value>bbiDelete</value>
+  </data>
+  <data name="&gt;&gt;bbiDelete.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ribbonPage1.Name" xml:space="preserve">
+    <value>ribbonPage1</value>
+  </data>
+  <data name="&gt;&gt;ribbonPage1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPage, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;rpgActions.Name" xml:space="preserve">
+    <value>rpgActions</value>
+  </data>
+  <data name="&gt;&gt;rpgActions.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ribbonPage2.Name" xml:space="preserve">
+    <value>ribbonPage2</value>
+  </data>
+  <data name="&gt;&gt;ribbonPage2.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPage, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;dataSet1.Name" xml:space="preserve">
+    <value>dataSet1</value>
+  </data>
+  <data name="&gt;&gt;dataSet1.Type" xml:space="preserve">
+    <value>CallManagement.DataSet1, DataSet1.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditEntry</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraBars.Ribbon.RibbonForm, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="rpgActions.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="ribbonPage2.Text" xml:space="preserve">
+    <value>ribbonPage2</value>
+  </data>
+  <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>823, 17</value>
+  </metadata>
 </root>

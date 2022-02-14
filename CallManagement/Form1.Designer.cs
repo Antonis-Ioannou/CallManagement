@@ -48,14 +48,9 @@ namespace CallManagement
             this.bbiDeleteEntry = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRefreshData = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgParameters = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageManageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgActions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageLayout = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barToggleSwitchItem3 = new DevExpress.XtraBars.BarToggleSwitchItem();
@@ -152,8 +147,8 @@ namespace CallManagement
             this.ribbonControl1.MaxItemId = 36;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPageCalls,
             this.ribbonPageManageCalls,
+            this.ribbonPageCalls,
             this.ribbonPageLayout});
             // 
             // applicationMenu1
@@ -277,63 +272,33 @@ namespace CallManagement
             // ribbonPageCalls
             // 
             this.ribbonPageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
+            this.rpgParameters});
             this.ribbonPageCalls.Name = "ribbonPageCalls";
             resources.ApplyResources(this.ribbonPageCalls, "ribbonPageCalls");
             // 
-            // ribbonPageGroup1
+            // rpgParameters
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiCallingContact);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            resources.ApplyResources(this.ribbonPageGroup1, "ribbonPageGroup1");
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.bbiCallTypes);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            resources.ApplyResources(this.ribbonPageGroup2, "ribbonPageGroup2");
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.bbiCallReceiver);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            resources.ApplyResources(this.ribbonPageGroup3, "ribbonPageGroup3");
+            this.rpgParameters.ItemLinks.Add(this.bbiCallingContact);
+            this.rpgParameters.ItemLinks.Add(this.bbiCallTypes);
+            this.rpgParameters.ItemLinks.Add(this.bbiCallReceiver);
+            this.rpgParameters.Name = "rpgParameters";
+            resources.ApplyResources(this.rpgParameters, "rpgParameters");
             // 
             // ribbonPageManageCalls
             // 
             this.ribbonPageManageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup6,
-            this.ribbonPageGroup7,
-            this.ribbonPageGroup8,
-            this.ribbonPageGroup4});
+            this.rpgActions});
             this.ribbonPageManageCalls.Name = "ribbonPageManageCalls";
             resources.ApplyResources(this.ribbonPageManageCalls, "ribbonPageManageCalls");
             // 
-            // ribbonPageGroup6
+            // rpgActions
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.bbiCreateEntry);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            resources.ApplyResources(this.ribbonPageGroup6, "ribbonPageGroup6");
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.bbiEditEntry);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            resources.ApplyResources(this.ribbonPageGroup7, "ribbonPageGroup7");
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.bbiDeleteEntry);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            resources.ApplyResources(this.ribbonPageGroup8, "ribbonPageGroup8");
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.bbiRefreshData);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            resources.ApplyResources(this.ribbonPageGroup4, "ribbonPageGroup4");
+            this.rpgActions.ItemLinks.Add(this.bbiCreateEntry);
+            this.rpgActions.ItemLinks.Add(this.bbiEditEntry);
+            this.rpgActions.ItemLinks.Add(this.bbiDeleteEntry);
+            this.rpgActions.ItemLinks.Add(this.bbiRefreshData);
+            this.rpgActions.Name = "rpgActions";
+            resources.ApplyResources(this.rpgActions, "rpgActions");
             // 
             // ribbonPageLayout
             // 
@@ -741,7 +706,7 @@ namespace CallManagement
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageCalls;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgParameters;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -758,10 +723,8 @@ namespace CallManagement
         private DevExpress.XtraGrid.Columns.GridColumn colNotes;
         private DevExpress.XtraGrid.Columns.GridColumn colModifiedDate;
         private DevExpress.XtraBars.BarButtonItem bbiCallTypes;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem bbiCallingContact;
         private DevExpress.XtraBars.BarButtonItem bbiCallReceiver;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
         private System.Windows.Forms.BindingSource callsCallTypeBindingSource;
@@ -787,12 +750,9 @@ namespace CallManagement
         private DevExpress.XtraBars.BarButtonItem bbiEditEntry;
         private DevExpress.XtraBars.BarButtonItem bbiDeleteEntry;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageManageCalls;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgActions;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageLayout;
         private DevExpress.XtraBars.BarButtonItem bbiRefreshData;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
         private DevExpress.XtraBars.BarSubItem bsiLanguage;
         private DevExpress.XtraBars.BarSubItem bsiSkin;

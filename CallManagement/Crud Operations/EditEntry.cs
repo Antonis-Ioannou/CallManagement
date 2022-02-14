@@ -15,7 +15,7 @@ namespace CallManagement.Crud_Operations
 {
     public delegate void ReloadGridData();
 
-    public partial class EditEntry : Form
+    public partial class EditEntry : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public event ReloadGridData ReloadDataEvent;
 
@@ -38,6 +38,14 @@ namespace CallManagement.Crud_Operations
 
         private void EditEntry_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.CallingContact' table. You can move, or remove it, as needed.
+            this.callingContactTableAdapter.Fill(this.dataSet1.CallingContact);
+            // TODO: This line of code loads data into the 'dataSet1.CallType' table. You can move, or remove it, as needed.
+            this.callTypeTableAdapter.Fill(this.dataSet1.CallType);
+            // TODO: This line of code loads data into the 'dataSet1.CallReciever' table. You can move, or remove it, as needed.
+            this.callRecieverTableAdapter.Fill(this.dataSet1.CallReciever);
+            // TODO: This line of code loads data into the 'dataSet1.Calls' table. You can move, or remove it, as needed.
+            this.callsTableAdapter1.Fill(this.dataSet1.Calls);
             FillTableAdapters();
         }
 
@@ -45,13 +53,13 @@ namespace CallManagement.Crud_Operations
         {
             dataSet1.EnforceConstraints = false;
             callRecieverTableAdapter.Connection.ConnectionString = Form1.ConnectionString;
-            callRecieverTableAdapter.Fill(this.dataSet11.CallReciever);
+            callRecieverTableAdapter.Fill(this.dataSet1.CallReciever);
 
             callingContactTableAdapter.Connection.ConnectionString = Form1.ConnectionString;
-            callingContactTableAdapter.Fill(this.dataSet11.CallingContact);
+            callingContactTableAdapter.Fill(this.dataSet1.CallingContact);
 
             callTypeTableAdapter.Connection.ConnectionString = Form1.ConnectionString;
-            callTypeTableAdapter.Fill(this.dataSet11.CallType);          
+            callTypeTableAdapter.Fill(this.dataSet1.CallType);          
            
             if (SelectedId != -1)
             {
@@ -63,6 +71,9 @@ namespace CallManagement.Crud_Operations
         private void SetModifiedDate()
         {
             DataRowView drvCall = bindingSource1.Current as DataRowView;
+            
+            if (drvCall == null)
+                return;
 
             drvCall.BeginEdit();
 
@@ -75,32 +86,28 @@ namespace CallManagement.Crud_Operations
 
         private void saveChanges()
         {
-            if (this.ValidateChildren())
+            try
             {
-                //Here the form is in valid state
-                //Do what you need when the form is valid
-                try
-                {
-                    SetModifiedDate();
-                    this.bindingSource1.EndEdit();
-                    this.callsTableAdapter1.Update(dataSet1.Calls);
-                    saveSuccess = true;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Ooops, something went wrong");
-                }
-                finally
-                {
-                    this.ReloadDataEvent?.Invoke();
-                    this.Close();
-                }
+                SetModifiedDate();
+                bindingSource1.EndEdit();
+                callsTableAdapter1.Update(dataSet1.Calls);
+                saveSuccess = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ooops, something went wrong");
+            }
+            finally
+            {
+                ReloadDataEvent?.Invoke();
+                Close();
             }
         }
 
         private void saveChangesBtn(object sender, EventArgs e)
         {
-            saveChanges();
+            if (ValidateChildren())
+                saveChanges();
         }
 
         private void callTypeValidation(object sender, CancelEventArgs e)
@@ -179,9 +186,9 @@ namespace CallManagement.Crud_Operations
             string text = "Would you like to save before exit?";
             string title = "Confirm exit";
             var buttons = MessageBoxButtons.YesNoCancel;
-            string text2 = "Confirm exit?";
-            string title2 = "Confirm exit";
-            var buttons2 = MessageBoxButtons.YesNo;
+            //string text2 = "Confirm exit?";
+            //string title2 = "Confirm exit";
+            //var buttons2 = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Question;
 
             if (e.CloseReason == CloseReason.UserClosing)
@@ -195,20 +202,28 @@ namespace CallManagement.Crud_Operations
                     }
                     else if (result == DialogResult.Yes)
                     {
-                        saveChanges();
+                        if (ValidateChildren())                        
+                            saveChanges();
+
                         dataChanged = false;
                         e.Cancel = true;
                     }
                 }
-                else
-                {
-                    DialogResult result2 = MessageBox.Show(text2, title2, buttons2, icon);
-                    if (result2 == DialogResult.No)
-                    {
-                        e.Cancel = true;
-                    }
-                }
+                //else
+                //{
+                //    DialogResult result2 = MessageBox.Show(text2, title2, buttons2, icon);
+                //    if (result2 == DialogResult.No)
+                //    {
+                //        e.Cancel = true;
+                //    }
+                //}
             }
+        }
+
+        private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            bindingSource1.RemoveCurrent();
+            saveChanges();
         }
     }
 }

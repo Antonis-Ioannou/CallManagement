@@ -141,13 +141,32 @@ namespace CallManagement
             barStaticItem1.Caption = "Total calls: " + gridItems;
 
             //---current displaed inbound/outbound calls---//
-            //int inBoundCalls = gridControl1.DefaultView.DataRowCount
+            int inbountCalls = 0;
+            int outboundCalls = 0;
 
-
-
-            //barStaticItem2.Caption = "Εισερχόμενες: " + dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
-            barStaticItem2.Caption = "Inbound: " + "?";//dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(1)).Count();
-            barStaticItem3.Caption = "Outbound: " + "?";//dataSet1.Calls.Select(x => x.TypeId).Where(y => y.Equals(2)).Count();
+            DevExpress.XtraGrid.Columns.GridColumn col = gridView1.Columns.ColumnByFieldName("TypeId");
+            if (col == null)
+            {
+                return;
+            }
+            else
+            {
+                int dataRowCount = gridControl1.DefaultView.DataRowCount;
+                for (int i = 0; i < dataRowCount; i++)
+                {
+                    var callType = gridView1.GetRowCellDisplayText(i,col);
+                    if (callType == "Εισερχόμενη Κλήση")
+                    {
+                        inbountCalls++;
+                    }
+                    else
+                    {
+                        outboundCalls++;
+                    }
+                }
+            }
+            barStaticItem2.Caption = "Εισερχόμενες: " + inbountCalls;
+            barStaticItem3.Caption = "Εξερχόμενες: " + outboundCalls;
         }
 
         //---Saving position, size of window and skin---//
@@ -318,19 +337,13 @@ namespace CallManagement
             DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
             if (dialogResult == DialogResult.Yes)
             {
-                int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
-                callsTableAdapter.deleteSelectedRow(selectedRow);
-                MessageBox.Show("Delete successful!");
+                bsCalls.RemoveCurrent();
+                callsTableAdapter.Update(dataSet1);
+                //int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
+                //callsTableAdapter.deleteSelectedRow(selectedRow);
+                //MessageBox.Show("Delete successful!");
             }
-
             FillTableAdapter();
-            //----------Δουλεύει----------//
-
-
-            //------Custom messagebox------//
-            //DeleteEntryMessageBox deleteEntry = new DeleteEntryMessageBox();
-            //deleteEntry.Show("hello",Color.DarkCyan);
-            //------Custom messagebox------//
         }
 
         //----------//

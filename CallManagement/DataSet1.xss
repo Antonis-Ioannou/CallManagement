@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:Calls" ZOrder="5" X="137" Y="40" Height="286" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:CallType" ZOrder="7" X="485" Y="8" Height="115" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:CallingContact" ZOrder="6" X="484" Y="135" Height="134" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:CallReciever" ZOrder="4" X="105" Y="369" Height="115" Width="215" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:CallReciever" ZOrder="4" X="513" Y="388" Height="115" Width="215" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:Calls_CallType" ZOrder="3" LineWidth="11">
@@ -39,12 +39,16 @@
     <Connector ID="DesignRelation:Calls_CallReciever" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>222</X>
+          <X>379</X>
           <Y>326</Y>
         </Point>
         <Point>
-          <X>222</X>
-          <Y>369</Y>
+          <X>379</X>
+          <Y>405</Y>
+        </Point>
+        <Point>
+          <X>513</X>
+          <Y>405</Y>
         </Point>
       </RoutePoints>
     </Connector>
