@@ -39,6 +39,14 @@ namespace CallManagement.Crud_Operations
         private void EditEntry_Load(object sender, EventArgs e)
         {           
             FillTableAdapters();
+            if (SelectedId.Equals(-1))
+            {
+                lciDateModified.Enabled = false;
+            }
+            else
+            {
+                lciDateCreated.Enabled = false;
+            }
         }
 
         private void FillTableAdapters()
