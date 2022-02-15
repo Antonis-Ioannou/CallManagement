@@ -55,7 +55,7 @@ namespace CallManagement.Crud_Operations
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.manageCallpage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgActions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -263,7 +263,7 @@ namespace CallManagement.Crud_Operations
             this.ribbonControl1.MaxItemId = 3;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
+            this.manageCallpage});
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // bbiDelete
@@ -278,16 +278,16 @@ namespace CallManagement.Crud_Operations
             // 
             resources.ApplyResources(this.bbiSave, "bbiSave");
             this.bbiSave.Id = 2;
-            this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
             this.bbiSave.Name = "bbiSave";
             this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveBtn);
             // 
-            // ribbonPage1
+            // manageCallpage
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.manageCallpage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.rpgActions});
-            this.ribbonPage1.Name = "ribbonPage1";
-            resources.ApplyResources(this.ribbonPage1, "ribbonPage1");
+            this.manageCallpage.Name = "manageCallpage";
+            resources.ApplyResources(this.manageCallpage, "manageCallpage");
             // 
             // rpgActions
             // 
@@ -368,7 +368,7 @@ namespace CallManagement.Crud_Operations
         private DataSet1TableAdapters.CallRecieverTableAdapter callRecieverTableAdapter;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage manageCallpage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgActions;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;

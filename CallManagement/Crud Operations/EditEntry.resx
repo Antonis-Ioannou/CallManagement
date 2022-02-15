@@ -244,6 +244,18 @@
   <data name="layoutControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 158</value>
   </data>
+  <data name="lciCallType.Text" xml:space="preserve">
+    <value>CallType</value>
+  </data>
+  <data name="lciCallingContact.Text" xml:space="preserve">
+    <value>CallingContact</value>
+  </data>
+  <data name="lciCallReciever.Text" xml:space="preserve">
+    <value>CallReciever</value>
+  </data>
+  <data name="lciNotes.Text" xml:space="preserve">
+    <value>Notes</value>
+  </data>
   <data name="layoutControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1179, 447</value>
   </data>
@@ -264,21 +276,6 @@
   </data>
   <data name="&gt;&gt;layoutControl1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>31, 54</value>
-  </metadata>
-  <data name="lciCallType.Text" xml:space="preserve">
-    <value>CallType</value>
-  </data>
-  <data name="lciCallingContact.Text" xml:space="preserve">
-    <value>CallingContact</value>
-  </data>
-  <data name="lciCallReciever.Text" xml:space="preserve">
-    <value>CallReciever</value>
-  </data>
-  <data name="lciNotes.Text" xml:space="preserve">
-    <value>Notes</value>
   </data>
   <metadata name="callsTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>150, 54</value>
@@ -336,7 +333,7 @@
   <data name="bbiSave.Caption" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="barButtonItem1.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bbiSave.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIxLjIsIFZlcnNpb249MjEuMi40
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
@@ -361,8 +358,8 @@
   <data name="rpgActions.Text" xml:space="preserve">
     <value>Actions</value>
   </data>
-  <data name="ribbonPage1.Text" xml:space="preserve">
-    <value>ribbonPage1</value>
+  <data name="manageCallpage.Text" xml:space="preserve">
+    <value>Manage Call</value>
   </data>
   <data name="ribbonControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1179, 158</value>
@@ -505,10 +502,10 @@
   <data name="&gt;&gt;bbiSave.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;ribbonPage1.Name" xml:space="preserve">
-    <value>ribbonPage1</value>
+  <data name="&gt;&gt;manageCallpage.Name" xml:space="preserve">
+    <value>manageCallpage</value>
   </data>
-  <data name="&gt;&gt;ribbonPage1.Type" xml:space="preserve">
+  <data name="&gt;&gt;manageCallpage.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonPage, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;rpgActions.Name" xml:space="preserve">

@@ -52,7 +52,7 @@ namespace CallManagement
             this.ribbonPageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgParameters = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageLayout = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgLayout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barToggleSwitchItem3 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barToggleSwitchItem4 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -96,9 +96,9 @@ namespace CallManagement
             this.callingContactTableAdapter = new CallManagement.DataSet1TableAdapters.CallingContactTableAdapter();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiTotalCalls = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiInboundCalls = new DevExpress.XtraBars.BarStaticItem();
+            this.bsiOutboundCalls = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -303,15 +303,15 @@ namespace CallManagement
             // ribbonPageLayout
             // 
             this.ribbonPageLayout.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
+            this.rpgLayout});
             this.ribbonPageLayout.Name = "ribbonPageLayout";
             resources.ApplyResources(this.ribbonPageLayout, "ribbonPageLayout");
             // 
-            // ribbonPageGroup5
+            // rpgLayout
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.bbiResetLayout);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            resources.ApplyResources(this.ribbonPageGroup5, "ribbonPageGroup5");
+            this.rpgLayout.ItemLinks.Add(this.bbiResetLayout);
+            this.rpgLayout.Name = "rpgLayout";
+            resources.ApplyResources(this.rpgLayout, "rpgLayout");
             // 
             // barToggleSwitchItem3
             // 
@@ -469,22 +469,22 @@ namespace CallManagement
             // 
             // colCallsId
             // 
+            resources.ApplyResources(this.colCallsId, "colCallsId");
             this.colCallsId.FieldName = "CallsId";
             this.colCallsId.Name = "colCallsId";
-            resources.ApplyResources(this.colCallsId, "colCallsId");
             // 
             // colCreationDate
             // 
+            resources.ApplyResources(this.colCreationDate, "colCreationDate");
             this.colCreationDate.FieldName = "CreationDate";
             this.colCreationDate.Name = "colCreationDate";
-            resources.ApplyResources(this.colCreationDate, "colCreationDate");
             // 
             // colTypeId
             // 
+            resources.ApplyResources(this.colTypeId, "colTypeId");
             this.colTypeId.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.colTypeId.FieldName = "TypeId";
             this.colTypeId.Name = "colTypeId";
-            resources.ApplyResources(this.colTypeId, "colTypeId");
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -503,10 +503,10 @@ namespace CallManagement
             // 
             // colReceiverId
             // 
+            resources.ApplyResources(this.colReceiverId, "colReceiverId");
             this.colReceiverId.ColumnEdit = this.repositoryItemLookUpEdit2;
             this.colReceiverId.FieldName = "ReceiverId";
             this.colReceiverId.Name = "colReceiverId";
-            resources.ApplyResources(this.colReceiverId, "colReceiverId");
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -525,10 +525,10 @@ namespace CallManagement
             // 
             // colCallContactId
             // 
+            resources.ApplyResources(this.colCallContactId, "colCallContactId");
             this.colCallContactId.ColumnEdit = this.repositoryItemLookUpEdit3;
             this.colCallContactId.FieldName = "CallContactId";
             this.colCallContactId.Name = "colCallContactId";
-            resources.ApplyResources(this.colCallContactId, "colCallContactId");
             // 
             // repositoryItemLookUpEdit3
             // 
@@ -547,15 +547,15 @@ namespace CallManagement
             // 
             // colNotes
             // 
+            resources.ApplyResources(this.colNotes, "colNotes");
             this.colNotes.FieldName = "Notes";
             this.colNotes.Name = "colNotes";
-            resources.ApplyResources(this.colNotes, "colNotes");
             // 
             // colModifiedDate
             // 
+            resources.ApplyResources(this.colModifiedDate, "colModifiedDate");
             this.colModifiedDate.FieldName = "ModifiedDate";
             this.colModifiedDate.Name = "colModifiedDate";
-            resources.ApplyResources(this.colModifiedDate, "colModifiedDate");
             // 
             // Root
             // 
@@ -602,9 +602,9 @@ namespace CallManagement
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barStaticItem1,
-            this.barStaticItem2,
-            this.barStaticItem3});
+            this.bsiTotalCalls,
+            this.bsiInboundCalls,
+            this.bsiOutboundCalls});
             this.barManager1.MaxItemId = 3;
             this.barManager1.StatusBar = this.bar3;
             // 
@@ -616,31 +616,31 @@ namespace CallManagement
             this.bar3.DockRow = 0;
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bsiTotalCalls),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bsiInboundCalls),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bsiOutboundCalls)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             resources.ApplyResources(this.bar3, "bar3");
             // 
-            // barStaticItem1
+            // bsiTotalCalls
             // 
-            resources.ApplyResources(this.barStaticItem1, "barStaticItem1");
-            this.barStaticItem1.Id = 0;
-            this.barStaticItem1.Name = "barStaticItem1";
+            resources.ApplyResources(this.bsiTotalCalls, "bsiTotalCalls");
+            this.bsiTotalCalls.Id = 0;
+            this.bsiTotalCalls.Name = "bsiTotalCalls";
             // 
-            // barStaticItem2
+            // bsiInboundCalls
             // 
-            resources.ApplyResources(this.barStaticItem2, "barStaticItem2");
-            this.barStaticItem2.Id = 1;
-            this.barStaticItem2.Name = "barStaticItem2";
+            resources.ApplyResources(this.bsiInboundCalls, "bsiInboundCalls");
+            this.bsiInboundCalls.Id = 1;
+            this.bsiInboundCalls.Name = "bsiInboundCalls";
             // 
-            // barStaticItem3
+            // bsiOutboundCalls
             // 
-            resources.ApplyResources(this.barStaticItem3, "barStaticItem3");
-            this.barStaticItem3.Id = 2;
-            this.barStaticItem3.Name = "barStaticItem3";
+            resources.ApplyResources(this.bsiOutboundCalls, "bsiOutboundCalls");
+            this.bsiOutboundCalls.Id = 2;
+            this.bsiOutboundCalls.Name = "bsiOutboundCalls";
             // 
             // barDockControlTop
             // 
@@ -737,15 +737,15 @@ namespace CallManagement
         private DataSet1TableAdapters.CallingContactTableAdapter callingContactTableAdapter;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar3;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem bsiTotalCalls;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem3;
+        private DevExpress.XtraBars.BarStaticItem bsiInboundCalls;
+        private DevExpress.XtraBars.BarStaticItem bsiOutboundCalls;
         private DevExpress.XtraBars.BarButtonItem bbiResetLayout;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgLayout;
         private DevExpress.XtraBars.BarButtonItem bbiCreateEntry;
         private DevExpress.XtraBars.BarButtonItem bbiEditEntry;
         private DevExpress.XtraBars.BarButtonItem bbiDeleteEntry;

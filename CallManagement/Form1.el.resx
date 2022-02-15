@@ -824,4 +824,46 @@
   <data name="Form1.Text" xml:space="preserve">
     <value>Διαχείρηση Κλήσεων</value>
   </data>
+  <data name="colCallContactId.Caption" xml:space="preserve">
+    <value>Καλών Κλήσης</value>
+  </data>
+  <data name="colCreationDate.Caption" xml:space="preserve">
+    <value>Ημερ/νια Δημιουργίας</value>
+  </data>
+  <data name="colModifiedDate.Caption" xml:space="preserve">
+    <value>Ημερ/νια Επεξεργασίας</value>
+  </data>
+  <data name="colNotes.Caption" xml:space="preserve">
+    <value>Σημειώσεις</value>
+  </data>
+  <data name="colReceiverId.Caption" xml:space="preserve">
+    <value>Αποδέκτης Κλήσης</value>
+  </data>
+  <data name="colTypeId.Caption" xml:space="preserve">
+    <value>Είδος Κλήσης</value>
+  </data>
+  <data name="bsiInboundCalls.Caption" xml:space="preserve">
+    <value>Εισερχόμενες</value>
+  </data>
+  <data name="bsiLanguage.Caption" xml:space="preserve">
+    <value>Επιλογές Γλώσσας</value>
+  </data>
+  <data name="bsiOutboundCalls.Caption" xml:space="preserve">
+    <value>Εξερχόμενες</value>
+  </data>
+  <data name="bsiSkin.Caption" xml:space="preserve">
+    <value>Εμφάνιση</value>
+  </data>
+  <data name="bsiTotalCalls.Caption" xml:space="preserve">
+    <value>Σύνολο Κλήσεων</value>
+  </data>
+  <data name="rpgActions.Text" xml:space="preserve">
+    <value>Ενέργειες</value>
+  </data>
+  <data name="rpgLayout.Text" xml:space="preserve">
+    <value>Διάταξη</value>
+  </data>
+  <data name="rpgParameters.Text" xml:space="preserve">
+    <value>Παράμετροι</value>
+  </data>
 </root>
