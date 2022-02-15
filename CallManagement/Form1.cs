@@ -136,11 +136,11 @@ namespace CallManagement
         //---Status bar info---//
         private void gridView1_RowCountChanged(object sender, EventArgs e)
         {
-            //---current rows number on grid---//
+            //---current total row number on grid---//
             int gridItems = gridControl1.DefaultView.DataRowCount;
             bsiTotalCalls.Caption = "Total calls: " + gridItems;
 
-            //---current displaed inbound/outbound calls---//
+            //---current displayed inbound/outbound calls---//
             int inbountCalls = 0;
             int outboundCalls = 0;
 
