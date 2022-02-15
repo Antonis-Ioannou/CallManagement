@@ -487,6 +487,7 @@ namespace CallManagement
             this.colTypeId.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.colTypeId.FieldName = "TypeId";
             this.colTypeId.Name = "colTypeId";
+            this.colTypeId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             // 
             // repositoryItemLookUpEdit1
             // 
