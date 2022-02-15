@@ -70,9 +70,9 @@ namespace CallManagement.Crud_Operations
             drvCall.BeginEdit();
 
             if (SelectedId.Equals(-1))
-                drvCall.Row["CreationDate"] = DateTime.Now;
+                drvCall.Row["CreationDate"] = dateCreatedEdit.Text;
 
-            drvCall.Row["ModifiedDate"] = DateTime.Now;
+            drvCall.Row["ModifiedDate"] = dateModifiedEdit.Text;
             drvCall.EndEdit();
         }
 

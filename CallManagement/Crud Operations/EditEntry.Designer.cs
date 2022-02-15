@@ -32,6 +32,13 @@ namespace CallManagement.Crud_Operations
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEntry));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.dateCreatedEdit = new DevExpress.XtraEditors.DateEdit();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
+            this.manageCallpage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rpgActions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new CallManagement.DataSet1();
@@ -47,20 +54,20 @@ namespace CallManagement.Crud_Operations
             this.lciCallingContact = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciCallReciever = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciNotes = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciDateCreated = new DevExpress.XtraLayout.LayoutControlItem();
             this.callsTableAdapter1 = new CallManagement.DataSet1TableAdapters.CallsTableAdapter();
             this.callTypeTableAdapter = new CallManagement.DataSet1TableAdapters.CallTypeTableAdapter();
             this.callingContactTableAdapter = new CallManagement.DataSet1TableAdapters.CallingContactTableAdapter();
             this.callRecieverTableAdapter = new CallManagement.DataSet1TableAdapters.CallRecieverTableAdapter();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
-            this.manageCallpage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgActions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.dateModifiedEdit = new DevExpress.XtraEditors.DateEdit();
+            this.lciDateModified = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -76,12 +83,17 @@ namespace CallManagement.Crud_Operations
             ((System.ComponentModel.ISupportInitialize)(this.lciCallingContact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciCallReciever)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciNotes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciDateCreated)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciDateModified)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.dateModifiedEdit);
+            this.layoutControl1.Controls.Add(this.dateCreatedEdit);
             this.layoutControl1.Controls.Add(this.textEdit1);
             this.layoutControl1.Controls.Add(this.callType);
             this.layoutControl1.Controls.Add(this.callingContact);
@@ -89,6 +101,69 @@ namespace CallManagement.Crud_Operations
             resources.ApplyResources(this.layoutControl1, "layoutControl1");
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
+            // 
+            // dateCreatedEdit
+            // 
+            resources.ApplyResources(this.dateCreatedEdit, "dateCreatedEdit");
+            this.dateCreatedEdit.MenuManager = this.ribbonControl1;
+            this.dateCreatedEdit.Name = "dateCreatedEdit";
+            this.dateCreatedEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateCreatedEdit.Properties.Buttons"))))});
+            this.dateCreatedEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateCreatedEdit.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateCreatedEdit.StyleController = this.layoutControl1;
+            // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
+            this.bbiDelete,
+            this.bbiSave});
+            resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
+            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.manageCallpage});
+            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
+            // 
+            // bbiDelete
+            // 
+            resources.ApplyResources(this.bbiDelete, "bbiDelete");
+            this.bbiDelete.Id = 1;
+            this.bbiDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiDelete.ImageOptions.SvgImage")));
+            this.bbiDelete.Name = "bbiDelete";
+            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
+            // 
+            // bbiSave
+            // 
+            resources.ApplyResources(this.bbiSave, "bbiSave");
+            this.bbiSave.Id = 2;
+            this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
+            this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveBtn);
+            // 
+            // manageCallpage
+            // 
+            this.manageCallpage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpgActions});
+            this.manageCallpage.Name = "manageCallpage";
+            resources.ApplyResources(this.manageCallpage, "manageCallpage");
+            // 
+            // rpgActions
+            // 
+            this.rpgActions.AllowTextClipping = false;
+            this.rpgActions.ItemLinks.Add(this.bbiSave);
+            this.rpgActions.ItemLinks.Add(this.bbiDelete);
+            this.rpgActions.Name = "rpgActions";
+            resources.ApplyResources(this.rpgActions, "rpgActions");
+            // 
+            // ribbonStatusBar1
+            // 
+            resources.ApplyResources(this.ribbonStatusBar1, "ribbonStatusBar1");
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             // 
             // textEdit1
             // 
@@ -182,7 +257,9 @@ namespace CallManagement.Crud_Operations
             this.emptySpaceItem1,
             this.lciCallingContact,
             this.lciCallReciever,
-            this.lciNotes});
+            this.lciNotes,
+            this.lciDateCreated,
+            this.lciDateModified});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1179, 447);
             this.Root.TextVisible = false;
@@ -190,7 +267,7 @@ namespace CallManagement.Crud_Operations
             // lciCallType
             // 
             this.lciCallType.Control = this.callType;
-            this.lciCallType.Location = new System.Drawing.Point(0, 0);
+            this.lciCallType.Location = new System.Drawing.Point(0, 24);
             this.lciCallType.Name = "lciCallType";
             this.lciCallType.Size = new System.Drawing.Size(1159, 24);
             resources.ApplyResources(this.lciCallType, "lciCallType");
@@ -199,15 +276,15 @@ namespace CallManagement.Crud_Operations
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 96);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 144);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1159, 331);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1159, 283);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lciCallingContact
             // 
             this.lciCallingContact.Control = this.callingContact;
-            this.lciCallingContact.Location = new System.Drawing.Point(0, 24);
+            this.lciCallingContact.Location = new System.Drawing.Point(0, 48);
             this.lciCallingContact.Name = "lciCallingContact";
             this.lciCallingContact.Size = new System.Drawing.Size(1159, 24);
             resources.ApplyResources(this.lciCallingContact, "lciCallingContact");
@@ -216,7 +293,7 @@ namespace CallManagement.Crud_Operations
             // lciCallReciever
             // 
             this.lciCallReciever.Control = this.callReciever;
-            this.lciCallReciever.Location = new System.Drawing.Point(0, 48);
+            this.lciCallReciever.Location = new System.Drawing.Point(0, 72);
             this.lciCallReciever.Name = "lciCallReciever";
             this.lciCallReciever.Size = new System.Drawing.Size(1159, 24);
             resources.ApplyResources(this.lciCallReciever, "lciCallReciever");
@@ -225,11 +302,20 @@ namespace CallManagement.Crud_Operations
             // lciNotes
             // 
             this.lciNotes.Control = this.textEdit1;
-            this.lciNotes.Location = new System.Drawing.Point(0, 72);
+            this.lciNotes.Location = new System.Drawing.Point(0, 96);
             this.lciNotes.Name = "lciNotes";
             this.lciNotes.Size = new System.Drawing.Size(1159, 24);
             resources.ApplyResources(this.lciNotes, "lciNotes");
             this.lciNotes.TextSize = new System.Drawing.Size(69, 13);
+            // 
+            // lciDateCreated
+            // 
+            this.lciDateCreated.Control = this.dateCreatedEdit;
+            this.lciDateCreated.Location = new System.Drawing.Point(0, 0);
+            this.lciDateCreated.Name = "lciDateCreated";
+            this.lciDateCreated.Size = new System.Drawing.Size(1159, 24);
+            resources.ApplyResources(this.lciDateCreated, "lciDateCreated");
+            this.lciDateCreated.TextSize = new System.Drawing.Size(69, 13);
             // 
             // callsTableAdapter1
             // 
@@ -251,62 +337,30 @@ namespace CallManagement.Crud_Operations
             // 
             this.dxErrorProvider.ContainerControl = this;
             // 
-            // ribbonControl1
-            // 
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem,
-            this.ribbonControl1.SearchEditItem,
-            this.bbiDelete,
-            this.bbiSave});
-            resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
-            this.ribbonControl1.MaxItemId = 3;
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.manageCallpage});
-            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
-            // 
-            // bbiDelete
-            // 
-            resources.ApplyResources(this.bbiDelete, "bbiDelete");
-            this.bbiDelete.Id = 1;
-            this.bbiDelete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiDelete.ImageOptions.SvgImage")));
-            this.bbiDelete.Name = "bbiDelete";
-            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
-            // 
-            // bbiSave
-            // 
-            resources.ApplyResources(this.bbiSave, "bbiSave");
-            this.bbiSave.Id = 2;
-            this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
-            this.bbiSave.Name = "bbiSave";
-            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveBtn);
-            // 
-            // manageCallpage
-            // 
-            this.manageCallpage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgActions});
-            this.manageCallpage.Name = "manageCallpage";
-            resources.ApplyResources(this.manageCallpage, "manageCallpage");
-            // 
-            // rpgActions
-            // 
-            this.rpgActions.AllowTextClipping = false;
-            this.rpgActions.ItemLinks.Add(this.bbiSave);
-            this.rpgActions.ItemLinks.Add(this.bbiDelete);
-            this.rpgActions.Name = "rpgActions";
-            resources.ApplyResources(this.rpgActions, "rpgActions");
-            // 
-            // ribbonStatusBar1
-            // 
-            resources.ApplyResources(this.ribbonStatusBar1, "ribbonStatusBar1");
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Name = "ribbonPage2";
             resources.ApplyResources(this.ribbonPage2, "ribbonPage2");
+            // 
+            // dateModifiedEdit
+            // 
+            resources.ApplyResources(this.dateModifiedEdit, "dateModifiedEdit");
+            this.dateModifiedEdit.MenuManager = this.ribbonControl1;
+            this.dateModifiedEdit.Name = "dateModifiedEdit";
+            this.dateModifiedEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEdit1.Properties.Buttons"))))});
+            this.dateModifiedEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEdit1.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateModifiedEdit.StyleController = this.layoutControl1;
+            // 
+            // lciDateModified
+            // 
+            this.lciDateModified.Control = this.dateModifiedEdit;
+            this.lciDateModified.Location = new System.Drawing.Point(0, 120);
+            this.lciDateModified.Name = "lciDateModified";
+            this.lciDateModified.Size = new System.Drawing.Size(1159, 24);
+            resources.ApplyResources(this.lciDateModified, "lciDateModified");
+            this.lciDateModified.TextSize = new System.Drawing.Size(69, 13);
             // 
             // EditEntry
             // 
@@ -323,6 +377,9 @@ namespace CallManagement.Crud_Operations
             this.Load += new System.EventHandler(this.EditEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -338,8 +395,11 @@ namespace CallManagement.Crud_Operations
             ((System.ComponentModel.ISupportInitialize)(this.lciCallingContact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciCallReciever)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciNotes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciDateCreated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciDateModified)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,5 +435,9 @@ namespace CallManagement.Crud_Operations
         private DevExpress.XtraBars.BarButtonItem bbiDelete;
         private DataSet1 dataSet1;
         private DevExpress.XtraBars.BarButtonItem bbiSave;
+        private DevExpress.XtraEditors.DateEdit dateCreatedEdit;
+        private DevExpress.XtraLayout.LayoutControlItem lciDateCreated;
+        private DevExpress.XtraEditors.DateEdit dateModifiedEdit;
+        private DevExpress.XtraLayout.LayoutControlItem lciDateModified;
     }
 }
