@@ -214,8 +214,17 @@ namespace CallManagement.Crud_Operations
 
         private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            bindingSource1.RemoveCurrent();
-            saveChanges();
+            string warning = "Are you sure you want to delete this entry?";
+            string title = "Delete Entry";
+            var buttons = MessageBoxButtons.YesNo;
+            var icon = MessageBoxIcon.Warning;
+
+            DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
+            if (dialogResult == DialogResult.Yes)
+            {
+                bindingSource1.RemoveCurrent();
+                saveChanges();
+            }
         }
     }
 }
