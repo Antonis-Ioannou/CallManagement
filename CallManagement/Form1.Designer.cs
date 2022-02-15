@@ -462,6 +462,7 @@ namespace CallManagement
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colCreationDate, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridView1.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.gridView1_ColumnWidthChanged);
@@ -472,6 +473,7 @@ namespace CallManagement
             resources.ApplyResources(this.colCallsId, "colCallsId");
             this.colCallsId.FieldName = "CallsId";
             this.colCallsId.Name = "colCallsId";
+            this.colCallsId.ShowUnboundExpressionMenu = true;
             // 
             // colCreationDate
             // 

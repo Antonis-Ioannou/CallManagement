@@ -136,11 +136,8 @@ namespace CallManagement
         //---Status bar info---//
         private void gridView1_RowCountChanged(object sender, EventArgs e)
         {
-            //---current total row number on grid---//
+            //---current total row number on grid & displayed inbound/outbound calls---//
             int gridItems = gridControl1.DefaultView.DataRowCount;
-            bsiTotalCalls.Caption = "Total calls: " + gridItems;
-
-            //---current displayed inbound/outbound calls---//
             int inbountCalls = 0;
             int outboundCalls = 0;
 
@@ -167,11 +164,13 @@ namespace CallManagement
             }
             if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
             {
+                bsiTotalCalls.Caption = "Total calls: " + gridItems;
                 bsiInboundCalls.Caption = "Inbound: " + inbountCalls;
                 bsiOutboundCalls.Caption = "Outbound: " + outboundCalls;
             }
             else
             {
+                bsiTotalCalls.Caption = "Σύνολο Κλήσεων: " + gridItems;
                 bsiInboundCalls.Caption = "Εισερχόμενες: " + inbountCalls;
                 bsiOutboundCalls.Caption = "Εξερχόμενες: " + outboundCalls;
             }

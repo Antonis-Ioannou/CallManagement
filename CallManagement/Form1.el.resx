@@ -854,9 +854,6 @@
   <data name="bsiSkin.Caption" xml:space="preserve">
     <value>Εμφάνιση</value>
   </data>
-  <data name="bsiTotalCalls.Caption" xml:space="preserve">
-    <value>Σύνολο Κλήσεων</value>
-  </data>
   <data name="rpgActions.Text" xml:space="preserve">
     <value>Ενέργειες</value>
   </data>
