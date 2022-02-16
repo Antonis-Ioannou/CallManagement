@@ -173,9 +173,6 @@
   <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="rpgActions.Text" xml:space="preserve">
-    <value>Actions</value>
-  </data>
   <data name="manageCallpage.Text" xml:space="preserve">
     <value>Manage Call</value>
   </data>
@@ -213,10 +210,10 @@
     <value>2</value>
   </data>
   <assembly alias="DevExpress.Utils.v21.2" name="DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="dateEdit1.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
+  <data name="dateModifiedEdit.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
-  <data name="dateEdit1.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
+  <data name="dateModifiedEdit.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
   <data name="dateModifiedEdit.Size" type="System.Drawing.Size, System.Drawing">
@@ -236,10 +233,10 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;dateModifiedEdit.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
-  <data name="dateCreatedEdit.EditValue" type="System.DateTime, mscorlib">
-    <value>02/15/2022 15:30:44</value>
+  <data name="dateCreatedEdit.EditValue" xml:space="preserve">
+    <value />
   </data>
   <data name="dateCreatedEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 12</value>
@@ -430,6 +427,12 @@
   <data name="&gt;&gt;layoutControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="rpgActions.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>31, 54</value>
+  </metadata>
   <metadata name="callsTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>150, 54</value>
   </metadata>
@@ -556,6 +559,12 @@
   <data name="&gt;&gt;lciDateCreated.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;lciDateModified.Name" xml:space="preserve">
+    <value>lciDateModified</value>
+  </data>
+  <data name="&gt;&gt;lciDateModified.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;callsTableAdapter1.Name" xml:space="preserve">
     <value>callsTableAdapter1</value>
   </data>
@@ -591,12 +600,6 @@
   </data>
   <data name="&gt;&gt;ribbonPage2.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonPage, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;lciDateModified.Name" xml:space="preserve">
-    <value>lciDateModified</value>
-  </data>
-  <data name="&gt;&gt;lciDateModified.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EditEntry</value>

@@ -32,13 +32,14 @@ namespace CallManagement.Crud_Operations
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEntry));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.dateCreatedEdit = new DevExpress.XtraEditors.DateEdit();
+            this.dateModifiedEdit = new DevExpress.XtraEditors.DateEdit();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.manageCallpage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgActions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.dateCreatedEdit = new DevExpress.XtraEditors.DateEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new CallManagement.DataSet1();
@@ -55,19 +56,20 @@ namespace CallManagement.Crud_Operations
             this.lciCallReciever = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciNotes = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciDateCreated = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciDateModified = new DevExpress.XtraLayout.LayoutControlItem();
             this.callsTableAdapter1 = new CallManagement.DataSet1TableAdapters.CallsTableAdapter();
             this.callTypeTableAdapter = new CallManagement.DataSet1TableAdapters.CallTypeTableAdapter();
             this.callingContactTableAdapter = new CallManagement.DataSet1TableAdapters.CallingContactTableAdapter();
             this.callRecieverTableAdapter = new CallManagement.DataSet1TableAdapters.CallRecieverTableAdapter();
             this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.dateModifiedEdit = new DevExpress.XtraEditors.DateEdit();
-            this.lciDateModified = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -84,10 +86,8 @@ namespace CallManagement.Crud_Operations
             ((System.ComponentModel.ISupportInitialize)(this.lciCallReciever)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciDateCreated)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciDateModified)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -102,16 +102,16 @@ namespace CallManagement.Crud_Operations
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
             // 
-            // dateCreatedEdit
+            // dateModifiedEdit
             // 
-            resources.ApplyResources(this.dateCreatedEdit, "dateCreatedEdit");
-            this.dateCreatedEdit.MenuManager = this.ribbonControl1;
-            this.dateCreatedEdit.Name = "dateCreatedEdit";
-            this.dateCreatedEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateCreatedEdit.Properties.Buttons"))))});
-            this.dateCreatedEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateCreatedEdit.Properties.CalendarTimeProperties.Buttons"))))});
-            this.dateCreatedEdit.StyleController = this.layoutControl1;
+            resources.ApplyResources(this.dateModifiedEdit, "dateModifiedEdit");
+            this.dateModifiedEdit.MenuManager = this.ribbonControl1;
+            this.dateModifiedEdit.Name = "dateModifiedEdit";
+            this.dateModifiedEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateModifiedEdit.Properties.Buttons"))))});
+            this.dateModifiedEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateModifiedEdit.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateModifiedEdit.StyleController = this.layoutControl1;
             // 
             // ribbonControl1
             // 
@@ -164,6 +164,17 @@ namespace CallManagement.Crud_Operations
             resources.ApplyResources(this.ribbonStatusBar1, "ribbonStatusBar1");
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            // 
+            // dateCreatedEdit
+            // 
+            resources.ApplyResources(this.dateCreatedEdit, "dateCreatedEdit");
+            this.dateCreatedEdit.MenuManager = this.ribbonControl1;
+            this.dateCreatedEdit.Name = "dateCreatedEdit";
+            this.dateCreatedEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateCreatedEdit.Properties.Buttons"))))});
+            this.dateCreatedEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateCreatedEdit.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateCreatedEdit.StyleController = this.layoutControl1;
             // 
             // textEdit1
             // 
@@ -317,6 +328,15 @@ namespace CallManagement.Crud_Operations
             resources.ApplyResources(this.lciDateCreated, "lciDateCreated");
             this.lciDateCreated.TextSize = new System.Drawing.Size(69, 13);
             // 
+            // lciDateModified
+            // 
+            this.lciDateModified.Control = this.dateModifiedEdit;
+            this.lciDateModified.Location = new System.Drawing.Point(0, 120);
+            this.lciDateModified.Name = "lciDateModified";
+            this.lciDateModified.Size = new System.Drawing.Size(1159, 24);
+            resources.ApplyResources(this.lciDateModified, "lciDateModified");
+            this.lciDateModified.TextSize = new System.Drawing.Size(69, 13);
+            // 
             // callsTableAdapter1
             // 
             this.callsTableAdapter1.ClearBeforeFill = true;
@@ -342,26 +362,6 @@ namespace CallManagement.Crud_Operations
             this.ribbonPage2.Name = "ribbonPage2";
             resources.ApplyResources(this.ribbonPage2, "ribbonPage2");
             // 
-            // dateModifiedEdit
-            // 
-            resources.ApplyResources(this.dateModifiedEdit, "dateModifiedEdit");
-            this.dateModifiedEdit.MenuManager = this.ribbonControl1;
-            this.dateModifiedEdit.Name = "dateModifiedEdit";
-            this.dateModifiedEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEdit1.Properties.Buttons"))))});
-            this.dateModifiedEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEdit1.Properties.CalendarTimeProperties.Buttons"))))});
-            this.dateModifiedEdit.StyleController = this.layoutControl1;
-            // 
-            // lciDateModified
-            // 
-            this.lciDateModified.Control = this.dateModifiedEdit;
-            this.lciDateModified.Location = new System.Drawing.Point(0, 120);
-            this.lciDateModified.Name = "lciDateModified";
-            this.lciDateModified.Size = new System.Drawing.Size(1159, 24);
-            resources.ApplyResources(this.lciDateModified, "lciDateModified");
-            this.lciDateModified.TextSize = new System.Drawing.Size(69, 13);
-            // 
             // EditEntry
             // 
             resources.ApplyResources(this, "$this");
@@ -377,9 +377,11 @@ namespace CallManagement.Crud_Operations
             this.Load += new System.EventHandler(this.EditEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -396,10 +398,8 @@ namespace CallManagement.Crud_Operations
             ((System.ComponentModel.ISupportInitialize)(this.lciCallReciever)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciNotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciDateCreated)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciDateModified)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
