@@ -104,6 +104,7 @@ namespace CallManagement.Crud_Operations
             // 
             // dateModifiedEdit
             // 
+            this.dateModifiedEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "ModifiedDate", true));
             resources.ApplyResources(this.dateModifiedEdit, "dateModifiedEdit");
             this.dateModifiedEdit.MenuManager = this.ribbonControl1;
             this.dateModifiedEdit.Name = "dateModifiedEdit";
@@ -167,6 +168,7 @@ namespace CallManagement.Crud_Operations
             // 
             // dateCreatedEdit
             // 
+            this.dateCreatedEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "CreationDate", true));
             resources.ApplyResources(this.dateCreatedEdit, "dateCreatedEdit");
             this.dateCreatedEdit.MenuManager = this.ribbonControl1;
             this.dateCreatedEdit.Name = "dateCreatedEdit";
