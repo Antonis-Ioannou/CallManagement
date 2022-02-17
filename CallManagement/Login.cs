@@ -71,10 +71,10 @@ namespace CallManagement
                     conn.Close();
                 }
 
-                MessageBox.Show("Connection OK");
-                MessageBox.Show("Choose a database");
+                XtraMessageBox.Show("Connection OK");
+                XtraMessageBox.Show("Choose a database");
             }
-            catch { MessageBox.Show("Invalid log-in credentials!", "Ooops, something went wrong :(", MessageBoxButtons.OK, MessageBoxIcon.Error); };
+            catch { XtraMessageBox.Show("Invalid log-in credentials!", "Ooops, something went wrong :(", MessageBoxButtons.OK, MessageBoxIcon.Error); };
         }
 
         private void loginSave(object sender, EventArgs e)
@@ -104,9 +104,9 @@ namespace CallManagement
                 finally
                 {
                     if (saveSuccess)
-                        MessageBox.Show("Created");
+                        XtraMessageBox.Show("Created");
                     else
-                        MessageBox.Show("Something went wrong....");
+                        XtraMessageBox.Show("Something went wrong....");
                     Close();
                 }
             }

@@ -2,6 +2,7 @@
 using CallManagement.Properties;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraBars.Helpers;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,13 +31,24 @@ namespace CallManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             gridView1.SaveLayoutToXml(defaultGridLayoutFile);
+            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
+            {
+                bciEnglish.Checked = true;
+                bciGreek.Checked = false;
+            }
+            else
+            {
+                bciGreek.Checked = true;
+                bciEnglish.Checked = false;
+            }
+
+            gridView1.SaveLayoutToXml(defaultGridLayoutFile);
 
             if (!File.Exists(customLayout))
                 gridView1.RestoreLayoutFromXml(defaultGridLayoutFile);
             //---Load saved layout settings---//
             else
-                gridView1.RestoreLayoutFromXml(customLayout);            
+                gridView1.RestoreLayoutFromXml(customLayout);
 
             //---Set the state, position and size when the form loads---//
             if (Properties.Settings.Default.F1Size.Width == 0 || Properties.Settings.Default.F1Size.Height == 0)
@@ -54,7 +66,7 @@ namespace CallManagement
                 this.Location = Properties.Settings.Default.F1Location;
                 this.Size = Properties.Settings.Default.F1Size;
             }
-                     
+
             GetConnectionString();
 
             if (string.IsNullOrEmpty(ConnectionString))
@@ -114,7 +126,14 @@ namespace CallManagement
 
             using (FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                ConnectionString = xmlSerializer.Deserialize(fs).ToString();
+                try
+                {
+                    ConnectionString = xmlSerializer.Deserialize(fs).ToString();
+                }
+                catch (Exception e)
+                {
+                    Application.Exit();
+                }
             }
         }
 
@@ -154,7 +173,7 @@ namespace CallManagement
                 int dataRowCount = gridControl1.DefaultView.DataRowCount;
                 for (int i = 0; i < dataRowCount; i++)
                 {
-                    var callType = gridView1.GetRowCellDisplayText(i,col);
+                    var callType = gridView1.GetRowCellDisplayText(i, col);
                     if (callType == "Εισερχόμενη Κλήση")
                     {
                         inbountCalls++;
@@ -177,7 +196,7 @@ namespace CallManagement
                 bsiInboundCalls.Caption = "Εισερχόμενες: " + inbountCalls;
                 bsiOutboundCalls.Caption = "Εξερχόμενες: " + outboundCalls;
             }
-            
+
         }
 
         //---Saving position, size of window and skin---//
@@ -185,9 +204,20 @@ namespace CallManagement
         {
             string text = "Are yoy sure you want to exit?";
             string title = "Exit application?";
+            string text2 = "Έξοδος από το πρόγραμμα;";
+            string title2 = "Έξοδος";
+            DialogResult result;
             var buttons = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Question;
-            DialogResult result = MessageBox.Show(text,title, buttons, icon);
+
+            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
+            {
+                result = XtraMessageBox.Show(text, title, buttons, icon);
+            }
+            else
+            {
+                result = XtraMessageBox.Show(text2, title2, buttons, icon);
+            }
 
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -235,8 +265,23 @@ namespace CallManagement
 
         private void resetLayoutDefault(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore Default Layout? Your saved layout will be deleted!", "Restore Default Layout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            
+            string text = "Are you sure you want to restore Default Layout? Your current layout will be deleted!";
+            string title = "Restore Default Layout";
+            string text2 = "Επαναφορά αρχικής διάταξης; Η τρέχουσα διάταξη, θα διαγραφεί.";
+            string title2 = "Επαναφορά αρχικής διάταξης";
+            DialogResult dialogResult;
+            var buttons = MessageBoxButtons.YesNo;
+            var icon = MessageBoxIcon.Question;
+
+            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
+            {
+                dialogResult = XtraMessageBox.Show(text, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                dialogResult = XtraMessageBox.Show(text2, title2, buttons, icon);
+            }
+
             if (dialogResult == DialogResult.Yes)
             {
                 File.Delete(customLayout);
@@ -254,6 +299,14 @@ namespace CallManagement
         {
             string setGreek = "el";
 
+            if (System.Globalization.CultureInfo.CurrentCulture.Name == "el")
+            {
+                XtraMessageBox.Show(Messages.Messages.GreekLanguageCaption);
+                bciEnglish.Checked = false;
+                bciGreek.Checked = true;
+                return;
+            }
+
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
 
@@ -262,6 +315,10 @@ namespace CallManagement
 
             using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
             {
+                string restartNow2 = "Restart application?";
+                string title2 = "Restart";
+                var buttons = MessageBoxButtons.YesNo;
+                var icon = MessageBoxIcon.Question;
                 bool saveSuccess = true;
                 try
                 {
@@ -275,30 +332,36 @@ namespace CallManagement
                 {
                     if (saveSuccess)
                     {
-                        MessageBox.Show("Greek selected. Need to restart application to apply new settings");
-                        string restartNow = "Restart application now?";
-                        string title = "Restart";
-                        var buttons = MessageBoxButtons.YesNo;
-                        var icon = MessageBoxIcon.Question;
-
-                        DialogResult dialogResult = MessageBox.Show(restartNow, title, buttons, icon);
+                        XtraMessageBox.Show(Messages.Messages.GreekLanguageCaption);
+                        DialogResult dialogResult = XtraMessageBox.Show(restartNow2, title2, buttons, icon);
                         if (dialogResult == DialogResult.Yes)
                         {
                             Process.Start(Application.ExecutablePath);
                             Process.GetCurrentProcess().Kill();
+                            bciGreek.Checked = true;
+                            bciEnglish.Checked = false;
                         }
+                        bciGreek.Checked = false;
                     }
                     else
                     {
-                        MessageBox.Show("Something went wrong....");
+                        XtraMessageBox.Show("Something went wrong....");
                     }
                 }
             }
         }
-
+    
         private void setEnglish(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string setEnglish = "en";
+
+            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
+            {
+                XtraMessageBox.Show(Messages.Messages.EnglishLanguageCaption);
+                bciEnglish.Checked = true;
+                bciGreek.Checked = false;
+                return;
+            }
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
@@ -321,22 +384,25 @@ namespace CallManagement
                 {
                     if (saveSuccess)
                     {
-                        MessageBox.Show("English selected. Need to restart application to apply new settings");
-                        string restartNow = "Restart application now?";
-                        string title = "Restart";
+                        XtraMessageBox.Show(Messages.Messages.EnglishLanguageCaption);
+                        string restartNow = "Επανεκίνηση εφαρμογής;";
+                        string title = "Επανεκίνηση";
                         var buttons = MessageBoxButtons.YesNo;
                         var icon = MessageBoxIcon.Question;
 
-                        DialogResult dialogResult = MessageBox.Show(restartNow, title, buttons, icon);
+                        DialogResult dialogResult = XtraMessageBox.Show(restartNow, title, buttons, icon);
                         if (dialogResult == DialogResult.Yes)
                         {
                             System.Diagnostics.Process.Start(Application.ExecutablePath);
                             Process.GetCurrentProcess().Kill();
+                            bciGreek.Checked = false;
+                            bciEnglish.Checked = true;
                         }
+                        bciEnglish.Checked = false;
                     }
                     else
                     {
-                        MessageBox.Show("Something went wrong....");
+                        XtraMessageBox.Show("Something went wrong....");
                     }
                 }
             }
@@ -357,19 +423,19 @@ namespace CallManagement
             //----------Δουλεύει----------//
             if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
             {
-                DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
+                DialogResult dialogResult = XtraMessageBox.Show(warning, title, buttons, icon);
                 if (dialogResult == DialogResult.Yes)
                 {
                     bsCalls.RemoveCurrent();
                     callsTableAdapter.Update(dataSet1);
                     //int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
                     //callsTableAdapter.deleteSelectedRow(selectedRow);
-                    //MessageBox.Show("Delete successful!");
+                    //XtraMessageBox.Show("Delete successful!");
                 }
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show(warning2, title2, buttons, icon);
+                DialogResult dialogResult = XtraMessageBox.Show(warning2, title2, buttons, icon);
                 if (dialogResult == DialogResult.Yes)
                 {
                     bsCalls.RemoveCurrent();

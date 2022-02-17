@@ -97,7 +97,7 @@ namespace CallManagement.Crud_Operations
             catch (Exception ex)
             {
                 string exceptionInfo = ex.Message;
-                MessageBox.Show(exceptionInfo);
+                XtraMessageBox.Show(exceptionInfo);
             }
             finally
             {
@@ -197,7 +197,7 @@ namespace CallManagement.Crud_Operations
             {
                 if (dataChanged)
                 {
-                    DialogResult result = MessageBox.Show(text, title, buttons, icon);
+                    DialogResult result = XtraMessageBox.Show(text, title, buttons, icon);
                     if (result == DialogResult.Cancel)
                     {
                         e.Cancel = true;
@@ -233,7 +233,7 @@ namespace CallManagement.Crud_Operations
 
             if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
             {
-                DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
+                DialogResult dialogResult = XtraMessageBox.Show(warning, title, buttons, icon);
                 if (dialogResult == DialogResult.Yes)
                 {
                     bindingSource1.RemoveCurrent();
@@ -242,7 +242,7 @@ namespace CallManagement.Crud_Operations
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show(warning2, title2, buttons, icon);
+                DialogResult dialogResult = XtraMessageBox.Show(warning2, title2, buttons, icon);
                 if (dialogResult == DialogResult.Yes)
                 {
                     bindingSource1.RemoveCurrent();
