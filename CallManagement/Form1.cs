@@ -132,7 +132,7 @@ namespace CallManagement
                 }
                 catch (Exception e)
                 {
-                    Application.Exit();
+                    XtraMessageBox.Show(e.Message);
                 }
             }
         }
