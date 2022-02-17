@@ -33,6 +33,8 @@ namespace CallManagement.Crud_Operations
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEntry));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.dateModifiedEdit = new DevExpress.XtraEditors.DateEdit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new CallManagement.DataSet1();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
@@ -41,8 +43,6 @@ namespace CallManagement.Crud_Operations
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.dateCreatedEdit = new DevExpress.XtraEditors.DateEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new CallManagement.DataSet1();
             this.callType = new DevExpress.XtraEditors.LookUpEdit();
             this.callTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.callingContact = new DevExpress.XtraEditors.LookUpEdit();
@@ -67,12 +67,12 @@ namespace CallManagement.Crud_Operations
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.callType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.callTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.callingContact.Properties)).BeginInit();
@@ -113,6 +113,16 @@ namespace CallManagement.Crud_Operations
             this.dateModifiedEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateModifiedEdit.Properties.CalendarTimeProperties.Buttons"))))});
             this.dateModifiedEdit.StyleController = this.layoutControl1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Calls";
+            this.bindingSource1.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ribbonControl1
             // 
@@ -184,16 +194,6 @@ namespace CallManagement.Crud_Operations
             resources.ApplyResources(this.textEdit1, "textEdit1");
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.StyleController = this.layoutControl1;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Calls";
-            this.bindingSource1.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // callType
             // 
@@ -381,12 +381,12 @@ namespace CallManagement.Crud_Operations
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateModifiedEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateCreatedEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.callType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.callTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.callingContact.Properties)).EndInit();

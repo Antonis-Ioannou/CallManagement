@@ -637,6 +637,9 @@
   <data name="colCallsId.VisibleIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="colCallsId.Width" type="System.Int32, mscorlib">
+    <value>165</value>
+  </data>
   <data name="colCreationDate.Caption" xml:space="preserve">
     <value>Creation Date</value>
   </data>
@@ -645,6 +648,9 @@
   </data>
   <data name="colCreationDate.VisibleIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="colCreationDate.Width" type="System.Int32, mscorlib">
+    <value>109</value>
   </data>
   <data name="colTypeId.Caption" xml:space="preserve">
     <value>Call Type</value>
@@ -665,6 +671,9 @@
   <data name="colTypeId.VisibleIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="colTypeId.Width" type="System.Int32, mscorlib">
+    <value>171</value>
+  </data>
   <data name="colReceiverId.Caption" xml:space="preserve">
     <value>Call Reciever</value>
   </data>
@@ -682,6 +691,9 @@
   </data>
   <data name="colReceiverId.VisibleIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="colReceiverId.Width" type="System.Int32, mscorlib">
+    <value>182</value>
   </data>
   <data name="colCallContactId.Caption" xml:space="preserve">
     <value>Calling Contact</value>
@@ -701,6 +713,9 @@
   <data name="colCallContactId.VisibleIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="colCallContactId.Width" type="System.Int32, mscorlib">
+    <value>208</value>
+  </data>
   <data name="colNotes.Caption" xml:space="preserve">
     <value>Notes</value>
   </data>
@@ -710,6 +725,9 @@
   <data name="colNotes.VisibleIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="colNotes.Width" type="System.Int32, mscorlib">
+    <value>206</value>
+  </data>
   <data name="colModifiedDate.Caption" xml:space="preserve">
     <value>Modified Date</value>
   </data>
@@ -718,6 +736,9 @@
   </data>
   <data name="colModifiedDate.VisibleIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="colModifiedDate.Width" type="System.Int32, mscorlib">
+    <value>207</value>
   </data>
   <data name="gridControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1284, 454</value>

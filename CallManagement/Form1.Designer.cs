@@ -434,7 +434,6 @@ namespace CallManagement
             this.gridControl1.ShowOnlyPredefinedDetails = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Load += new System.EventHandler(this.Form1_Load);
             this.gridControl1.DoubleClick += new System.EventHandler(this.dbClickEdit);
             // 
             // bsCalls
@@ -462,10 +461,12 @@ namespace CallManagement
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsLayout.LayoutVersion = "1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colCreationDate, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridView1.ColumnWidthChanged += new DevExpress.XtraGrid.Views.Base.ColumnEventHandler(this.gridView1_ColumnWidthChanged);
+            this.gridView1.BeforeLoadLayout += new DevExpress.Utils.LayoutAllowEventHandler(this.gridView1_BeforeLoadLayout);
             this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
             // 
             // colCallsId
@@ -487,7 +488,6 @@ namespace CallManagement
             this.colTypeId.ColumnEdit = this.repositoryItemLookUpEdit1;
             this.colTypeId.FieldName = "TypeId";
             this.colTypeId.Name = "colTypeId";
-            this.colTypeId.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             // 
             // repositoryItemLookUpEdit1
             // 

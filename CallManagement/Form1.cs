@@ -21,6 +21,7 @@ namespace CallManagement
         public static string ConnectionString = string.Empty;
         static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
         string customLayout = Path.Combine(path, @"gridLayout.xml");
+        string defaultGridLayoutFile = Path.Combine(path + @"\defaultLayout.xml");
 
         public Form1()
         {
@@ -29,11 +30,13 @@ namespace CallManagement
 
         private void Form1_Load(object sender, EventArgs e)
         {
+             gridView1.SaveLayoutToXml(defaultGridLayoutFile);
+
+            if (!File.Exists(customLayout))
+                gridView1.RestoreLayoutFromXml(defaultGridLayoutFile);
             //---Load saved layout settings---//
-            if (File.Exists(customLayout))
-            {
-                gridView1.RestoreLayoutFromXml(customLayout);
-            }
+            else
+                gridView1.RestoreLayoutFromXml(customLayout);            
 
             //---Set the state, position and size when the form loads---//
             if (Properties.Settings.Default.F1Size.Width == 0 || Properties.Settings.Default.F1Size.Height == 0)
@@ -212,6 +215,7 @@ namespace CallManagement
 
                     // don't forget to save the settings
                     Settings.Default.Save();
+                    gridView1.SaveLayoutToXml(customLayout);
                 }
                 else
                 {
@@ -223,17 +227,21 @@ namespace CallManagement
         //---Save grid layout--//
         private void gridView1_ColumnWidthChanged(object sender, DevExpress.XtraGrid.Views.Base.ColumnEventArgs e)
         {
-            gridView1.SaveLayoutToXml(customLayout);
+            //gridView1.SaveLayoutToXml(customLayout);
         }
 
         //---Reset layout to default---//
+        bool restoringDefaultLayout;
+
         private void resetLayoutDefault(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to restore Default Layout? Your saved layout will be deleted!", "Restore Default Layout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            
             if (dialogResult == DialogResult.Yes)
             {
-                gridView1.RestoreLayoutFromXml(path + @"\defaultLayout.xml");
-                gridView1.SaveLayoutToXml(customLayout);
+                File.Delete(customLayout);
+                restoringDefaultLayout = true;
+                gridView1.RestoreLayoutFromXml(defaultGridLayoutFile);
             }
         }
 
@@ -399,6 +407,13 @@ namespace CallManagement
                 return;
 
             OpenEditForm((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId"));
+        }
+
+        private void gridView1_BeforeLoadLayout(object sender, DevExpress.Utils.LayoutAllowEventArgs e)
+        {
+            if (e.PreviousVersion != gridView1.OptionsLayout.LayoutVersion
+                && !restoringDefaultLayout)
+                e.Allow = false;
         }
     }
 }

@@ -78,9 +78,10 @@ namespace CallManagement.Crud_Operations
             drvCall.BeginEdit();
 
             if (SelectedId.Equals(-1))
-                drvCall.Row["CreationDate"] = dateCreatedEdit.Text;
+                drvCall.Row["CreationDate"] =  drvCall.Row["ModifiedDate"] =  dateCreatedEdit.EditValue;
+            else
+            drvCall.Row["ModifiedDate"] = dateModifiedEdit.EditValue;
 
-            drvCall.Row["ModifiedDate"] = dateModifiedEdit.Text;
             drvCall.EndEdit();
         }
 
@@ -93,9 +94,10 @@ namespace CallManagement.Crud_Operations
                 callsTableAdapter1.Update(dataSet1.Calls);
                 saveSuccess = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ooops, something went wrong");
+                string exceptionInfo = ex.Message;
+                MessageBox.Show(exceptionInfo);
             }
             finally
             {
