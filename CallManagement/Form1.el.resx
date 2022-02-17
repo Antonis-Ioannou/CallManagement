@@ -831,7 +831,7 @@
     <value>Ημερ/νια Δημιουργίας</value>
   </data>
   <data name="colModifiedDate.Caption" xml:space="preserve">
-    <value>Ημερ/νια Επεξεργασίας</value>
+    <value>Ημερ/νια Τροποποίησης</value>
   </data>
   <data name="colNotes.Caption" xml:space="preserve">
     <value>Σημειώσεις</value>

@@ -226,14 +226,28 @@ namespace CallManagement.Crud_Operations
         {
             string warning = "Are you sure you want to delete this entry?";
             string title = "Delete Entry";
+            string warning2 = "Επιβεβαίωση διαγραφής;";
+            string title2 = "Διαγραφή Κλήσης";
             var buttons = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Warning;
 
-            DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
-            if (dialogResult == DialogResult.Yes)
+            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
             {
-                bindingSource1.RemoveCurrent();
-                saveChanges();
+                DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    bindingSource1.RemoveCurrent();
+                    saveChanges();
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show(warning2, title2, buttons, icon);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    bindingSource1.RemoveCurrent();
+                    saveChanges();
+                }
             }
         }
     }

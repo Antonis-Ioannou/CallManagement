@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bbiDelete.Caption" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
+  <data name="bbiSave.Caption" xml:space="preserve">
+    <value>Αποθήκευση κ Έξοδος</value>
+  </data>
   <data name="EditEntry.Text" xml:space="preserve">
     <value>Επεξεργασία Κλήσης</value>
   </data>
@@ -136,8 +142,20 @@
   <data name="lciCallType.Text" xml:space="preserve">
     <value>Είδος Κλήσης</value>
   </data>
+  <data name="lciDateCreated.Text" xml:space="preserve">
+    <value>Ημερ/νία Δημιουργίας</value>
+  </data>
+  <data name="lciDateModified.Text" xml:space="preserve">
+    <value>Ημερ/νία Τροποποίησης</value>
+  </data>
   <data name="lciNotes.Text" xml:space="preserve">
     <value>Σημειώσεις</value>
+  </data>
+  <data name="manageCallpage.Text" xml:space="preserve">
+    <value>Διαχείρηση Κλήσης</value>
+  </data>
+  <data name="rpgActions.Text" xml:space="preserve">
+    <value>Ενέργειες</value>
   </data>
   <data name="sbSubmitChanges.Text" xml:space="preserve">
     <value>Αποθήκευση κ Έξοδος</value>

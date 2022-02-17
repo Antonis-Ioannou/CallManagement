@@ -342,27 +342,46 @@ namespace CallManagement
             }
         }
 
-        private void deleteEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        public void deleteEntryConfirmation()
         {
+            string warning = "Are you sure you want to delete this entry?";
+            string title = "Delete Entry";
+            string warning2 = "Επιβεβαίωση διαγραφής;";
+            string title2 = "Διαγραφή Κλήσης";
+            var buttons = MessageBoxButtons.YesNo;
+            var icon = MessageBoxIcon.Warning;
+
             if (gridView1.IsGroupRow(gridView1.FocusedRowHandle)
                || gridView1.RowCount == 0)
                 return;
             //----------Δουλεύει----------//
-            string warning = "Are you sure you want to delete this entry?";
-            string title = "Delete Entry";
-            var buttons = MessageBoxButtons.YesNo;
-            var icon = MessageBoxIcon.Warning;
-
-            DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
-            if (dialogResult == DialogResult.Yes)
+            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
             {
-                bsCalls.RemoveCurrent();
-                callsTableAdapter.Update(dataSet1);
-                //int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
-                //callsTableAdapter.deleteSelectedRow(selectedRow);
-                //MessageBox.Show("Delete successful!");
+                DialogResult dialogResult = MessageBox.Show(warning, title, buttons, icon);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    bsCalls.RemoveCurrent();
+                    callsTableAdapter.Update(dataSet1);
+                    //int selectedRow = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId");
+                    //callsTableAdapter.deleteSelectedRow(selectedRow);
+                    //MessageBox.Show("Delete successful!");
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show(warning2, title2, buttons, icon);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    bsCalls.RemoveCurrent();
+                    callsTableAdapter.Update(dataSet1);
+                }
             }
             FillTableAdapter();
+        }
+
+        private void deleteEntry(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            deleteEntryConfirmation();
         }
 
         //----------//
