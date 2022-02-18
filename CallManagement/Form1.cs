@@ -51,7 +51,7 @@ namespace CallManagement
                 {
                     ConnectionString = xmlSerializer.Deserialize(fs).ToString();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     //XtraMessageBox.Show(e.Message);
                 }
