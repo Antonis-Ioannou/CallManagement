@@ -29,6 +29,34 @@ namespace CallManagement
             InitializeComponent();
         }
 
+        private void GetConnectionString()
+        {
+            string fullPath = Path.Combine(path, @"conStr.xml");
+
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            if (!File.Exists(fullPath))
+            {
+                File.Create(fullPath);
+                return;
+            }
+
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+
+            using (FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                try
+                {
+                    ConnectionString = xmlSerializer.Deserialize(fs).ToString();
+                }
+                catch (Exception e)
+                {
+                    //XtraMessageBox.Show(e.Message);
+                }
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
@@ -73,6 +101,11 @@ namespace CallManagement
             {
                 Form formLogin = new Login();
                 formLogin.ShowDialog();
+                if (formLogin.DialogResult != DialogResult.OK)
+                {
+                    XtraMessageBox.Show("Exiting application. Create connection and try again");
+                    Process.GetCurrentProcess().Kill();
+                }
             }
 
             //----------load saved skin/palette----------//
@@ -106,34 +139,6 @@ namespace CallManagement
 
                 callsTableAdapter.Connection.ConnectionString = ConnectionString;
                 callsTableAdapter.Fill(dataSet1.Calls);
-            }
-        }
-
-        private void GetConnectionString()
-        {
-            string fullPath = Path.Combine(path, @"conStr.xml");
-
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-
-            if (!File.Exists(fullPath))
-            {
-                File.Create(fullPath);
-                return;
-            }
-
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
-
-            using (FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.Read))
-            {
-                try
-                {
-                    ConnectionString = xmlSerializer.Deserialize(fs).ToString();
-                }
-                catch (Exception e)
-                {
-                    XtraMessageBox.Show(e.Message);
-                }
             }
         }
 

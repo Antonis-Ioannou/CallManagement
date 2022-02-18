@@ -30,44 +30,44 @@ namespace CallManagement
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButtonSave = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonConnect = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBoxEditDatabase = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxEditServer = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
+            this.textEditUserName = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciUserName = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.lciPassword = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciServer = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciDatabase = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditDatabase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditServer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciServer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton2);
-            this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.comboBoxEdit2);
-            this.layoutControl1.Controls.Add(this.comboBoxEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.simpleButtonSave);
+            this.layoutControl1.Controls.Add(this.simpleButtonConnect);
+            this.layoutControl1.Controls.Add(this.comboBoxEditDatabase);
+            this.layoutControl1.Controls.Add(this.comboBoxEditServer);
+            this.layoutControl1.Controls.Add(this.textEditPassword);
+            this.layoutControl1.Controls.Add(this.textEditUserName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -76,39 +76,94 @@ namespace CallManagement
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // simpleButtonSave
+            // 
+            this.simpleButtonSave.Location = new System.Drawing.Point(12, 134);
+            this.simpleButtonSave.Name = "simpleButtonSave";
+            this.simpleButtonSave.Size = new System.Drawing.Size(1023, 22);
+            this.simpleButtonSave.StyleController = this.layoutControl1;
+            this.simpleButtonSave.TabIndex = 9;
+            this.simpleButtonSave.Text = "Save";
+            this.simpleButtonSave.Click += new System.EventHandler(this.loginSave);
+            // 
+            // simpleButtonConnect
+            // 
+            this.simpleButtonConnect.Location = new System.Drawing.Point(12, 84);
+            this.simpleButtonConnect.Name = "simpleButtonConnect";
+            this.simpleButtonConnect.Size = new System.Drawing.Size(1023, 22);
+            this.simpleButtonConnect.StyleController = this.layoutControl1;
+            this.simpleButtonConnect.TabIndex = 8;
+            this.simpleButtonConnect.Text = "Connect";
+            this.simpleButtonConnect.Click += new System.EventHandler(this.loginConnect);
+            // 
+            // comboBoxEditDatabase
+            // 
+            this.comboBoxEditDatabase.Location = new System.Drawing.Point(73, 110);
+            this.comboBoxEditDatabase.Name = "comboBoxEditDatabase";
+            this.comboBoxEditDatabase.Properties.AutoComplete = false;
+            this.comboBoxEditDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditDatabase.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEditDatabase.Size = new System.Drawing.Size(962, 20);
+            this.comboBoxEditDatabase.StyleController = this.layoutControl1;
+            this.comboBoxEditDatabase.TabIndex = 7;
+            this.comboBoxEditDatabase.SelectedIndexChanged += new System.EventHandler(this.loginDatabase);
+            this.comboBoxEditDatabase.TextChanged += new System.EventHandler(this.enablingSaveBtn);
+            // 
+            // comboBoxEditServer
+            // 
+            this.comboBoxEditServer.Location = new System.Drawing.Point(73, 60);
+            this.comboBoxEditServer.Name = "comboBoxEditServer";
+            this.comboBoxEditServer.Properties.AutoComplete = false;
+            this.comboBoxEditServer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditServer.Size = new System.Drawing.Size(962, 20);
+            this.comboBoxEditServer.StyleController = this.layoutControl1;
+            this.comboBoxEditServer.TabIndex = 6;
+            this.comboBoxEditServer.SelectedIndexChanged += new System.EventHandler(this.loginServer);
+            // 
+            // textEditPassword
+            // 
+            this.textEditPassword.Location = new System.Drawing.Point(73, 36);
+            this.textEditPassword.Name = "textEditPassword";
+            this.textEditPassword.Size = new System.Drawing.Size(962, 20);
+            this.textEditPassword.StyleController = this.layoutControl1;
+            this.textEditPassword.TabIndex = 5;
+            this.textEditPassword.EditValueChanged += new System.EventHandler(this.loginPassword);
+            // 
+            // textEditUserName
+            // 
+            this.textEditUserName.Location = new System.Drawing.Point(73, 12);
+            this.textEditUserName.Name = "textEditUserName";
+            this.textEditUserName.Size = new System.Drawing.Size(962, 20);
+            this.textEditUserName.StyleController = this.layoutControl1;
+            this.textEditUserName.TabIndex = 4;
+            this.textEditUserName.EditValueChanged += new System.EventHandler(this.loginUserName);
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
+            this.lciUserName,
             this.emptySpaceItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
+            this.lciPassword,
+            this.lciServer,
+            this.lciDatabase,
             this.layoutControlItem5,
             this.layoutControlItem6});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1047, 579);
             this.Root.TextVisible = false;
             // 
-            // textEdit1
+            // lciUserName
             // 
-            this.textEdit1.Location = new System.Drawing.Point(73, 12);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(962, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 4;
-            this.textEdit1.EditValueChanged += new System.EventHandler(this.loginUserName);
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.textEdit1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1027, 24);
-            this.layoutControlItem1.Text = "UserName";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(49, 13);
+            this.lciUserName.Control = this.textEditUserName;
+            this.lciUserName.Location = new System.Drawing.Point(0, 0);
+            this.lciUserName.Name = "lciUserName";
+            this.lciUserName.Size = new System.Drawing.Size(1027, 24);
+            this.lciUserName.Text = "UserName";
+            this.lciUserName.TextSize = new System.Drawing.Size(49, 13);
             // 
             // emptySpaceItem1
             // 
@@ -118,98 +173,45 @@ namespace CallManagement
             this.emptySpaceItem1.Size = new System.Drawing.Size(1027, 411);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // textEdit2
+            // lciPassword
             // 
-            this.textEdit2.Location = new System.Drawing.Point(73, 36);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(962, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 5;
-            this.textEdit2.EditValueChanged += new System.EventHandler(this.loginPassword);
+            this.lciPassword.Control = this.textEditPassword;
+            this.lciPassword.Location = new System.Drawing.Point(0, 24);
+            this.lciPassword.Name = "lciPassword";
+            this.lciPassword.Size = new System.Drawing.Size(1027, 24);
+            this.lciPassword.Text = "Password";
+            this.lciPassword.TextSize = new System.Drawing.Size(49, 13);
             // 
-            // layoutControlItem2
+            // lciServer
             // 
-            this.layoutControlItem2.Control = this.textEdit2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1027, 24);
-            this.layoutControlItem2.Text = "Password";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(49, 13);
+            this.lciServer.Control = this.comboBoxEditServer;
+            this.lciServer.Location = new System.Drawing.Point(0, 48);
+            this.lciServer.Name = "lciServer";
+            this.lciServer.Size = new System.Drawing.Size(1027, 24);
+            this.lciServer.Text = "Server";
+            this.lciServer.TextSize = new System.Drawing.Size(49, 13);
             // 
-            // comboBoxEdit1
+            // lciDatabase
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(73, 60);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.AutoComplete = false;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(962, 20);
-            this.comboBoxEdit1.StyleController = this.layoutControl1;
-            this.comboBoxEdit1.TabIndex = 6;
-            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.loginServer);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.comboBoxEdit1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1027, 24);
-            this.layoutControlItem3.Text = "Server";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(49, 13);
-            // 
-            // comboBoxEdit2
-            // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(73, 110);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.AutoComplete = false;
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(962, 20);
-            this.comboBoxEdit2.StyleController = this.layoutControl1;
-            this.comboBoxEdit2.TabIndex = 7;
-            this.comboBoxEdit2.SelectedIndexChanged += new System.EventHandler(this.loginDatabase);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.comboBoxEdit2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 98);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1027, 24);
-            this.layoutControlItem4.Text = "Database";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(49, 13);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 84);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(1023, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "Connect";
-            this.simpleButton1.Click += new System.EventHandler(this.loginConnect);
+            this.lciDatabase.Control = this.comboBoxEditDatabase;
+            this.lciDatabase.Location = new System.Drawing.Point(0, 98);
+            this.lciDatabase.Name = "lciDatabase";
+            this.lciDatabase.Size = new System.Drawing.Size(1027, 24);
+            this.lciDatabase.Text = "Database";
+            this.lciDatabase.TextSize = new System.Drawing.Size(49, 13);
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.simpleButton1;
+            this.layoutControlItem5.Control = this.simpleButtonConnect;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(1027, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(12, 134);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(1023, 22);
-            this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 9;
-            this.simpleButton2.Text = "Save";
-            this.simpleButton2.Click += new System.EventHandler(this.loginSave);
-            // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.simpleButton2;
+            this.layoutControlItem6.Control = this.simpleButtonSave;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 122);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(1027, 26);
@@ -227,16 +229,16 @@ namespace CallManagement
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditDatabase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditServer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciServer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
@@ -247,17 +249,17 @@ namespace CallManagement
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonSave;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonConnect;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditDatabase;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditServer;
+        private DevExpress.XtraEditors.TextEdit textEditPassword;
+        private DevExpress.XtraEditors.TextEdit textEditUserName;
+        private DevExpress.XtraLayout.LayoutControlItem lciUserName;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem lciPassword;
+        private DevExpress.XtraLayout.LayoutControlItem lciServer;
+        private DevExpress.XtraLayout.LayoutControlItem lciDatabase;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }

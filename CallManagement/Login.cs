@@ -47,10 +47,10 @@ namespace CallManagement
 
         private void loginConnect(object sender, EventArgs e)
         {
-            comboBoxEdit2.Properties.Items.Clear();
-            builder.DataSource = comboBoxEdit1.Text;
-            builder.UserID = textEdit1.Text;
-            builder.Password = textEdit2.Text;
+            comboBoxEditDatabase.Properties.Items.Clear();
+            builder.DataSource = comboBoxEditServer.Text;
+            builder.UserID = textEditUserName.Text;
+            builder.Password = textEditPassword.Text;
             conn.ConnectionString = builder.ConnectionString;
 
             //---load databases---//
@@ -67,7 +67,7 @@ namespace CallManagement
                 DataTable dtDatabases = dataset.Tables[0];
                 for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
                 {
-                    comboBoxEdit2.Properties.Items.Add(dataset.Tables[0].Rows[i][0].ToString());
+                    comboBoxEditDatabase.Properties.Items.Add(dataset.Tables[0].Rows[i][0].ToString());
                     conn.Close();
                 }
 
@@ -77,10 +77,15 @@ namespace CallManagement
             catch { XtraMessageBox.Show("Invalid log-in credentials!", "Ooops, something went wrong :(", MessageBoxButtons.OK, MessageBoxIcon.Error); };
         }
 
+        private void enablingSaveBtn(object sender, EventArgs e)
+        {
+            simpleButtonSave.Enabled = true;
+        }
+
         private void loginSave(object sender, EventArgs e)
         {
-            if (comboBoxEdit2.EditValue != null)
-                builder.InitialCatalog = comboBoxEdit2.EditValue.ToString();
+            if (comboBoxEditDatabase.EditValue != null)
+                builder.InitialCatalog = comboBoxEditDatabase.EditValue.ToString();
 
             string connString = builder.ConnectionString.ToString();
 
@@ -104,9 +109,14 @@ namespace CallManagement
                 finally
                 {
                     if (saveSuccess)
+                    {
                         XtraMessageBox.Show("Created");
+                        DialogResult = DialogResult.OK;
+                    }
                     else
+                    {
                         XtraMessageBox.Show("Something went wrong....");
+                    }
                     Close();
                 }
             }
@@ -114,7 +124,8 @@ namespace CallManagement
 
         private void Login_Load(object sender, EventArgs e)
         {
-            GetLoadServer(comboBoxEdit1);
+            GetLoadServer(comboBoxEditServer);
+            simpleButtonSave.Enabled = false;
         }
 
         //---load servers---//
