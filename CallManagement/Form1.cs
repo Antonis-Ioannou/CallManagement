@@ -1,4 +1,5 @@
 ﻿using CallManagement.Crud_Operations;
+using CallManagement.Messages;
 using CallManagement.Properties;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraBars.Helpers;
@@ -191,40 +192,22 @@ namespace CallManagement
                     }
                 }
             }
-            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
-            {
-                bsiTotalCalls.Caption = "Total calls: " + gridItems;
-                bsiInboundCalls.Caption = "Inbound: " + inbountCalls;
-                bsiOutboundCalls.Caption = "Outbound: " + outboundCalls;
-            }
-            else
-            {
-                bsiTotalCalls.Caption = "Σύνολο Κλήσεων: " + gridItems;
-                bsiInboundCalls.Caption = "Εισερχόμενες: " + inbountCalls;
-                bsiOutboundCalls.Caption = "Εξερχόμενες: " + outboundCalls;
-            }
+            bsiTotalCalls.Caption = Messages.Messages.barStatusItemTotalCalls + gridItems;
+            bsiInboundCalls.Caption = Messages.Messages.barStatusItemInbound + inbountCalls;
+            bsiOutboundCalls.Caption = Messages.Messages.barStatusItemOutbound + outboundCalls;
 
         }
 
         //---Saving position, size of window and skin---//
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
-            string text = "Are yoy sure you want to exit?";
-            string title = "Exit application?";
-            string text2 = "Έξοδος από το πρόγραμμα;";
-            string title2 = "Έξοδος";
             DialogResult result;
+            string title = Messages.Messages.ApplicationClosingConfirmationTitle;
+            string text = Messages.Messages.ApplicationClosingConfirmationText;
             var buttons = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Question;
 
-            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
-            {
-                result = XtraMessageBox.Show(text, title, buttons, icon);
-            }
-            else
-            {
-                result = XtraMessageBox.Show(text2, title2, buttons, icon);
-            }
+            result = XtraMessageBox.Show(text, title, buttons, icon);
 
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -272,22 +255,13 @@ namespace CallManagement
 
         private void resetLayoutDefault(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string text = "Are you sure you want to restore Default Layout? Your current layout will be deleted!";
-            string title = "Restore Default Layout";
-            string text2 = "Επαναφορά αρχικής διάταξης; Η τρέχουσα διάταξη, θα διαγραφεί.";
-            string title2 = "Επαναφορά αρχικής διάταξης";
+            string text = Messages.Messages.resetLayoutText;
+            string title = Messages.Messages.resetLayoutTitle;
             DialogResult dialogResult;
             var buttons = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Question;
 
-            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
-            {
-                dialogResult = XtraMessageBox.Show(text, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                dialogResult = XtraMessageBox.Show(text2, title2, buttons, icon);
-            }
+            dialogResult = XtraMessageBox.Show(text, title, buttons, icon);
 
             if (dialogResult == DialogResult.Yes)
             {
@@ -322,8 +296,8 @@ namespace CallManagement
 
             using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                string restartNow2 = "Restart application?";
-                string title2 = "Restart";
+                string restartNow2 = Messages.Messages.languageChangeRestartAppText;
+                string title2 = Messages.Messages.languageChangeRestartAppTitle;
                 var buttons = MessageBoxButtons.YesNo;
                 var icon = MessageBoxIcon.Question;
                 bool saveSuccess = true;
@@ -389,14 +363,14 @@ namespace CallManagement
                 }
                 finally
                 {
+                    XtraMessageBox.Show(Messages.Messages.EnglishLanguageCaption);
+                    string restartNow = Messages.Messages.languageChangeRestartAppText;
+                    string title = Messages.Messages.languageChangeRestartAppTitle;
+                    string exception = Messages.Messages.languageChangeRestartAppException;
+                    var buttons = MessageBoxButtons.YesNo;
+                    var icon = MessageBoxIcon.Question;
                     if (saveSuccess)
                     {
-                        XtraMessageBox.Show(Messages.Messages.EnglishLanguageCaption);
-                        string restartNow = "Επανεκίνηση εφαρμογής;";
-                        string title = "Επανεκίνηση";
-                        var buttons = MessageBoxButtons.YesNo;
-                        var icon = MessageBoxIcon.Question;
-
                         DialogResult dialogResult = XtraMessageBox.Show(restartNow, title, buttons, icon);
                         if (dialogResult == DialogResult.Yes)
                         {
@@ -409,7 +383,7 @@ namespace CallManagement
                     }
                     else
                     {
-                        XtraMessageBox.Show("Something went wrong....");
+                        XtraMessageBox.Show(exception);
                     }
                 }
             }
@@ -417,10 +391,8 @@ namespace CallManagement
 
         public void deleteEntryConfirmation()
         {
-            string warning = "Are you sure you want to delete this entry?";
-            string title = "Delete Entry";
-            string warning2 = "Επιβεβαίωση διαγραφής;";
-            string title2 = "Διαγραφή Κλήσης";
+            string warning = Messages.Messages.deleteEntryConfirmationText;
+            string title = Messages.Messages.deleteEntryConfirmationTitle;
             var buttons = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Warning;
 
@@ -428,9 +400,7 @@ namespace CallManagement
                || gridView1.RowCount == 0)
                 return;
             //----------Δουλεύει----------//
-            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
-            {
-                DialogResult dialogResult = XtraMessageBox.Show(warning, title, buttons, icon);
+            DialogResult dialogResult = XtraMessageBox.Show(warning, title, buttons, icon);
                 if (dialogResult == DialogResult.Yes)
                 {
                     bsCalls.RemoveCurrent();
@@ -439,16 +409,6 @@ namespace CallManagement
                     //callsTableAdapter.deleteSelectedRow(selectedRow);
                     //XtraMessageBox.Show("Delete successful!");
                 }
-            }
-            else
-            {
-                DialogResult dialogResult = XtraMessageBox.Show(warning2, title2, buttons, icon);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    bsCalls.RemoveCurrent();
-                    callsTableAdapter.Update(dataSet1);
-                }
-            }
             FillTableAdapter();
         }
 
@@ -468,15 +428,9 @@ namespace CallManagement
             else
             {
                 EditEntry editEntry = new EditEntry(id);
-                if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
-                {
-                    editEntry.Text = id < 0 ? editEntry.Text = "Create Call" : editEntry.Text = "Edit Call";
-                }
-                else
-                {
-                    editEntry.Text = id < 0 ? editEntry.Text = "Δημιουργία Εγγραφής" : editEntry.Text = "Τροποποίηση Εγγραφής";
-                }
-                
+                string create = Messages.Messages.editFormHeaderCreateCall;
+                string edit = Messages.Messages.editFormHeaderEditCall;
+                editEntry.Text = id < 0 ? editEntry.Text = create : editEntry.Text = edit;
                 editEntry.ReloadDataEvent += EditEntry_ReloadDataEvent;
                 editEntry.Show();
             }

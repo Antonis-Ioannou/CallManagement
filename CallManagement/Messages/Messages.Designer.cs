@@ -61,6 +61,87 @@ namespace CallManagement.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are yoy sure you want to exit?.
+        /// </summary>
+        internal static string ApplicationClosingConfirmationText {
+            get {
+                return ResourceManager.GetString("ApplicationClosingConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit application?.
+        /// </summary>
+        internal static string ApplicationClosingConfirmationTitle {
+            get {
+                return ResourceManager.GetString("ApplicationClosingConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inbound: .
+        /// </summary>
+        internal static string barStatusItemInbound {
+            get {
+                return ResourceManager.GetString("barStatusItemInbound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Outbound:.
+        /// </summary>
+        internal static string barStatusItemOutbound {
+            get {
+                return ResourceManager.GetString("barStatusItemOutbound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total calls: .
+        /// </summary>
+        internal static string barStatusItemTotalCalls {
+            get {
+                return ResourceManager.GetString("barStatusItemTotalCalls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this entry?.
+        /// </summary>
+        internal static string deleteEntryConfirmationText {
+            get {
+                return ResourceManager.GetString("deleteEntryConfirmationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Entry.
+        /// </summary>
+        internal static string deleteEntryConfirmationTitle {
+            get {
+                return ResourceManager.GetString("deleteEntryConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Call.
+        /// </summary>
+        internal static string editFormHeaderCreateCall {
+            get {
+                return ResourceManager.GetString("editFormHeaderCreateCall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Call.
+        /// </summary>
+        internal static string editFormHeaderEditCall {
+            get {
+                return ResourceManager.GetString("editFormHeaderEditCall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English already selected!.
         /// </summary>
         internal static string EnglishLanguageCaption {
@@ -75,6 +156,51 @@ namespace CallManagement.Messages {
         internal static string GreekLanguageCaption {
             get {
                 return ResourceManager.GetString("GreekLanguageCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something went wrong....
+        /// </summary>
+        internal static string languageChangeRestartAppException {
+            get {
+                return ResourceManager.GetString("languageChangeRestartAppException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart application?.
+        /// </summary>
+        internal static string languageChangeRestartAppText {
+            get {
+                return ResourceManager.GetString("languageChangeRestartAppText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        internal static string languageChangeRestartAppTitle {
+            get {
+                return ResourceManager.GetString("languageChangeRestartAppTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to restore Default Layout? Your current layout will be deleted!.
+        /// </summary>
+        internal static string resetLayoutText {
+            get {
+                return ResourceManager.GetString("resetLayoutText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore Default Layout.
+        /// </summary>
+        internal static string resetLayoutTitle {
+            get {
+                return ResourceManager.GetString("resetLayoutTitle", resourceCulture);
             }
         }
     }

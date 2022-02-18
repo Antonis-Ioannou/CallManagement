@@ -117,10 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApplicationClosingConfirmationText" xml:space="preserve">
+    <value>Έξοδος από το πρόγραμμα;</value>
+  </data>
+  <data name="ApplicationClosingConfirmationTitle" xml:space="preserve">
+    <value>Έξοδος</value>
+  </data>
+  <data name="barStatusItemInbound" xml:space="preserve">
+    <value>Εισερχόμενες: </value>
+  </data>
+  <data name="barStatusItemOutbound" xml:space="preserve">
+    <value>Εξερχόμενες: </value>
+  </data>
+  <data name="barStatusItemTotalCalls" xml:space="preserve">
+    <value>Σύνολο Κλήσεων: </value>
+  </data>
+  <data name="deleteEntryConfirmationText" xml:space="preserve">
+    <value>Είστε σίγουροι ότι θέλετε να διαγράψετε την καταχώρηση;</value>
+  </data>
+  <data name="deleteEntryConfirmationTitle" xml:space="preserve">
+    <value>Διαγραφή καταχώρησης</value>
+  </data>
+  <data name="editFormHeaderCreateCall" xml:space="preserve">
+    <value>Δημιουργία Εγγραφής</value>
+  </data>
+  <data name="editFormHeaderEditCall" xml:space="preserve">
+    <value>Τροποποίηση Εγγραφής</value>
+  </data>
   <data name="EnglishLanguageCaption" xml:space="preserve">
     <value>Επιλέχθηκαν Αγγλίκά. Χρεαιάζεται να γίνει επανεκίνηση για την εφαρμογή των νέων επιλογών</value>
   </data>
   <data name="GreekLanguageCaption" xml:space="preserve">
     <value>Ελληνικά ήδη επιλεγμένα!</value>
+  </data>
+  <data name="languageChangeRestartAppException" xml:space="preserve">
+    <value>Κάτι πήγε στραβά...</value>
+  </data>
+  <data name="languageChangeRestartAppText" xml:space="preserve">
+    <value>Επανεκίνηση εφαρμογής;</value>
+  </data>
+  <data name="languageChangeRestartAppTitle" xml:space="preserve">
+    <value>Επανεκίνηση</value>
+  </data>
+  <data name="resetLayoutText" xml:space="preserve">
+    <value>Επαναφορά αρχικής διάταξης; Η τρέχουσα διάταξη, θα διαγραφεί.</value>
+  </data>
+  <data name="resetLayoutTitle" xml:space="preserve">
+    <value>Επαναφορά αρχικής διάταξης</value>
   </data>
 </root>
