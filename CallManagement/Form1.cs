@@ -100,6 +100,8 @@ namespace CallManagement
             if (string.IsNullOrEmpty(ConnectionString))
             {
                 Form formLogin = new Login();
+                formLogin.StartPosition = FormStartPosition.Manual;
+                formLogin.Location = Settings.Default.F1Location;
                 formLogin.ShowDialog();
                 if (formLogin.DialogResult != DialogResult.OK)
                 {
