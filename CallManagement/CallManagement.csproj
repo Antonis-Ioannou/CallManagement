@@ -126,6 +126,9 @@
     <EmbeddedResource Include="CallReciever.resx">
       <DependentUpon>CallReciever.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CallTypes.el.resx">
+      <DependentUpon>CallTypes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CallTypes.resx">
       <DependentUpon>CallTypes.cs</DependentUpon>
     </EmbeddedResource>
