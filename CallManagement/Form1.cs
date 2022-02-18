@@ -461,7 +461,15 @@ namespace CallManagement
             else
             {
                 EditEntry editEntry = new EditEntry(id);
-                editEntry.Text = id < 0 ? editEntry.Text = "Create Call" : editEntry.Text = "Edit Call";
+                if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
+                {
+                    editEntry.Text = id < 0 ? editEntry.Text = "Create Call" : editEntry.Text = "Edit Call";
+                }
+                else
+                {
+                    editEntry.Text = id < 0 ? editEntry.Text = "Δημιουργία Εγγραφής" : editEntry.Text = "Τροποποίηση Εγγραφής";
+                }
+                
                 editEntry.ReloadDataEvent += EditEntry_ReloadDataEvent;
                 editEntry.Show();
             }
