@@ -147,20 +147,44 @@ namespace CallManagement
 
         private void formCallTypes(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form formCallTypes = new CallTypes();
-            formCallTypes.Show();
+            var formCallTypes = Application.OpenForms.OfType<CallTypes>().Select(t => t).FirstOrDefault();
+            if (formCallTypes != null)
+            {
+                formCallTypes.BringToFront();
+            }
+            else
+            {
+                formCallTypes = new CallTypes();
+                formCallTypes.Show();
+            }
         }
 
         private void formCallingContact(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form formCallingContact = new CallingContact();
-            formCallingContact.Show();
+            var formCallingContact = Application.OpenForms.OfType<CallingContact>().Select(t => t).FirstOrDefault();
+            if (formCallingContact != null)
+            {
+                formCallingContact.BringToFront();
+            }
+            else
+            {
+                formCallingContact = new CallingContact();
+                formCallingContact.Show();
+            }
         }
 
         private void formCallReciever(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form formCallReciever = new CallReciever();
-            formCallReciever.Show();
+            var formCallReciever = Application.OpenForms.OfType<CallReciever>().Select(t => t).FirstOrDefault();
+            if (formCallReciever != null)
+            {
+                formCallReciever.BringToFront();
+            }
+            else
+            {
+                formCallReciever = new CallReciever();
+                formCallReciever.Show();
+            }
         }
 
         //---Status bar info---//
