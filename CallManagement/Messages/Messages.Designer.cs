@@ -106,6 +106,15 @@ namespace CallManagement.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string bbiDelet_Caption {
+            get {
+                return ResourceManager.GetString("bbiDelet.Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete this entry?.
         /// </summary>
         internal static string deleteEntryConfirmationText {
@@ -120,6 +129,24 @@ namespace CallManagement.Messages {
         internal static string deleteEntryConfirmationTitle {
             get {
                 return ResourceManager.GetString("deleteEntryConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you like to save before exit?.
+        /// </summary>
+        internal static string editFormClosingText {
+            get {
+                return ResourceManager.GetString("editFormClosingText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm exit.
+        /// </summary>
+        internal static string editFormClosingTitle {
+            get {
+                return ResourceManager.GetString("editFormClosingTitle", resourceCulture);
             }
         }
         

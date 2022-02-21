@@ -132,11 +132,20 @@
   <data name="barStatusItemTotalCalls" xml:space="preserve">
     <value>Σύνολο Κλήσεων: </value>
   </data>
+  <data name="bbiDelet.Caption" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
   <data name="deleteEntryConfirmationText" xml:space="preserve">
     <value>Είστε σίγουροι ότι θέλετε να διαγράψετε την καταχώρηση;</value>
   </data>
   <data name="deleteEntryConfirmationTitle" xml:space="preserve">
     <value>Διαγραφή καταχώρησης</value>
+  </data>
+  <data name="editFormClosingText" xml:space="preserve">
+    <value>Αποθήκευση αλλαγών πριν την έξοδο;</value>
+  </data>
+  <data name="editFormClosingTitle" xml:space="preserve">
+    <value>Αποθήκευση αλλαγών;</value>
   </data>
   <data name="editFormHeaderCreateCall" xml:space="preserve">
     <value>Δημιουργία Εγγραφής</value>

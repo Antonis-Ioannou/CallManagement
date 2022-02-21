@@ -185,12 +185,9 @@ namespace CallManagement.Crud_Operations
                 return;
             }
 
-            string text = "Would you like to save before exit?";
-            string title = "Confirm exit";
+            string text = Messages.Messages.editFormClosingText;
+            string title = Messages.Messages.editFormClosingTitle;
             var buttons = MessageBoxButtons.YesNoCancel;
-            //string text2 = "Confirm exit?";
-            //string title2 = "Confirm exit";
-            //var buttons2 = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Question;
 
             if (e.CloseReason == CloseReason.UserClosing)
@@ -211,44 +208,22 @@ namespace CallManagement.Crud_Operations
                         e.Cancel = true;
                     }
                 }
-                //else
-                //{
-                //    DialogResult result2 = MessageBox.Show(text2, title2, buttons2, icon);
-                //    if (result2 == DialogResult.No)
-                //    {
-                //        e.Cancel = true;
-                //    }
-                //}
             }
         }
 
         private void bbiDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string warning = "Are you sure you want to delete this entry?";
-            string title = "Delete Entry";
-            string warning2 = "Επιβεβαίωση διαγραφής;";
-            string title2 = "Διαγραφή Κλήσης";
+            var text = Messages.Messages.deleteEntryConfirmationText;
+            var title = Messages.Messages.deleteEntryConfirmationTitle;
             var buttons = MessageBoxButtons.YesNo;
             var icon = MessageBoxIcon.Warning;
 
-            if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
-            {
-                DialogResult dialogResult = XtraMessageBox.Show(warning, title, buttons, icon);
+            DialogResult dialogResult = XtraMessageBox.Show(text, title, buttons, icon);
                 if (dialogResult == DialogResult.Yes)
                 {
                     bindingSource1.RemoveCurrent();
                     saveChanges();
                 }
-            }
-            else
-            {
-                DialogResult dialogResult = XtraMessageBox.Show(warning2, title2, buttons, icon);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    bindingSource1.RemoveCurrent();
-                    saveChanges();
-                }
-            }
         }
     }
 }
