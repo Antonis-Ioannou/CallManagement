@@ -32,13 +32,11 @@ namespace CallManagement
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
-            this.bsiLanguage = new DevExpress.XtraBars.BarSubItem();
-            this.bciEnglish = new DevExpress.XtraBars.BarCheckItem();
-            this.bciGreek = new DevExpress.XtraBars.BarCheckItem();
-            this.bsiSkin = new DevExpress.XtraBars.BarSubItem();
-            this.skinList = new DevExpress.XtraBars.SkinBarSubItem();
-            this.skinPaletteDropDown = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
+            this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.bsviSettings = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.bbiCallTypes = new DevExpress.XtraBars.BarButtonItem();
             this.bbiCallingContact = new DevExpress.XtraBars.BarButtonItem();
             this.bbiCallReceiver = new DevExpress.XtraBars.BarButtonItem();
@@ -47,12 +45,19 @@ namespace CallManagement
             this.bbiEditEntry = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDeleteEntry = new DevExpress.XtraBars.BarButtonItem();
             this.bbiRefreshData = new DevExpress.XtraBars.BarButtonItem();
+            this.bsiLanguage = new DevExpress.XtraBars.BarSubItem();
+            this.bciEnglish = new DevExpress.XtraBars.BarCheckItem();
+            this.bciGreek = new DevExpress.XtraBars.BarCheckItem();
+            this.bsiSkin = new DevExpress.XtraBars.BarSubItem();
+            this.skinList = new DevExpress.XtraBars.SkinBarSubItem();
+            this.skinPaletteDropDown = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
             this.ribbonPageManageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgActions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgParameters = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageLayout = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgLayout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.barToggleSwitchItem3 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barToggleSwitchItem4 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -103,10 +108,17 @@ namespace CallManagement
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
-            this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.bsviSettings = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.lciLanguage = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
+            this.backstageViewControl1.SuspendLayout();
+            this.backstageViewClientControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -123,8 +135,10 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
-            this.backstageViewControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciLanguage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -156,57 +170,49 @@ namespace CallManagement
             this.ribbonPageCalls,
             this.ribbonPageLayout});
             // 
-            // applicationMenu1
+            // backstageViewControl1
             // 
-            this.applicationMenu1.ItemLinks.Add(this.bsiLanguage);
-            this.applicationMenu1.ItemLinks.Add(this.bsiSkin);
-            this.applicationMenu1.Name = "applicationMenu1";
-            this.applicationMenu1.Ribbon = this.ribbonControl1;
-            this.applicationMenu1.ShowRightPane = true;
+            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl1);
+            this.backstageViewControl1.Items.Add(this.bsviSettings);
+            resources.ApplyResources(this.backstageViewControl1, "backstageViewControl1");
+            this.backstageViewControl1.Name = "backstageViewControl1";
+            this.backstageViewControl1.OwnerControl = this.ribbonControl1;
+            this.backstageViewControl1.SelectedTab = this.bsviSettings;
+            this.backstageViewControl1.SelectedTabIndex = 0;
+            this.backstageViewControl1.VisibleInDesignTime = true;
             // 
-            // bsiLanguage
+            // backstageViewClientControl1
             // 
-            resources.ApplyResources(this.bsiLanguage, "bsiLanguage");
-            this.bsiLanguage.Id = 16;
-            this.bsiLanguage.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bciEnglish),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bciGreek)});
-            this.bsiLanguage.Name = "bsiLanguage";
+            this.backstageViewClientControl1.Controls.Add(this.layoutControl2);
+            resources.ApplyResources(this.backstageViewClientControl1, "backstageViewClientControl1");
+            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
             // 
-            // bciEnglish
+            // layoutControl2
             // 
-            resources.ApplyResources(this.bciEnglish, "bciEnglish");
-            this.bciEnglish.Id = 34;
-            this.bciEnglish.Name = "bciEnglish";
-            this.bciEnglish.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.setEnglish);
+            this.layoutControl2.Controls.Add(this.comboBoxEdit1);
+            resources.ApplyResources(this.layoutControl2, "layoutControl2");
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.layoutControlGroup1;
             // 
-            // bciGreek
+            // layoutControlGroup1
             // 
-            resources.ApplyResources(this.bciGreek, "bciGreek");
-            this.bciGreek.Id = 35;
-            this.bciGreek.Name = "bciGreek";
-            this.bciGreek.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.setGreek);
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.lciLanguage,
+            this.emptySpaceItem1,
+            this.emptySpaceItem3});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(825, 399);
+            this.layoutControlGroup1.TextVisible = false;
             // 
-            // bsiSkin
+            // bsviSettings
             // 
-            resources.ApplyResources(this.bsiSkin, "bsiSkin");
-            this.bsiSkin.Id = 17;
-            this.bsiSkin.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinList),
-            new DevExpress.XtraBars.LinkPersistInfo(this.skinPaletteDropDown)});
-            this.bsiSkin.Name = "bsiSkin";
-            // 
-            // skinList
-            // 
-            this.skinList.AllowSerializeChildren = DevExpress.Utils.DefaultBoolean.False;
-            resources.ApplyResources(this.skinList, "skinList");
-            this.skinList.Id = 27;
-            this.skinList.Name = "skinList";
-            // 
-            // skinPaletteDropDown
-            // 
-            this.skinPaletteDropDown.Id = 29;
-            this.skinPaletteDropDown.Name = "skinPaletteDropDown";
+            this.bsviSettings.AllowHtmlString = true;
+            resources.ApplyResources(this.bsviSettings, "bsviSettings");
+            this.bsviSettings.ContentControl = this.backstageViewClientControl1;
+            this.bsviSettings.Name = "bsviSettings";
+            this.bsviSettings.Selected = true;
             // 
             // bbiCallTypes
             // 
@@ -274,6 +280,50 @@ namespace CallManagement
             this.bbiRefreshData.Name = "bbiRefreshData";
             this.bbiRefreshData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshData);
             // 
+            // bsiLanguage
+            // 
+            resources.ApplyResources(this.bsiLanguage, "bsiLanguage");
+            this.bsiLanguage.Id = 16;
+            this.bsiLanguage.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bciEnglish),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bciGreek)});
+            this.bsiLanguage.Name = "bsiLanguage";
+            // 
+            // bciEnglish
+            // 
+            resources.ApplyResources(this.bciEnglish, "bciEnglish");
+            this.bciEnglish.Id = 34;
+            this.bciEnglish.Name = "bciEnglish";
+            this.bciEnglish.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.setEnglish);
+            // 
+            // bciGreek
+            // 
+            resources.ApplyResources(this.bciGreek, "bciGreek");
+            this.bciGreek.Id = 35;
+            this.bciGreek.Name = "bciGreek";
+            this.bciGreek.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.setGreek);
+            // 
+            // bsiSkin
+            // 
+            resources.ApplyResources(this.bsiSkin, "bsiSkin");
+            this.bsiSkin.Id = 17;
+            this.bsiSkin.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinList),
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinPaletteDropDown)});
+            this.bsiSkin.Name = "bsiSkin";
+            // 
+            // skinList
+            // 
+            this.skinList.AllowSerializeChildren = DevExpress.Utils.DefaultBoolean.False;
+            resources.ApplyResources(this.skinList, "skinList");
+            this.skinList.Id = 27;
+            this.skinList.Name = "skinList";
+            // 
+            // skinPaletteDropDown
+            // 
+            this.skinPaletteDropDown.Id = 29;
+            this.skinPaletteDropDown.Name = "skinPaletteDropDown";
+            // 
             // ribbonPageManageCalls
             // 
             this.ribbonPageManageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -317,6 +367,14 @@ namespace CallManagement
             this.rpgLayout.ItemLinks.Add(this.bbiResetLayout);
             this.rpgLayout.Name = "rpgLayout";
             resources.ApplyResources(this.rpgLayout, "rpgLayout");
+            // 
+            // applicationMenu1
+            // 
+            this.applicationMenu1.ItemLinks.Add(this.bsiLanguage);
+            this.applicationMenu1.ItemLinks.Add(this.bsiSkin);
+            this.applicationMenu1.Name = "applicationMenu1";
+            this.applicationMenu1.Ribbon = this.ribbonControl1;
+            this.applicationMenu1.ShowRightPane = true;
             // 
             // barToggleSwitchItem3
             // 
@@ -674,29 +732,45 @@ namespace CallManagement
             resources.ApplyResources(this.barDockControlRight, "barDockControlRight");
             this.barDockControlRight.Manager = this.barManager1;
             // 
-            // backstageViewControl1
+            // comboBoxEdit1
             // 
-            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl1);
-            this.backstageViewControl1.Items.Add(this.bsviSettings);
-            resources.ApplyResources(this.backstageViewControl1, "backstageViewControl1");
-            this.backstageViewControl1.Name = "backstageViewControl1";
-            this.backstageViewControl1.OwnerControl = this.ribbonControl1;
-            this.backstageViewControl1.SelectedTab = this.bsviSettings;
-            this.backstageViewControl1.SelectedTabIndex = 0;
-            this.backstageViewControl1.VisibleInDesignTime = true;
+            resources.ApplyResources(this.comboBoxEdit1, "comboBoxEdit1");
+            this.comboBoxEdit1.MenuManager = this.ribbonControl1;
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEdit1.Properties.Buttons"))))});
+            this.comboBoxEdit1.StyleController = this.layoutControl2;
             // 
-            // backstageViewClientControl1
+            // lciLanguage
             // 
-            resources.ApplyResources(this.backstageViewClientControl1, "backstageViewClientControl1");
-            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
+            this.lciLanguage.Control = this.comboBoxEdit1;
+            this.lciLanguage.Location = new System.Drawing.Point(0, 0);
+            this.lciLanguage.MaxSize = new System.Drawing.Size(325, 24);
+            this.lciLanguage.MinSize = new System.Drawing.Size(325, 24);
+            this.lciLanguage.Name = "lciLanguage";
+            this.lciLanguage.Size = new System.Drawing.Size(325, 24);
+            this.lciLanguage.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.lciLanguage, "lciLanguage");
+            this.lciLanguage.TextSize = new System.Drawing.Size(47, 13);
             // 
-            // bsviSettings
+            // emptySpaceItem1
             // 
-            this.bsviSettings.AllowHtmlString = true;
-            resources.ApplyResources(this.bsviSettings, "bsviSettings");
-            this.bsviSettings.ContentControl = this.backstageViewClientControl1;
-            this.bsviSettings.Name = "bsviSettings";
-            this.bsviSettings.Selected = true;
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 355);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(325, 0);
+            this.emptySpaceItem3.MaxSize = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem3.MinSize = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Form1
             // 
@@ -714,6 +788,12 @@ namespace CallManagement
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Closing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
+            this.backstageViewControl1.ResumeLayout(false);
+            this.backstageViewClientControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -730,8 +810,10 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
-            this.backstageViewControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciLanguage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -814,6 +896,12 @@ namespace CallManagement
         private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl1;
         private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl1;
         private DevExpress.XtraBars.Ribbon.BackstageViewTabItem bsviSettings;
+        private DevExpress.XtraLayout.LayoutControl layoutControl2;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem lciLanguage;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
     }
 }
 
