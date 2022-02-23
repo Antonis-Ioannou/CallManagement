@@ -36,7 +36,15 @@ namespace CallManagement
 
             using (FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                cultureString = xmlSerializer.Deserialize(fs).ToString();
+                if (string.IsNullOrEmpty(cultureString))
+                {
+                    cultureString = "en";
+                }
+                else
+                {
+                    cultureString = xmlSerializer.Deserialize(fs).ToString();
+                }
+                
             }
         }
 
