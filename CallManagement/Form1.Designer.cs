@@ -30,6 +30,7 @@ namespace CallManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
@@ -114,6 +115,10 @@ namespace CallManagement
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.cbeSkins = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.lciSkins = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -143,6 +148,10 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeSkins.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciSkins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -193,6 +202,7 @@ namespace CallManagement
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.cbeSkins);
             this.layoutControl2.Controls.Add(this.cbeLanguage);
             resources.ApplyResources(this.layoutControl2, "layoutControl2");
             this.layoutControl2.Name = "layoutControl2";
@@ -215,7 +225,10 @@ namespace CallManagement
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.lciLanguage,
             this.emptySpaceItem1,
-            this.emptySpaceItem3});
+            this.emptySpaceItem3,
+            this.lciSkins,
+            this.emptySpaceItem2,
+            this.emptySpaceItem4});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(825, 399);
             this.layoutControlGroup1.TextVisible = false;
@@ -235,9 +248,9 @@ namespace CallManagement
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 84);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 355);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 295);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -785,6 +798,47 @@ namespace CallManagement
             this.sharedImageCollection1.ImageSource.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("sharedImageCollection1.ImageSource.ImageStream")));
             this.sharedImageCollection1.ParentControl = this;
             // 
+            // cbeSkins
+            // 
+            resources.ApplyResources(this.cbeSkins, "cbeSkins");
+            this.cbeSkins.MenuManager = this.ribbonControl1;
+            this.cbeSkins.Name = "cbeSkins";
+            this.cbeSkins.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEdit1.Properties.Buttons"))))});
+            this.cbeSkins.StyleController = this.layoutControl2;
+            this.cbeSkins.SelectedIndexChanged += new System.EventHandler(this.changeSkin);
+            // 
+            // lciSkins
+            // 
+            this.lciSkins.Control = this.cbeSkins;
+            this.lciSkins.Location = new System.Drawing.Point(0, 60);
+            this.lciSkins.MaxSize = new System.Drawing.Size(325, 24);
+            this.lciSkins.MinSize = new System.Drawing.Size(325, 24);
+            this.lciSkins.Name = "lciSkins";
+            this.lciSkins.Size = new System.Drawing.Size(325, 24);
+            this.lciSkins.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.lciSkins, "lciSkins");
+            this.lciSkins.TextSize = new System.Drawing.Size(47, 13);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(805, 36);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(325, 60);
+            this.emptySpaceItem4.MaxSize = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem4.MinSize = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -829,6 +883,10 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeSkins.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciSkins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -919,6 +977,10 @@ namespace CallManagement
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.Utils.SharedImageCollection sharedImageCollection1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraEditors.ComboBoxEdit cbeSkins;
+        private DevExpress.XtraLayout.LayoutControlItem lciSkins;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
     }
 }
 

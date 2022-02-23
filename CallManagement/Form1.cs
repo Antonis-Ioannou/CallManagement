@@ -2,6 +2,7 @@
 using CallManagement.Messages;
 using CallManagement.Properties;
 using DevExpress.LookAndFeel;
+using DevExpress.Skins;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraEditors;
 using System;
@@ -130,6 +131,12 @@ namespace CallManagement
             List<string> languages = new List<string> {"English", "Ελληνικά" };
             DevExpress.XtraEditors.Repository.RepositoryItemComboBox properties = cbeLanguage.Properties;
             properties.Items.AddRange(languages);
+            //---backstage view skin settings---//
+            DevExpress.UserSkins.BonusSkins.Register();
+            foreach (SkinContainer cnt in SkinManager.Default.Skins)
+            {
+                cbeSkins.Properties.Items.Add(cnt.SkinName);
+            }
         }
 
         private void FillTableAdapter()
@@ -509,7 +516,6 @@ namespace CallManagement
                 if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
                 {
                     XtraMessageBox.Show(Messages.Messages.EnglishLanguageCaption);
-                    cbeLanguage.BackColor = Color.Aqua;
                     return;
                 }
 
@@ -610,6 +616,18 @@ namespace CallManagement
                         }
                     }
                 }
+            }
+        }
+
+        private void changeSkin(object sender, EventArgs e)
+        {
+            ComboBoxEdit comboBox = sender as ComboBoxEdit;
+            string skinName = comboBox.Text;
+            switch (skinName)
+            {
+                default:
+                    UserLookAndFeel.Default.SkinName = skinName;
+                    break;
             }
         }
     }
