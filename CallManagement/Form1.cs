@@ -287,7 +287,6 @@ namespace CallManagement
 
         //---Reset layout to default---//
         bool restoringDefaultLayout;
-
         private void resetLayoutDefault(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string text = Messages.Messages.resetLayoutText;
@@ -437,12 +436,8 @@ namespace CallManagement
         {
             ComboBoxEdit comboBox = sender as ComboBoxEdit;
             string skinName = comboBox.Text;
-            switch (skinName)
-            {
-                default:
-                    UserLookAndFeel.Default.SkinName = skinName;
-                    break;
-            }
+            if(!string.IsNullOrEmpty(skinName))
+            UserLookAndFeel.Default.SkinName = skinName;
         }
 
         private void refreshData(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -450,6 +445,7 @@ namespace CallManagement
             FillTableAdapter();
         }
 
+        //---application menu change language---//
         private void setGreek(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string setGreek = "el";
@@ -505,7 +501,6 @@ namespace CallManagement
                 }
             }
         }
-    
         private void setEnglish(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string setEnglish = "en";
@@ -573,7 +568,6 @@ namespace CallManagement
             if (gridView1.IsGroupRow(gridView1.FocusedRowHandle)
                || gridView1.RowCount == 0)
                 return;
-            //----------Δουλεύει----------//
             DialogResult dialogResult = XtraMessageBox.Show(warning, title, buttons, icon);
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -591,14 +585,14 @@ namespace CallManagement
             deleteEntryConfirmation();
         }
 
-        //----------//
-
         private void OpenEditForm(int id)
         {
             var openedForm = Application.OpenForms.OfType<EditEntry>().Select(t => t).Where(t => t.SelectedId == id).FirstOrDefault();
 
             if (openedForm != null)
+            {
                 openedForm.BringToFront();
+            }
             else
             {
                 EditEntry editEntry = new EditEntry(id);
