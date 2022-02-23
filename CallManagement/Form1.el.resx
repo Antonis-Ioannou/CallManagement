@@ -863,4 +863,19 @@
   <data name="rpgParameters.Text" xml:space="preserve">
     <value>Παράμετροι</value>
   </data>
+  <data name="bsviSettings.Caption" xml:space="preserve">
+    <value>&lt;i&gt;&lt;b&gt;Ρυθμίσεις&lt;/b&gt;&lt;/i&gt;</value>
+  </data>
+  <data name="lciLanguage.Text" xml:space="preserve">
+    <value>Γλώσσα</value>
+  </data>
+  <data name="lciSkins.Text" xml:space="preserve">
+    <value>Χρώμα Θέματος</value>
+  </data>
+  <data name="rpgPalette.Text" xml:space="preserve">
+    <value>Χρωματική Παλέτα</value>
+  </data>
+  <data name="rpgSkins.Text" xml:space="preserve">
+    <value>Χρώμα Θέματος</value>
+  </data>
 </root>

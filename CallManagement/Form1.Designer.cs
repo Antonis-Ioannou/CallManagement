@@ -30,6 +30,7 @@ namespace CallManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
@@ -118,6 +119,14 @@ namespace CallManagement
             this.lciSkins = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.rpgSkins = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ddbiSkins = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinPaletteDropDownButtonItem4 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.rpgPalette = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ddbiPalette = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.paletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
@@ -173,9 +182,15 @@ namespace CallManagement
             this.skinList,
             this.skinPaletteDropDown,
             this.bciEnglish,
-            this.bciGreek});
+            this.bciGreek,
+            this.ddbiSkins,
+            this.skinPaletteDropDownButtonItem4,
+            this.skinRibbonGalleryBarItem1,
+            this.ddbiPalette,
+            this.skinRibbonGalleryBarItem2,
+            this.paletteRibbonGalleryBarItem1});
             resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
-            this.ribbonControl1.MaxItemId = 36;
+            this.ribbonControl1.MaxItemId = 42;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageManageCalls,
@@ -229,7 +244,7 @@ namespace CallManagement
             this.emptySpaceItem4,
             this.emptySpaceItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(825, 399);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(825, 353);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // lciLanguage
@@ -249,7 +264,7 @@ namespace CallManagement
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 58);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 321);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 275);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -415,7 +430,9 @@ namespace CallManagement
             // ribbonPageLayout
             // 
             this.ribbonPageLayout.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgLayout});
+            this.rpgLayout,
+            this.rpgSkins,
+            this.rpgPalette});
             this.ribbonPageLayout.Name = "ribbonPageLayout";
             resources.ApplyResources(this.ribbonPageLayout, "ribbonPageLayout");
             // 
@@ -841,6 +858,53 @@ namespace CallManagement
             this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // rpgSkins
+            // 
+            this.rpgSkins.ItemLinks.Add(this.ddbiSkins);
+            this.rpgSkins.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
+            this.rpgSkins.Name = "rpgSkins";
+            resources.ApplyResources(this.rpgSkins, "rpgSkins");
+            // 
+            // ddbiSkins
+            // 
+            this.ddbiSkins.Id = 36;
+            this.ddbiSkins.Name = "ddbiSkins";
+            // 
+            // skinPaletteDropDownButtonItem4
+            // 
+            this.skinPaletteDropDownButtonItem4.Id = 37;
+            this.skinPaletteDropDownButtonItem4.Name = "skinPaletteDropDownButtonItem4";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            resources.ApplyResources(this.skinRibbonGalleryBarItem1, "skinRibbonGalleryBarItem1");
+            this.skinRibbonGalleryBarItem1.Id = 38;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
+            // rpgPalette
+            // 
+            this.rpgPalette.ItemLinks.Add(this.ddbiPalette);
+            this.rpgPalette.ItemLinks.Add(this.paletteRibbonGalleryBarItem1);
+            this.rpgPalette.Name = "rpgPalette";
+            resources.ApplyResources(this.rpgPalette, "rpgPalette");
+            // 
+            // ddbiPalette
+            // 
+            this.ddbiPalette.Id = 39;
+            this.ddbiPalette.Name = "ddbiPalette";
+            // 
+            // skinRibbonGalleryBarItem2
+            // 
+            resources.ApplyResources(this.skinRibbonGalleryBarItem2, "skinRibbonGalleryBarItem2");
+            this.skinRibbonGalleryBarItem2.Id = 40;
+            this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
+            // 
+            // paletteRibbonGalleryBarItem1
+            // 
+            resources.ApplyResources(this.paletteRibbonGalleryBarItem1, "paletteRibbonGalleryBarItem1");
+            this.paletteRibbonGalleryBarItem1.Id = 41;
+            this.paletteRibbonGalleryBarItem1.Name = "paletteRibbonGalleryBarItem1";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -983,6 +1047,14 @@ namespace CallManagement
         private DevExpress.XtraLayout.LayoutControlItem lciSkins;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.XtraBars.SkinDropDownButtonItem ddbiSkins;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgSkins;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem4;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem ddbiPalette;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgPalette;
+        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem paletteRibbonGalleryBarItem1;
     }
 }
 

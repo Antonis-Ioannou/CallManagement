@@ -142,7 +142,7 @@
     <value>layoutControl2</value>
   </data>
   <data name="&gt;&gt;cbeSkins.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="cbeLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 12</value>
@@ -182,7 +182,7 @@
     <value>Skins</value>
   </data>
   <data name="layoutControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>825, 399</value>
+    <value>577, 370</value>
   </data>
   <data name="layoutControl2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -206,7 +206,7 @@
     <value>140, 63</value>
   </data>
   <data name="backstageViewClientControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>825, 399</value>
+    <value>577, 370</value>
   </data>
   <data name="backstageViewClientControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -227,10 +227,10 @@
     <value>&lt;i&gt;&lt;b&gt;Settings&lt;/b&gt;&lt;/i&gt;</value>
   </data>
   <data name="backstageViewControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 130</value>
+    <value>359, 62</value>
   </data>
   <data name="backstageViewControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 463</value>
+    <value>718, 434</value>
   </data>
   <data name="backstageViewControl1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -587,35 +587,35 @@
   <data name="bsiLanguage.Caption" xml:space="preserve">
     <value>&amp;Language Settings</value>
   </data>
-  <data name="bciEnglish.Caption" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="bciGreek.Caption" xml:space="preserve">
-    <value>Ελληνικά</value>
-  </data>
   <data name="bsiSkin.Caption" xml:space="preserve">
     <value>&amp;Skin Settings</value>
   </data>
   <data name="skinList.Caption" xml:space="preserve">
     <value>&amp;Skin List</value>
   </data>
+  <data name="bciEnglish.Caption" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="bciGreek.Caption" xml:space="preserve">
+    <value>Ελληνικά</value>
+  </data>
+  <data name="skinRibbonGalleryBarItem1.Caption" xml:space="preserve">
+    <value>skinRibbonGalleryBarItem1</value>
+  </data>
+  <data name="skinRibbonGalleryBarItem2.Caption" xml:space="preserve">
+    <value>skinRibbonGalleryBarItem2</value>
+  </data>
+  <data name="paletteRibbonGalleryBarItem1.Caption" xml:space="preserve">
+    <value>skinPaletteRibbonGalleryBarItem1</value>
+  </data>
   <data name="ribbonControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="rpgActions.Text" xml:space="preserve">
-    <value>Actions</value>
   </data>
   <data name="ribbonPageManageCalls.Text" xml:space="preserve">
     <value>Manage Calls</value>
   </data>
-  <data name="rpgParameters.Text" xml:space="preserve">
-    <value>Parameters</value>
-  </data>
   <data name="ribbonPageCalls.Text" xml:space="preserve">
     <value>Calls Parameters</value>
-  </data>
-  <data name="rpgLayout.Text" xml:space="preserve">
-    <value>Layout</value>
   </data>
   <data name="ribbonPageLayout.Text" xml:space="preserve">
     <value>Layout</value>
@@ -634,6 +634,15 @@
   </data>
   <data name="&gt;&gt;ribbonControl1.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="rpgActions.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="rpgParameters.Text" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="rpgLayout.Text" xml:space="preserve">
+    <value>Layout</value>
   </data>
   <metadata name="applicationMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>577, 56</value>
@@ -783,15 +792,15 @@
   <data name="colTypeId.Caption" xml:space="preserve">
     <value>Call Type</value>
   </data>
+  <metadata name="callsCallTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>401, 17</value>
+  </metadata>
   <data name="repositoryItemLookUpEdit1.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="repositoryItemLookUpEdit1.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
-  <metadata name="callsCallTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>401, 17</value>
-  </metadata>
   <data name="colTypeId.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -804,15 +813,15 @@
   <data name="colReceiverId.Caption" xml:space="preserve">
     <value>Call Reciever</value>
   </data>
+  <metadata name="callsCallRecieverBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>770, 17</value>
+  </metadata>
   <data name="repositoryItemLookUpEdit2.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="repositoryItemLookUpEdit2.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
-  <metadata name="callsCallRecieverBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>770, 17</value>
-  </metadata>
   <data name="colReceiverId.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -825,15 +834,15 @@
   <data name="colCallContactId.Caption" xml:space="preserve">
     <value>Calling Contact</value>
   </data>
+  <metadata name="callsCallingContactBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <data name="repositoryItemLookUpEdit3.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="repositoryItemLookUpEdit3.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
-  <metadata name="callsCallingContactBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <data name="colCallContactId.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -912,6 +921,18 @@
   <data name="&gt;&gt;layoutControl1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>126, 28</value>
+  </metadata>
+  <metadata name="callsCallTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>401, 17</value>
+  </metadata>
+  <metadata name="callsCallRecieverBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>770, 17</value>
+  </metadata>
+  <metadata name="callsCallingContactBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <metadata name="callsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>253, 17</value>
   </metadata>
@@ -927,15 +948,6 @@
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>452, 56</value>
   </metadata>
-  <data name="bsiTotalCalls.Caption" xml:space="preserve">
-    <value>Total Calls</value>
-  </data>
-  <data name="bsiInboundCalls.Caption" xml:space="preserve">
-    <value>Indound</value>
-  </data>
-  <data name="bsiOutboundCalls.Caption" xml:space="preserve">
-    <value>Outbound</value>
-  </data>
   <data name="bar3.Text" xml:space="preserve">
     <value>Status bar</value>
   </data>
@@ -1485,11 +1497,68 @@
   <data name="&gt;&gt;emptySpaceItem4.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;rpgSkins.Name" xml:space="preserve">
+    <value>rpgSkins</value>
+  </data>
+  <data name="&gt;&gt;rpgSkins.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ddbiSkins.Name" xml:space="preserve">
+    <value>ddbiSkins</value>
+  </data>
+  <data name="&gt;&gt;ddbiSkins.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.SkinDropDownButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;skinPaletteDropDownButtonItem4.Name" xml:space="preserve">
+    <value>skinPaletteDropDownButtonItem4</value>
+  </data>
+  <data name="&gt;&gt;skinPaletteDropDownButtonItem4.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.SkinPaletteDropDownButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;skinRibbonGalleryBarItem1.Name" xml:space="preserve">
+    <value>skinRibbonGalleryBarItem1</value>
+  </data>
+  <data name="&gt;&gt;skinRibbonGalleryBarItem1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.SkinRibbonGalleryBarItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;rpgPalette.Name" xml:space="preserve">
+    <value>rpgPalette</value>
+  </data>
+  <data name="&gt;&gt;rpgPalette.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ddbiPalette.Name" xml:space="preserve">
+    <value>ddbiPalette</value>
+  </data>
+  <data name="&gt;&gt;ddbiPalette.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.SkinPaletteDropDownButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;skinRibbonGalleryBarItem2.Name" xml:space="preserve">
+    <value>skinRibbonGalleryBarItem2</value>
+  </data>
+  <data name="&gt;&gt;skinRibbonGalleryBarItem2.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.SkinRibbonGalleryBarItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;paletteRibbonGalleryBarItem1.Name" xml:space="preserve">
+    <value>paletteRibbonGalleryBarItem1</value>
+  </data>
+  <data name="&gt;&gt;paletteRibbonGalleryBarItem1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonForm, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bsiTotalCalls.Caption" xml:space="preserve">
+    <value>Total Calls</value>
+  </data>
+  <data name="bsiInboundCalls.Caption" xml:space="preserve">
+    <value>Indound</value>
+  </data>
+  <data name="bsiOutboundCalls.Caption" xml:space="preserve">
+    <value>Outbound</value>
   </data>
   <metadata name="sharedImageCollection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>727, 56</value>
@@ -1502,7 +1571,7 @@
 </value>
   </data>
   <data name="SharedImageCollection.Timestamp" type="System.DateTime, mscorlib">
-    <value>02/23/2022 11:55:19</value>
+    <value>02/23/2022 12:49:24</value>
   </data>
   <data name="SharedImageCollection.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -1510,4 +1579,10 @@
   <metadata name="defaultLookAndFeel1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>906, 54</value>
   </metadata>
+  <data name="rpgSkins.Text" xml:space="preserve">
+    <value>Skins</value>
+  </data>
+  <data name="rpgPalette.Text" xml:space="preserve">
+    <value>Palette</value>
+  </data>
 </root>
