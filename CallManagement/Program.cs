@@ -19,7 +19,7 @@ namespace CallManagement
         /// </summary>
         [STAThread]
 
-        static void ChangeCulture()
+        static void LoadCulture()
         {
             string fullPath = Path.Combine(path, @"languageSettings.xml");
 
@@ -34,15 +34,15 @@ namespace CallManagement
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
 
-            using (FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (FileStream fs = new FileStream(fullPath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read))
             {
-                if (string.IsNullOrEmpty(cultureString))
-                {
-                    cultureString = "en";
-                }
-                else
+                try
                 {
                     cultureString = xmlSerializer.Deserialize(fs).ToString();
+                }
+                catch
+                {
+                    cultureString = "en";
                 }
                 
             }
@@ -55,7 +55,7 @@ namespace CallManagement
             //enable skins
             //BonusSkins.Register();
             //SkinManager.EnableFormSkins();
-            ChangeCulture();
+            LoadCulture();
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureString);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureString);
             Application.Run(new Form1());

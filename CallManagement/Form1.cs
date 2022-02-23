@@ -234,33 +234,6 @@ namespace CallManagement
 
         }
 
-        private void saveEngCulture(string x)
-        {
-            string setLanguage = x;
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
-            using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
-            {
-                bool saveSuccess = true;
-                try
-                {
-                    xmlSerializer.Serialize(fs, setLanguage);
-                }
-                catch
-                {
-                    saveSuccess = false;
-                }
-                finally
-                {
-                    if (saveSuccess)
-                    {
-
-                        bciEnglish.Checked = true;
-                        bciEnglish.Checked = false;
-                    }
-                }
-            }
-        }
-
         //---Saving position, size of window and skin---//
         private void Form1_Closing(object sender, FormClosingEventArgs e)
         {
@@ -294,10 +267,6 @@ namespace CallManagement
                     settings.SkinName = UserLookAndFeel.Default.SkinName;
                     settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
                     settings.Save();
-
-                    //---if there's no languageSettings.xml and language is not changed within the app, language xml remains empty, resulting in exception next time the app opens!---//
-                    //---so if the user hasnt changed the default lang which is english, lets save english---//
-                    saveEngCulture("en");
 
                     // don't forget to save the settings
                     Settings.Default.Save();

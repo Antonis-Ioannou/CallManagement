@@ -30,17 +30,20 @@ namespace CallManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.cbeSkins = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbeLanguage = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lciLanguage = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.lciSkins = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.bsviSettings = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.bbiCallTypes = new DevExpress.XtraBars.BarButtonItem();
             this.bbiCallingContact = new DevExpress.XtraBars.BarButtonItem();
@@ -56,12 +59,20 @@ namespace CallManagement
             this.bsiSkin = new DevExpress.XtraBars.BarSubItem();
             this.skinList = new DevExpress.XtraBars.SkinBarSubItem();
             this.skinPaletteDropDown = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.ddbiSkins = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinPaletteDropDownButtonItem4 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.ddbiPalette = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.paletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             this.ribbonPageManageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgActions = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageCalls = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgParameters = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageLayout = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rpgLayout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgSkins = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgPalette = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.barToggleSwitchItem3 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barToggleSwitchItem4 = new DevExpress.XtraBars.BarToggleSwitchItem();
@@ -115,29 +126,21 @@ namespace CallManagement
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.sharedImageCollection1 = new DevExpress.Utils.SharedImageCollection(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.cbeSkins = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.lciSkins = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.rpgSkins = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ddbiSkins = new DevExpress.XtraBars.SkinDropDownButtonItem();
-            this.skinPaletteDropDownButtonItem4 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
-            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.rpgPalette = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ddbiPalette = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
-            this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.paletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             this.backstageViewControl1.SuspendLayout();
             this.backstageViewClientControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeSkins.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeLanguage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciLanguage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciSkins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -156,10 +159,6 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeSkins.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lciSkins)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -222,6 +221,17 @@ namespace CallManagement
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
             // 
+            // cbeSkins
+            // 
+            resources.ApplyResources(this.cbeSkins, "cbeSkins");
+            this.cbeSkins.MenuManager = this.ribbonControl1;
+            this.cbeSkins.Name = "cbeSkins";
+            this.cbeSkins.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("cbeSkins.Properties.Buttons"))))});
+            this.cbeSkins.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbeSkins.StyleController = this.layoutControl2;
+            this.cbeSkins.SelectedIndexChanged += new System.EventHandler(this.changeSkin);
+            // 
             // cbeLanguage
             // 
             resources.ApplyResources(this.cbeLanguage, "cbeLanguage");
@@ -229,6 +239,7 @@ namespace CallManagement
             this.cbeLanguage.Name = "cbeLanguage";
             this.cbeLanguage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("cbeLanguage.Properties.Buttons"))))});
+            this.cbeLanguage.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbeLanguage.StyleController = this.layoutControl2;
             this.cbeLanguage.SelectedIndexChanged += new System.EventHandler(this.changeLanguage);
             // 
@@ -277,6 +288,40 @@ namespace CallManagement
             this.emptySpaceItem3.Size = new System.Drawing.Size(480, 24);
             this.emptySpaceItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // lciSkins
+            // 
+            this.lciSkins.Control = this.cbeSkins;
+            this.lciSkins.Location = new System.Drawing.Point(0, 34);
+            this.lciSkins.MaxSize = new System.Drawing.Size(325, 24);
+            this.lciSkins.MinSize = new System.Drawing.Size(325, 24);
+            this.lciSkins.Name = "lciSkins";
+            this.lciSkins.Size = new System.Drawing.Size(325, 24);
+            this.lciSkins.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.lciSkins, "lciSkins");
+            this.lciSkins.TextSize = new System.Drawing.Size(47, 13);
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(325, 34);
+            this.emptySpaceItem4.MaxSize = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem4.MinSize = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(480, 24);
+            this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(805, 10);
+            this.emptySpaceItem2.MinSize = new System.Drawing.Size(805, 10);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(805, 10);
+            this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // bsviSettings
             // 
@@ -396,6 +441,39 @@ namespace CallManagement
             this.skinPaletteDropDown.Id = 29;
             this.skinPaletteDropDown.Name = "skinPaletteDropDown";
             // 
+            // ddbiSkins
+            // 
+            this.ddbiSkins.Id = 36;
+            this.ddbiSkins.Name = "ddbiSkins";
+            // 
+            // skinPaletteDropDownButtonItem4
+            // 
+            this.skinPaletteDropDownButtonItem4.Id = 37;
+            this.skinPaletteDropDownButtonItem4.Name = "skinPaletteDropDownButtonItem4";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            resources.ApplyResources(this.skinRibbonGalleryBarItem1, "skinRibbonGalleryBarItem1");
+            this.skinRibbonGalleryBarItem1.Id = 38;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
+            // ddbiPalette
+            // 
+            this.ddbiPalette.Id = 39;
+            this.ddbiPalette.Name = "ddbiPalette";
+            // 
+            // skinRibbonGalleryBarItem2
+            // 
+            resources.ApplyResources(this.skinRibbonGalleryBarItem2, "skinRibbonGalleryBarItem2");
+            this.skinRibbonGalleryBarItem2.Id = 40;
+            this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
+            // 
+            // paletteRibbonGalleryBarItem1
+            // 
+            resources.ApplyResources(this.paletteRibbonGalleryBarItem1, "paletteRibbonGalleryBarItem1");
+            this.paletteRibbonGalleryBarItem1.Id = 41;
+            this.paletteRibbonGalleryBarItem1.Name = "paletteRibbonGalleryBarItem1";
+            // 
             // ribbonPageManageCalls
             // 
             this.ribbonPageManageCalls.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -441,6 +519,20 @@ namespace CallManagement
             this.rpgLayout.ItemLinks.Add(this.bbiResetLayout);
             this.rpgLayout.Name = "rpgLayout";
             resources.ApplyResources(this.rpgLayout, "rpgLayout");
+            // 
+            // rpgSkins
+            // 
+            this.rpgSkins.ItemLinks.Add(this.ddbiSkins);
+            this.rpgSkins.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
+            this.rpgSkins.Name = "rpgSkins";
+            resources.ApplyResources(this.rpgSkins, "rpgSkins");
+            // 
+            // rpgPalette
+            // 
+            this.rpgPalette.ItemLinks.Add(this.ddbiPalette);
+            this.rpgPalette.ItemLinks.Add(this.paletteRibbonGalleryBarItem1);
+            this.rpgPalette.Name = "rpgPalette";
+            resources.ApplyResources(this.rpgPalette, "rpgPalette");
             // 
             // applicationMenu1
             // 
@@ -814,97 +906,6 @@ namespace CallManagement
             this.sharedImageCollection1.ImageSource.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("sharedImageCollection1.ImageSource.ImageStream")));
             this.sharedImageCollection1.ParentControl = this;
             // 
-            // cbeSkins
-            // 
-            resources.ApplyResources(this.cbeSkins, "cbeSkins");
-            this.cbeSkins.MenuManager = this.ribbonControl1;
-            this.cbeSkins.Name = "cbeSkins";
-            this.cbeSkins.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEdit1.Properties.Buttons"))))});
-            this.cbeSkins.StyleController = this.layoutControl2;
-            this.cbeSkins.SelectedIndexChanged += new System.EventHandler(this.changeSkin);
-            // 
-            // lciSkins
-            // 
-            this.lciSkins.Control = this.cbeSkins;
-            this.lciSkins.Location = new System.Drawing.Point(0, 34);
-            this.lciSkins.MaxSize = new System.Drawing.Size(325, 24);
-            this.lciSkins.MinSize = new System.Drawing.Size(325, 24);
-            this.lciSkins.Name = "lciSkins";
-            this.lciSkins.Size = new System.Drawing.Size(325, 24);
-            this.lciSkins.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.lciSkins, "lciSkins");
-            this.lciSkins.TextSize = new System.Drawing.Size(47, 13);
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 24);
-            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(805, 10);
-            this.emptySpaceItem2.MinSize = new System.Drawing.Size(805, 10);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(805, 10);
-            this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(325, 34);
-            this.emptySpaceItem4.MaxSize = new System.Drawing.Size(480, 24);
-            this.emptySpaceItem4.MinSize = new System.Drawing.Size(480, 24);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(480, 24);
-            this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // rpgSkins
-            // 
-            this.rpgSkins.ItemLinks.Add(this.ddbiSkins);
-            this.rpgSkins.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
-            this.rpgSkins.Name = "rpgSkins";
-            resources.ApplyResources(this.rpgSkins, "rpgSkins");
-            // 
-            // ddbiSkins
-            // 
-            this.ddbiSkins.Id = 36;
-            this.ddbiSkins.Name = "ddbiSkins";
-            // 
-            // skinPaletteDropDownButtonItem4
-            // 
-            this.skinPaletteDropDownButtonItem4.Id = 37;
-            this.skinPaletteDropDownButtonItem4.Name = "skinPaletteDropDownButtonItem4";
-            // 
-            // skinRibbonGalleryBarItem1
-            // 
-            resources.ApplyResources(this.skinRibbonGalleryBarItem1, "skinRibbonGalleryBarItem1");
-            this.skinRibbonGalleryBarItem1.Id = 38;
-            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
-            // 
-            // rpgPalette
-            // 
-            this.rpgPalette.ItemLinks.Add(this.ddbiPalette);
-            this.rpgPalette.ItemLinks.Add(this.paletteRibbonGalleryBarItem1);
-            this.rpgPalette.Name = "rpgPalette";
-            resources.ApplyResources(this.rpgPalette, "rpgPalette");
-            // 
-            // ddbiPalette
-            // 
-            this.ddbiPalette.Id = 39;
-            this.ddbiPalette.Name = "ddbiPalette";
-            // 
-            // skinRibbonGalleryBarItem2
-            // 
-            resources.ApplyResources(this.skinRibbonGalleryBarItem2, "skinRibbonGalleryBarItem2");
-            this.skinRibbonGalleryBarItem2.Id = 40;
-            this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
-            // 
-            // paletteRibbonGalleryBarItem1
-            // 
-            resources.ApplyResources(this.paletteRibbonGalleryBarItem1, "paletteRibbonGalleryBarItem1");
-            this.paletteRibbonGalleryBarItem1.Id = 41;
-            this.paletteRibbonGalleryBarItem1.Name = "paletteRibbonGalleryBarItem1";
-            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -926,11 +927,15 @@ namespace CallManagement
             this.backstageViewClientControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbeSkins.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbeLanguage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciLanguage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciSkins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -949,10 +954,6 @@ namespace CallManagement
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1.ImageSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sharedImageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbeSkins.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lciSkins)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
