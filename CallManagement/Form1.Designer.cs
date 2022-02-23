@@ -30,7 +30,6 @@ namespace CallManagement
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
@@ -227,8 +226,8 @@ namespace CallManagement
             this.emptySpaceItem1,
             this.emptySpaceItem3,
             this.lciSkins,
-            this.emptySpaceItem2,
-            this.emptySpaceItem4});
+            this.emptySpaceItem4,
+            this.emptySpaceItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(825, 399);
             this.layoutControlGroup1.TextVisible = false;
@@ -248,9 +247,9 @@ namespace CallManagement
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 84);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 58);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 295);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 321);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -811,7 +810,7 @@ namespace CallManagement
             // lciSkins
             // 
             this.lciSkins.Control = this.cbeSkins;
-            this.lciSkins.Location = new System.Drawing.Point(0, 60);
+            this.lciSkins.Location = new System.Drawing.Point(0, 34);
             this.lciSkins.MaxSize = new System.Drawing.Size(325, 24);
             this.lciSkins.MinSize = new System.Drawing.Size(325, 24);
             this.lciSkins.Name = "lciSkins";
@@ -824,14 +823,17 @@ namespace CallManagement
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(805, 10);
+            this.emptySpaceItem2.MinSize = new System.Drawing.Size(805, 10);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(805, 36);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(805, 10);
+            this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(325, 60);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(325, 34);
             this.emptySpaceItem4.MaxSize = new System.Drawing.Size(480, 24);
             this.emptySpaceItem4.MinSize = new System.Drawing.Size(480, 24);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
