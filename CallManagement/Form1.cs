@@ -125,6 +125,11 @@ namespace CallManagement
 
             GetConnectionString();
             FillTableAdapter();
+
+            //---backstage view language settings---//
+            List<string> languages = new List<string> {"English", "Ελληνικά" };
+            DevExpress.XtraEditors.Repository.RepositoryItemComboBox properties = cbeLanguage.Properties;
+            properties.Items.AddRange(languages);
         }
 
         private void FillTableAdapter()
@@ -492,6 +497,120 @@ namespace CallManagement
             if (e.PreviousVersion != gridView1.OptionsLayout.LayoutVersion
                 && !restoringDefaultLayout)
                 e.Allow = false;
+        }
+
+        private void changeLanguage(object sender, EventArgs e)
+        {
+            int langIndex = cbeLanguage.SelectedIndex;
+            if (langIndex ==0)
+            {
+                string setEnglish = "en";
+
+                if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
+                {
+                    XtraMessageBox.Show(Messages.Messages.EnglishLanguageCaption);
+                    cbeLanguage.BackColor = Color.Aqua;
+                    return;
+                }
+
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+                using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    bool saveSuccess = true;
+                    try
+                    {
+                        xmlSerializer.Serialize(fs, setEnglish);
+                    }
+                    catch
+                    {
+                        saveSuccess = false;
+                    }
+                    finally
+                    {
+                        XtraMessageBox.Show(Messages.Messages.EnglishLanguageCaption);
+                        string restartNow = Messages.Messages.languageChangeRestartAppText;
+                        string title = Messages.Messages.languageChangeRestartAppTitle;
+                        string exception = Messages.Messages.languageChangeRestartAppException;
+                        var buttons = MessageBoxButtons.YesNo;
+                        var icon = MessageBoxIcon.Question;
+                        if (saveSuccess)
+                        {
+                            DialogResult dialogResult = XtraMessageBox.Show(restartNow, title, buttons, icon);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                System.Diagnostics.Process.Start(Application.ExecutablePath);
+                                Process.GetCurrentProcess().Kill();
+                                bciGreek.Checked = false;
+                                bciEnglish.Checked = true;
+                            }
+                            bciEnglish.Checked = false;
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(exception);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                string setGreek = "el";
+
+                if (System.Globalization.CultureInfo.CurrentCulture.Name == "el")
+                {
+                    XtraMessageBox.Show(Messages.Messages.GreekLanguageCaption);
+                    
+                    return;
+                }
+
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+                using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    string restartNow2 = Messages.Messages.languageChangeRestartAppText;
+                    string title2 = Messages.Messages.languageChangeRestartAppTitle;
+                    var buttons = MessageBoxButtons.YesNo;
+                    var icon = MessageBoxIcon.Question;
+                    bool saveSuccess = true;
+                    try
+                    {
+                        xmlSerializer.Serialize(fs, setGreek);
+                    }
+                    catch
+                    {
+                        saveSuccess = false;
+                    }
+                    finally
+                    {
+                        if (saveSuccess)
+                        {
+                            XtraMessageBox.Show(Messages.Messages.GreekLanguageCaption);
+                            DialogResult dialogResult = XtraMessageBox.Show(restartNow2, title2, buttons, icon);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                Process.Start(Application.ExecutablePath);
+                                Process.GetCurrentProcess().Kill();
+                                bciGreek.Checked = true;
+                                bciEnglish.Checked = false;
+                            }
+                            bciGreek.Checked = false;
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Something went wrong....");
+                        }
+                    }
+                }
+            }
         }
     }
 }
