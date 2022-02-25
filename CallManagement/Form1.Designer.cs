@@ -255,7 +255,7 @@ namespace CallManagement
             this.emptySpaceItem4,
             this.emptySpaceItem2});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(825, 353);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(825, 355);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // lciLanguage
@@ -275,7 +275,7 @@ namespace CallManagement
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 58);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 275);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(805, 277);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3

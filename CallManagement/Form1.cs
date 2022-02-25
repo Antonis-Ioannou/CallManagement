@@ -623,6 +623,7 @@ namespace CallManagement
             OpenEditForm((int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "CallsId"));
         }
 
+        //---open edit form with double click---//
         private void dbClickEdit(object sender, EventArgs e)
         {
             if (gridView1.IsGroupRow(gridView1.FocusedRowHandle))
