@@ -22,6 +22,7 @@ namespace CallManagement
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static string ConnectionString = string.Empty;
+        public static string skinXml = string.Empty;
         static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
         string customLayout = Path.Combine(path, @"gridLayout.xml");
         string defaultGridLayoutFile = Path.Combine(path + @"\defaultLayout.xml");
@@ -112,30 +113,50 @@ namespace CallManagement
                 }
             }
 
-            //----------load saved skin/palette----------//
-            var settings = Properties.Settings.Default;
-            if (!String.IsNullOrEmpty(settings.SkinName))
+                //=================================================================================================//
+                //saving skin and palette in xml
+
+                //----------load saved skin/palette----------//
+                //var settings = Properties.Settings.Default;
+                //if (!String.IsNullOrEmpty(settings.SkinName))
+                //{
+                //    if (!String.IsNullOrEmpty(settings.SkinName))
+                //    {
+                //        UserLookAndFeel.Default.SetSkinStyle(settings.SkinName, settings.PaletteName);
+                //    }
+                //    else
+                //        UserLookAndFeel.Default.SetSkinStyle(settings.SkinName);
+                //}
+
+
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+
+            using (FileStream fs = new FileStream(path + "\\skinSettings.xml", FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                if (!String.IsNullOrEmpty(settings.SkinName))
+                try
                 {
-                    UserLookAndFeel.Default.SetSkinStyle(settings.SkinName, settings.PaletteName);
+                    UserLookAndFeel.Default.SetSkinStyle(skinXml = xmlSerializer.Deserialize(fs).ToString());
                 }
-                else
-                    UserLookAndFeel.Default.SetSkinStyle(settings.SkinName);
-            }
+                catch (Exception)
+                {
+                    XtraMessageBox.Show(e.ToString());
+                }
+                //=================================================================================================//
 
-            GetConnectionString();
-            FillTableAdapter();
+                GetConnectionString();
+                FillTableAdapter();
 
-            //---backstage view language settings---//
-            List<string> languages = new List<string> {"English", "Ελληνικά" };
-            DevExpress.XtraEditors.Repository.RepositoryItemComboBox properties = cbeLanguage.Properties;
-            properties.Items.AddRange(languages);
-            //---backstage view skin settings---//
-            DevExpress.UserSkins.BonusSkins.Register();
-            foreach (SkinContainer cnt in SkinManager.Default.Skins)
-            {
-                cbeSkins.Properties.Items.Add(cnt.SkinName);
+                //---backstage view language settings---//
+                List<string> languages = new List<string> { "English", "Ελληνικά" };
+                DevExpress.XtraEditors.Repository.RepositoryItemComboBox properties = cbeLanguage.Properties;
+                properties.Items.AddRange(languages);
+                //---backstage view skin settings---//
+                DevExpress.UserSkins.BonusSkins.Register();
+                foreach (SkinContainer cnt in SkinManager.Default.Skins)
+                {
+                    cbeSkins.Properties.Items.Add(cnt.SkinName);
+                }
             }
         }
 
@@ -249,28 +270,50 @@ namespace CallManagement
             {
                 if (result == DialogResult.Yes)
                 {
-                    Properties.Settings.Default.F1State = this.WindowState;
-                    if (this.WindowState == FormWindowState.Normal)
-                    {
-                        // save location and size if the state is normal
-                        Properties.Settings.Default.F1Location = this.Location;
-                        Properties.Settings.Default.F1Size = this.Size;
-                    }
-                    else
-                    {
-                        // save the RestoreBounds if the form is minimized or maximized!
-                        Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
-                        Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
-                    }
-                    //save skin
-                    var settings = Properties.Settings.Default;
-                    settings.SkinName = UserLookAndFeel.Default.SkinName;
-                    settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
-                    settings.Save();
+                    //===============================================================================================//
+                    skinXml = UserLookAndFeel.Default.SkinName;
 
-                    // don't forget to save the settings
-                    Settings.Default.Save();
-                    gridView1.SaveLayoutToXml(customLayout);
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+                    string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
+
+                    using (FileStream fs = new FileStream(path + "\\skinSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+                    {
+                        try
+                        {
+                            xmlSerializer.Serialize(fs, skinXml);
+                        }
+                        catch(Exception)
+                        {
+                            XtraMessageBox.Show(e.ToString());
+                        }
+                    }
+
+                    //Properties.Settings.Default.F1State = this.WindowState;
+                    //if (this.WindowState == FormWindowState.Normal)
+                    //{
+                    //    // save location and size if the state is normal
+                    //    Properties.Settings.Default.F1Location = this.Location;
+                    //    Properties.Settings.Default.F1Size = this.Size;
+                    //}
+                    //else
+                    //{
+                    //    // save the RestoreBounds if the form is minimized or maximized!
+                    //    Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
+                    //    Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
+                    //}
+                    ////save skin
+                    //var settings = Properties.Settings.Default;
+                    //settings.SkinName = UserLookAndFeel.Default.SkinName;
+                    //settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
+                    //settings.Save();
+
+                    //// don't forget to save the settings
+                    //Settings.Default.Save();
+                    //gridView1.SaveLayoutToXml(customLayout);
+                    //===============================================================================================//
                 }
                 else
                 {
