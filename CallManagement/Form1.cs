@@ -401,8 +401,8 @@ namespace CallManagement
                             {
                                 //save skin
                                 var settings = Properties.Settings.Default;
-                                userSettings.skin = UserLookAndFeel.Default.SkinName;
-                                userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
+                                //userSettings.skin = UserLookAndFeel.Default.SkinName;
+                                //userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
                                 settings.Save();
 
                                 System.Diagnostics.Process.Start(Application.ExecutablePath);
@@ -461,8 +461,8 @@ namespace CallManagement
                             {
                                 //save skin
                                 var settings = Properties.Settings.Default;
-                                userSettings.skin = UserLookAndFeel.Default.SkinName;
-                                userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
+                                //userSettings.skin = UserLookAndFeel.Default.SkinName;
+                                //userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
                                 settings.Save();
 
                                 Process.Start(Application.ExecutablePath);
