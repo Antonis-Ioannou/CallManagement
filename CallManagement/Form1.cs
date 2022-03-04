@@ -292,6 +292,8 @@ namespace CallManagement
                         userSettings.skin = UserLookAndFeel.Default.ActiveSkinName;
                         userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
                         userSettings.formWindowState = this.WindowState;
+                        userSettings.location = this.Location;
+                        userSettings.size = this.Size;
 
                         try
                         {
@@ -303,7 +305,6 @@ namespace CallManagement
                         }
                     }
 
-                    //Properties.Settings.Default.F1State = this.WindowState;
                     if (this.WindowState == FormWindowState.Normal)
                     {
                         // save location and size if the state is normal
@@ -320,6 +321,24 @@ namespace CallManagement
                     //// don't forget to save the settings
                     Settings.Default.Save();
                     gridView1.SaveLayoutToXml(customLayout);
+
+                    //Properties.Settings.Default.F1State = this.WindowState;
+                    //if (this.WindowState == FormWindowState.Normal)
+                    //{
+                    //    // save location and size if the state is normal
+                    //    Properties.Settings.Default.F1Location = this.Location;
+                    //    Properties.Settings.Default.F1Size = this.Size;
+                    //}
+                    //else
+                    //{
+                    //    // save the RestoreBounds if the form is minimized or maximized!
+                    //    Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
+                    //    Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
+                    //}
+
+                    ////// don't forget to save the settings
+                    //Settings.Default.Save();
+                    //gridView1.SaveLayoutToXml(customLayout);
                     //===============================================================================================//
                 }
                 else

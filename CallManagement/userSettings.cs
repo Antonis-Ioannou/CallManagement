@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace CallManagement
         public string skin;
         public string palette;
         public FormWindowState formWindowState ;
+        public Size size;
+        public Point location;
         public string language;
     }
 }
