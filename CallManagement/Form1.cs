@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace CallManagement
@@ -23,9 +24,10 @@ namespace CallManagement
     {
         public static string ConnectionString = string.Empty;
         public static string skinXml = string.Empty;
-        static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+        public static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
         string customLayout = Path.Combine(path, @"gridLayout.xml");
         string defaultGridLayoutFile = Path.Combine(path + @"\defaultLayout.xml");
+        userSettings userSettings = new userSettings();
 
         public Form1()
         {
@@ -86,6 +88,7 @@ namespace CallManagement
             {
                 // first start
                 // optional: add default values
+                CenterToScreen();
             }
             else
             {
@@ -113,50 +116,65 @@ namespace CallManagement
                 }
             }
 
-                //=================================================================================================//
-                //saving skin and palette in xml
+            //=================================================================================================//
+                
+            //----------load saved skin/palette----------//
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
 
-                //----------load saved skin/palette----------//
-                //var settings = Properties.Settings.Default;
-                //if (!String.IsNullOrEmpty(settings.SkinName))
-                //{
-                //    if (!String.IsNullOrEmpty(settings.SkinName))
-                //    {
-                //        UserLookAndFeel.Default.SetSkinStyle(settings.SkinName, settings.PaletteName);
-                //    }
-                //    else
-                //        UserLookAndFeel.Default.SetSkinStyle(settings.SkinName);
-                //}
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
 
-
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
-
-            using (FileStream fs = new FileStream(path + "\\skinSettings.xml", FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (FileStream fs = new FileStream(path + "\\appSettings.xml", FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read))
             {
                 try
                 {
-                    UserLookAndFeel.Default.SetSkinStyle(skinXml = xmlSerializer.Deserialize(fs).ToString());
+                    userSettings result = (userSettings)xmlSerializer.Deserialize(fs);
+                    if (string.IsNullOrEmpty(result.skin) && string.IsNullOrEmpty(result.palette))
+                        {
+                            UserLookAndFeel.Default.SetSkinStyle("Default", "Default");
+                        }
+                    else if (string.IsNullOrEmpty(result.skin))
+                        {
+                            UserLookAndFeel.Default.SetSkinStyle("Default", result.palette);
+                        }
+                    else if (string.IsNullOrEmpty(result.palette))
+                        {
+                            UserLookAndFeel.Default.SetSkinStyle(result.skin, "Default");
+                        }
+                    else
+                        {
+                            UserLookAndFeel.Default.SetSkinStyle(result.skin, result.palette);
+                        }
+
+                    if (result.formWindowState.Equals(null))
+                        {
+                            this.WindowState = FormWindowState.Normal;
+                        }
+                    else
+                        {
+                            this.WindowState = result.formWindowState;
+                        }
                 }
                 catch (Exception)
                 {
-                    XtraMessageBox.Show(e.ToString());
+                    XtraMessageBox.Show("No saved user settings found. Loading default settings.");
+                    UserLookAndFeel.Default.SetSkinStyle("Office 2010 Black", "Default");
+                    this.WindowState = FormWindowState.Normal;
                 }
-                //=================================================================================================//
+            }
 
-                GetConnectionString();
-                FillTableAdapter();
+            GetConnectionString();
+            FillTableAdapter();
 
-                //---backstage view language settings---//
-                List<string> languages = new List<string> { "English", "Ελληνικά" };
-                DevExpress.XtraEditors.Repository.RepositoryItemComboBox properties = cbeLanguage.Properties;
-                properties.Items.AddRange(languages);
-                //---backstage view skin settings---//
-                DevExpress.UserSkins.BonusSkins.Register();
-                foreach (SkinContainer cnt in SkinManager.Default.Skins)
-                {
-                    cbeSkins.Properties.Items.Add(cnt.SkinName);
-                }
+            //---backstage view language settings---//
+            List<string> languages = new List<string> { "English", "Ελληνικά" };
+            DevExpress.XtraEditors.Repository.RepositoryItemComboBox properties = cbeLanguage.Properties;
+            properties.Items.AddRange(languages);
+            //---backstage view skin settings---//
+            DevExpress.UserSkins.BonusSkins.Register();
+            foreach (SkinContainer cnt in SkinManager.Default.Skins)
+            {
+                cbeSkins.Properties.Items.Add(cnt.SkinName);
             }
         }
 
@@ -271,19 +289,20 @@ namespace CallManagement
                 if (result == DialogResult.Yes)
                 {
                     //===============================================================================================//
-                    skinXml = UserLookAndFeel.Default.SkinName;
-
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
-                    string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
 
                     if (!Directory.Exists(path))
                         Directory.CreateDirectory(path);
 
-                    using (FileStream fs = new FileStream(path + "\\skinSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+                    using (FileStream fs = new FileStream(path + "\\appSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
                     {
+                        userSettings.skin = UserLookAndFeel.Default.ActiveSkinName;
+                        userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
+                        userSettings.formWindowState = this.WindowState;
+
                         try
                         {
-                            xmlSerializer.Serialize(fs, skinXml);
+                            xmlSerializer.Serialize(fs, userSettings);
                         }
                         catch(Exception)
                         {
