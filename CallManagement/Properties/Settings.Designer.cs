@@ -25,18 +25,6 @@ namespace CallManagement.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public global::System.Windows.Forms.FormWindowState F1State {
-            get {
-                return ((global::System.Windows.Forms.FormWindowState)(this["F1State"]));
-            }
-            set {
-                this["F1State"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
         public global::System.Drawing.Point F1Location {
             get {
@@ -56,30 +44,6 @@ namespace CallManagement.Properties {
             }
             set {
                 this["F1Size"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SkinName {
-            get {
-                return ((string)(this["SkinName"]));
-            }
-            set {
-                this["SkinName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string PaletteName {
-            get {
-                return ((string)(this["PaletteName"]));
-            }
-            set {
-                this["PaletteName"] = value;
             }
         }
     }

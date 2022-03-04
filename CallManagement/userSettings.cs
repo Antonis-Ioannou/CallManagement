@@ -12,8 +12,6 @@ namespace CallManagement
         public string skin;
         public string palette;
         public FormWindowState formWindowState ;
-        public int width;
-        public int height;
         public string language;
     }
 }

@@ -83,17 +83,58 @@ namespace CallManagement
             else
                 gridView1.RestoreLayoutFromXml(customLayout);
 
+            //----------load saved skin/palette----------//
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
+
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            using (FileStream fs = new FileStream(path + "\\appSettings.xml", FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read))
+            {
+                try
+                {
+                    userSettings result = (userSettings)xmlSerializer.Deserialize(fs);
+                    if (string.IsNullOrEmpty(result.skin) && string.IsNullOrEmpty(result.palette))
+                    {
+                        UserLookAndFeel.Default.SetSkinStyle("Default", "Default");
+                    }
+                    else if (string.IsNullOrEmpty(result.skin))
+                    {
+                        UserLookAndFeel.Default.SetSkinStyle("Default", result.palette);
+                    }
+                    else if (string.IsNullOrEmpty(result.palette))
+                    {
+                        UserLookAndFeel.Default.SetSkinStyle(result.skin, "Default");
+                    }
+                    else
+                    {
+                        UserLookAndFeel.Default.SetSkinStyle(result.skin, result.palette);
+                    }
+
+                    if (result.formWindowState.Equals(null))
+                    {
+                        this.WindowState = FormWindowState.Normal;
+                    }
+                    else
+                    {
+                        this.WindowState = result.formWindowState;
+                    }
+                }
+                catch (Exception)
+                {
+                    XtraMessageBox.Show("No saved user settings found. Loading default settings.");
+                    UserLookAndFeel.Default.SetSkinStyle("Office 2010 Black", "Default");
+                    this.WindowState = FormWindowState.Normal;
+                }
+            }
+
             //---Set the state, position and size when the form loads---//
             if (Properties.Settings.Default.F1Size.Width == 0 || Properties.Settings.Default.F1Size.Height == 0)
             {
-                // first start
-                // optional: add default values
                 CenterToScreen();
             }
             else
             {
-                this.WindowState = Properties.Settings.Default.F1State;
-
                 // we don't want a minimized window at startup
                 if (this.WindowState == FormWindowState.Minimized) this.WindowState = FormWindowState.Normal;
 
@@ -113,53 +154,6 @@ namespace CallManagement
                 {
                     XtraMessageBox.Show("Exiting application. Create connection and try again");
                     Process.GetCurrentProcess().Kill();
-                }
-            }
-
-            //=================================================================================================//
-                
-            //----------load saved skin/palette----------//
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
-
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-
-            using (FileStream fs = new FileStream(path + "\\appSettings.xml", FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read))
-            {
-                try
-                {
-                    userSettings result = (userSettings)xmlSerializer.Deserialize(fs);
-                    if (string.IsNullOrEmpty(result.skin) && string.IsNullOrEmpty(result.palette))
-                        {
-                            UserLookAndFeel.Default.SetSkinStyle("Default", "Default");
-                        }
-                    else if (string.IsNullOrEmpty(result.skin))
-                        {
-                            UserLookAndFeel.Default.SetSkinStyle("Default", result.palette);
-                        }
-                    else if (string.IsNullOrEmpty(result.palette))
-                        {
-                            UserLookAndFeel.Default.SetSkinStyle(result.skin, "Default");
-                        }
-                    else
-                        {
-                            UserLookAndFeel.Default.SetSkinStyle(result.skin, result.palette);
-                        }
-
-                    if (result.formWindowState.Equals(null))
-                        {
-                            this.WindowState = FormWindowState.Normal;
-                        }
-                    else
-                        {
-                            this.WindowState = result.formWindowState;
-                        }
-                }
-                catch (Exception)
-                {
-                    XtraMessageBox.Show("No saved user settings found. Loading default settings.");
-                    UserLookAndFeel.Default.SetSkinStyle("Office 2010 Black", "Default");
-                    this.WindowState = FormWindowState.Normal;
                 }
             }
 
@@ -288,7 +282,6 @@ namespace CallManagement
             {
                 if (result == DialogResult.Yes)
                 {
-                    //===============================================================================================//
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
 
                     if (!Directory.Exists(path))
@@ -311,26 +304,21 @@ namespace CallManagement
                     }
 
                     //Properties.Settings.Default.F1State = this.WindowState;
-                    //if (this.WindowState == FormWindowState.Normal)
-                    //{
-                    //    // save location and size if the state is normal
-                    //    Properties.Settings.Default.F1Location = this.Location;
-                    //    Properties.Settings.Default.F1Size = this.Size;
-                    //}
-                    //else
-                    //{
-                    //    // save the RestoreBounds if the form is minimized or maximized!
-                    //    Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
-                    //    Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
-                    //}
-                    ////save skin
-                    //var settings = Properties.Settings.Default;
-                    //settings.SkinName = UserLookAndFeel.Default.SkinName;
-                    //settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
-                    //settings.Save();
+                    if (this.WindowState == FormWindowState.Normal)
+                    {
+                        // save location and size if the state is normal
+                        Properties.Settings.Default.F1Location = this.Location;
+                        Properties.Settings.Default.F1Size = this.Size;
+                    }
+                    else
+                    {
+                        // save the RestoreBounds if the form is minimized or maximized!
+                        Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
+                        Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
+                    }
 
                     //// don't forget to save the settings
-                    //Settings.Default.Save();
+                    Settings.Default.Save();
                     gridView1.SaveLayoutToXml(customLayout);
                     //===============================================================================================//
                 }
@@ -413,8 +401,8 @@ namespace CallManagement
                             {
                                 //save skin
                                 var settings = Properties.Settings.Default;
-                                settings.SkinName = UserLookAndFeel.Default.SkinName;
-                                settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
+                                userSettings.skin = UserLookAndFeel.Default.SkinName;
+                                userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
                                 settings.Save();
 
                                 System.Diagnostics.Process.Start(Application.ExecutablePath);
@@ -473,8 +461,8 @@ namespace CallManagement
                             {
                                 //save skin
                                 var settings = Properties.Settings.Default;
-                                settings.SkinName = UserLookAndFeel.Default.SkinName;
-                                settings.PaletteName = UserLookAndFeel.Default.ActiveSvgPaletteName;
+                                userSettings.skin = UserLookAndFeel.Default.SkinName;
+                                userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
                                 settings.Save();
 
                                 Process.Start(Application.ExecutablePath);
