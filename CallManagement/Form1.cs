@@ -25,7 +25,7 @@ namespace CallManagement
         public static string ConnectionString = string.Empty;
         public static string skinXml = string.Empty;
         public static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
-        string customLayout = Path.Combine(path, @"gridLayout.xml");
+        string customLayout = Path.Combine(path, @"customLayout.xml");
         string defaultGridLayoutFile = Path.Combine(path + @"\defaultLayout.xml");
         userSettings userSettings = new userSettings();
 
@@ -331,7 +331,7 @@ namespace CallManagement
 
                     //// don't forget to save the settings
                     //Settings.Default.Save();
-                    //gridView1.SaveLayoutToXml(customLayout);
+                    gridView1.SaveLayoutToXml(customLayout);
                     //===============================================================================================//
                 }
                 else
