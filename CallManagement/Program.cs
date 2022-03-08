@@ -53,9 +53,6 @@ namespace CallManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //enable skins
-            //BonusSkins.Register();
-            //SkinManager.EnableFormSkins();
             LoadCulture();
             try
             {
