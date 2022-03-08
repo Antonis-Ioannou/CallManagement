@@ -347,26 +347,24 @@ namespace CallManagement
             int langIndex = cbeLanguage.SelectedIndex;
             if (langIndex == 0)
             {
-                string setEnglish = "en";
-
                 if (System.Globalization.CultureInfo.CurrentCulture.Name == "en")
                 {
                     XtraMessageBox.Show(Messages.Messages.EnglishLanguageCaption);
                     return;
                 }
 
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
 
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
 
-                using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+                using (FileStream fs = new FileStream(path + "\\appSettings.xml", FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
                 {
                     bool saveSuccess = true;
                     try
                     {
-                        xmlSerializer.Serialize(fs, setEnglish);
+                        userSettings.language = "en";
+                        xmlSerializer.Serialize(fs, userSettings);
                     }
                     catch
                     {
@@ -386,10 +384,8 @@ namespace CallManagement
                             if (dialogResult == DialogResult.Yes)
                             {
                                 //save skin
-                                var settings = Properties.Settings.Default;
                                 //userSettings.skin = UserLookAndFeel.Default.SkinName;
                                 //userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
-                                settings.Save();
 
                                 System.Diagnostics.Process.Start(Application.ExecutablePath);
                                 Process.GetCurrentProcess().Kill();
@@ -407,8 +403,6 @@ namespace CallManagement
             }
             else
             {
-                string setGreek = "el";
-
                 if (System.Globalization.CultureInfo.CurrentCulture.Name == "el")
                 {
                     XtraMessageBox.Show(Messages.Messages.GreekLanguageCaption);
@@ -416,13 +410,12 @@ namespace CallManagement
                     return;
                 }
 
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
 
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
 
-                using (FileStream fs = new FileStream(path + "\\languageSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+                using (FileStream fs = new FileStream(path + "\\appSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
                 {
                     string restartNow2 = Messages.Messages.languageChangeRestartAppText;
                     string title2 = Messages.Messages.languageChangeRestartAppTitle;
@@ -431,7 +424,8 @@ namespace CallManagement
                     bool saveSuccess = true;
                     try
                     {
-                        xmlSerializer.Serialize(fs, setGreek);
+                        userSettings.language = "el";
+                        xmlSerializer.Serialize(fs, userSettings);
                     }
                     catch
                     {
@@ -446,10 +440,8 @@ namespace CallManagement
                             if (dialogResult == DialogResult.Yes)
                             {
                                 //save skin
-                                var settings = Properties.Settings.Default;
                                 //userSettings.skin = UserLookAndFeel.Default.SkinName;
                                 //userSettings.palette = UserLookAndFeel.Default.ActiveSvgPaletteName;
-                                settings.Save();
 
                                 Process.Start(Application.ExecutablePath);
                                 Process.GetCurrentProcess().Kill();
@@ -495,7 +487,6 @@ namespace CallManagement
             }
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
 
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
@@ -550,7 +541,6 @@ namespace CallManagement
             }
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
 
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);

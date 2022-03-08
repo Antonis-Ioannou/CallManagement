@@ -14,6 +14,8 @@ namespace CallManagement
     {
         static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
         public static string cultureString = string.Empty;
+        static userSettings userSettings = new userSettings();
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -21,7 +23,7 @@ namespace CallManagement
 
         static void LoadCulture()
         {
-            string fullPath = Path.Combine(path, @"languageSettings.xml");
+            string fullPath = Path.Combine(path, @"appSettings.xml");
 
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
@@ -32,17 +34,17 @@ namespace CallManagement
                 return;
             }
 
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
 
             using (FileStream fs = new FileStream(fullPath, FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read))
             {
                 try
                 {
-                    cultureString = xmlSerializer.Deserialize(fs).ToString();
+                    userSettings = (userSettings)xmlSerializer.Deserialize(fs);
                 }
                 catch
                 {
-                    cultureString = "en";
+                    userSettings.language = "en";
                 }
                 
             }
@@ -56,8 +58,16 @@ namespace CallManagement
             //BonusSkins.Register();
             //SkinManager.EnableFormSkins();
             LoadCulture();
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureString);
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureString);
+            try
+            {
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(userSettings.language);
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(userSettings.language);
+            }
+            catch
+            {
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en");
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+            }
             Application.Run(new Form1());
         }
     }
