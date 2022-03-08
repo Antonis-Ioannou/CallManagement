@@ -23,7 +23,6 @@ namespace CallManagement
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static string ConnectionString = string.Empty;
-        public static string skinXml = string.Empty;
         public static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
         string customLayout = Path.Combine(path, @"customLayout.xml");
         string defaultGridLayoutFile = Path.Combine(path + @"\defaultLayout.xml");

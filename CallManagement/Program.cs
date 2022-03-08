@@ -13,7 +13,6 @@ namespace CallManagement
     static class Program
     {
         static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
-        public static string cultureString = string.Empty;
         static userSettings userSettings = new userSettings();
 
         /// <summary>
