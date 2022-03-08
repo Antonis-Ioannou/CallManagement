@@ -112,10 +112,24 @@ namespace CallManagement.Crud_Operations
                 saveChanges();
         }
 
+        private void dateCreatedValidation(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(dateCreatedEdit.Text))
+            {
+                //To set validation error
+                dxErrorProvider.SetError(dateCreatedEdit, "Date created cannot be empty!");
+                //To say the state of control in invalid
+                e.Cancel = true;
+            }
+            else
+            {
+                //To clear the validation error
+                this.dxErrorProvider.SetError(this.dateCreatedEdit, "");
+            }
+        }
+
         private void callTypeValidation(object sender, CancelEventArgs e)
         {
-            //Regex regex1 = new Regex(@"^[a-zA-Z]+$");
-            //if (!regex1.IsMatch(callType.Text))
             if (string.IsNullOrEmpty(callType.Text))
             {
                 //To set validation error
@@ -173,6 +187,11 @@ namespace CallManagement.Crud_Operations
         }
 
         private void callRecieverChanged(object sender, EventArgs e)
+        {
+            dataChanged = true;
+        }
+
+        private void notesChanged(object sender, EventArgs e)
         {
             dataChanged = true;
         }

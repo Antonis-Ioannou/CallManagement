@@ -187,6 +187,7 @@ namespace CallManagement.Crud_Operations
             this.dateCreatedEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateCreatedEdit.Properties.CalendarTimeProperties.Buttons"))))});
             this.dateCreatedEdit.StyleController = this.layoutControl1;
+            this.dateCreatedEdit.Validating += new System.ComponentModel.CancelEventHandler(this.dateCreatedValidation);
             // 
             // textEdit1
             // 
@@ -194,6 +195,7 @@ namespace CallManagement.Crud_Operations
             resources.ApplyResources(this.textEdit1, "textEdit1");
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.StyleController = this.layoutControl1;
+            this.textEdit1.Modified += new System.EventHandler(this.notesChanged);
             // 
             // callType
             // 
