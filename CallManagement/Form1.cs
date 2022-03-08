@@ -36,7 +36,7 @@ namespace CallManagement
 
         private void GetConnectionString()
         {
-            string fullPath = Path.Combine(path, @"conStr.xml");
+            string fullPath = Path.Combine(path, @"appSettings.xml");
 
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
@@ -47,17 +47,18 @@ namespace CallManagement
                 return;
             }
 
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
 
             using (FileStream fs = new FileStream(fullPath, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
                 try
                 {
-                    ConnectionString = xmlSerializer.Deserialize(fs).ToString();
+                    userSettings = (userSettings)xmlSerializer.Deserialize(fs);
+                    ConnectionString = userSettings.connString;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    //XtraMessageBox.Show(e.Message);
+                    //XtraMessageBox.Show(e.Message.ToString());
                 }
             }
         }
@@ -93,31 +94,31 @@ namespace CallManagement
             {
                 try
                 {
-                    userSettings result = (userSettings)xmlSerializer.Deserialize(fs);
-                    if (string.IsNullOrEmpty(result.skin) && string.IsNullOrEmpty(result.palette))
+                    userSettings = (userSettings)xmlSerializer.Deserialize(fs);
+                    if (string.IsNullOrEmpty(userSettings.skin) && string.IsNullOrEmpty(userSettings.palette))
                     {
                         UserLookAndFeel.Default.SetSkinStyle("Default", "Default");
                     }
-                    else if (string.IsNullOrEmpty(result.skin))
+                    else if (string.IsNullOrEmpty(userSettings.skin))
                     {
-                        UserLookAndFeel.Default.SetSkinStyle("Default", result.palette);
+                        UserLookAndFeel.Default.SetSkinStyle("Default", userSettings.palette);
                     }
-                    else if (string.IsNullOrEmpty(result.palette))
+                    else if (string.IsNullOrEmpty(userSettings.palette))
                     {
-                        UserLookAndFeel.Default.SetSkinStyle(result.skin, "Default");
+                        UserLookAndFeel.Default.SetSkinStyle(userSettings.skin, "Default");
                     }
                     else
                     {
-                        UserLookAndFeel.Default.SetSkinStyle(result.skin, result.palette);
+                        UserLookAndFeel.Default.SetSkinStyle(userSettings.skin, userSettings.palette);
                     }
 
-                    if (result.formWindowState.Equals(null))
+                    if (userSettings.formWindowState.Equals(null))
                     {
                         this.WindowState = FormWindowState.Normal;
                     }
                     else
                     {
-                        this.WindowState = result.formWindowState;
+                        this.WindowState = userSettings.formWindowState;
                     }
                 }
                 catch (Exception)
@@ -129,7 +130,7 @@ namespace CallManagement
             }
 
             //---Set the state, position and size when the form loads---//
-            if (Properties.Settings.Default.F1Size.Width == 0 || Properties.Settings.Default.F1Size.Height == 0)
+            if (userSettings.size.Width == 0 || userSettings.size.Height == 0)
             {
                 CenterToScreen();
             }
@@ -138,13 +139,13 @@ namespace CallManagement
                 // we don't want a minimized window at startup
                 if (this.WindowState == FormWindowState.Minimized) this.WindowState = FormWindowState.Normal;
 
-                this.Location = Properties.Settings.Default.F1Location;
-                this.Size = Properties.Settings.Default.F1Size;
+                this.Location = userSettings.location;
+                this.Size = userSettings.size;
             }
 
             GetConnectionString();
 
-            if (string.IsNullOrEmpty(ConnectionString))
+            if (string.IsNullOrEmpty(userSettings.connString))
             {
                 Form formLogin = new Login();
                 formLogin.StartPosition = FormStartPosition.Manual;
@@ -305,41 +306,7 @@ namespace CallManagement
                         }
                     }
 
-                    if (this.WindowState == FormWindowState.Normal)
-                    {
-                        // save location and size if the state is normal
-                        Properties.Settings.Default.F1Location = this.Location;
-                        Properties.Settings.Default.F1Size = this.Size;
-                    }
-                    else
-                    {
-                        // save the RestoreBounds if the form is minimized or maximized!
-                        Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
-                        Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
-                    }
-
-                    //// don't forget to save the settings
-                    Settings.Default.Save();
                     gridView1.SaveLayoutToXml(customLayout);
-
-                    //Properties.Settings.Default.F1State = this.WindowState;
-                    //if (this.WindowState == FormWindowState.Normal)
-                    //{
-                    //    // save location and size if the state is normal
-                    //    Properties.Settings.Default.F1Location = this.Location;
-                    //    Properties.Settings.Default.F1Size = this.Size;
-                    //}
-                    //else
-                    //{
-                    //    // save the RestoreBounds if the form is minimized or maximized!
-                    //    Properties.Settings.Default.F1Location = this.RestoreBounds.Location;
-                    //    Properties.Settings.Default.F1Size = this.RestoreBounds.Size;
-                    //}
-
-                    ////// don't forget to save the settings
-                    //Settings.Default.Save();
-                    //gridView1.SaveLayoutToXml(customLayout);
-                    //===============================================================================================//
                 }
                 else
                 {

@@ -1050,53 +1050,47 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Call Management</value>
   </data>
-  <data name="&gt;&gt;layoutControlGroup1.Name" xml:space="preserve">
-    <value>layoutControlGroup1</value>
+  <data name="&gt;&gt;applicationMenu1.Name" xml:space="preserve">
+    <value>applicationMenu1</value>
   </data>
-  <data name="&gt;&gt;layoutControlGroup1.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;applicationMenu1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.ApplicationMenu, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;lciLanguage.Name" xml:space="preserve">
-    <value>lciLanguage</value>
+  <data name="&gt;&gt;bsiLanguage.Name" xml:space="preserve">
+    <value>bsiLanguage</value>
   </data>
-  <data name="&gt;&gt;lciLanguage.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;bsiLanguage.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem1.Name" xml:space="preserve">
-    <value>emptySpaceItem1</value>
+  <data name="&gt;&gt;bciEnglish.Name" xml:space="preserve">
+    <value>bciEnglish</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem1.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;bciEnglish.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarCheckItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem3.Name" xml:space="preserve">
-    <value>emptySpaceItem3</value>
+  <data name="&gt;&gt;bciGreek.Name" xml:space="preserve">
+    <value>bciGreek</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem3.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;bciGreek.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarCheckItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;lciSkins.Name" xml:space="preserve">
-    <value>lciSkins</value>
+  <data name="&gt;&gt;bsiSkin.Name" xml:space="preserve">
+    <value>bsiSkin</value>
   </data>
-  <data name="&gt;&gt;lciSkins.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;bsiSkin.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem4.Name" xml:space="preserve">
-    <value>emptySpaceItem4</value>
+  <data name="&gt;&gt;skinList.Name" xml:space="preserve">
+    <value>skinList</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem4.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;skinList.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.SkinBarSubItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem2.Name" xml:space="preserve">
-    <value>emptySpaceItem2</value>
+  <data name="&gt;&gt;skinPaletteDropDown.Name" xml:space="preserve">
+    <value>skinPaletteDropDown</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem2.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;bsviSettings.Name" xml:space="preserve">
-    <value>bsviSettings</value>
-  </data>
-  <data name="&gt;&gt;bsviSettings.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Ribbon.BackstageViewTabItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;skinPaletteDropDown.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.SkinPaletteDropDownButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;bbiCallTypes.Name" xml:space="preserve">
     <value>bbiCallTypes</value>
@@ -1145,42 +1139,6 @@
   </data>
   <data name="&gt;&gt;bbiRefreshData.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;bsiLanguage.Name" xml:space="preserve">
-    <value>bsiLanguage</value>
-  </data>
-  <data name="&gt;&gt;bsiLanguage.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;bciEnglish.Name" xml:space="preserve">
-    <value>bciEnglish</value>
-  </data>
-  <data name="&gt;&gt;bciEnglish.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarCheckItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;bciGreek.Name" xml:space="preserve">
-    <value>bciGreek</value>
-  </data>
-  <data name="&gt;&gt;bciGreek.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarCheckItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;bsiSkin.Name" xml:space="preserve">
-    <value>bsiSkin</value>
-  </data>
-  <data name="&gt;&gt;bsiSkin.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;skinList.Name" xml:space="preserve">
-    <value>skinList</value>
-  </data>
-  <data name="&gt;&gt;skinList.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.SkinBarSubItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;skinPaletteDropDown.Name" xml:space="preserve">
-    <value>skinPaletteDropDown</value>
-  </data>
-  <data name="&gt;&gt;skinPaletteDropDown.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.SkinPaletteDropDownButtonItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;ddbiSkins.Name" xml:space="preserve">
     <value>ddbiSkins</value>
@@ -1266,11 +1224,53 @@
   <data name="&gt;&gt;rpgPalette.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.Ribbon.RibbonPageGroup, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;applicationMenu1.Name" xml:space="preserve">
-    <value>applicationMenu1</value>
+  <data name="&gt;&gt;layoutControlGroup1.Name" xml:space="preserve">
+    <value>layoutControlGroup1</value>
   </data>
-  <data name="&gt;&gt;applicationMenu1.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Ribbon.ApplicationMenu, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;layoutControlGroup1.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;lciLanguage.Name" xml:space="preserve">
+    <value>lciLanguage</value>
+  </data>
+  <data name="&gt;&gt;lciLanguage.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem1.Name" xml:space="preserve">
+    <value>emptySpaceItem1</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem1.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem3.Name" xml:space="preserve">
+    <value>emptySpaceItem3</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem3.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;lciSkins.Name" xml:space="preserve">
+    <value>lciSkins</value>
+  </data>
+  <data name="&gt;&gt;lciSkins.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem4.Name" xml:space="preserve">
+    <value>emptySpaceItem4</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem4.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem2.Name" xml:space="preserve">
+    <value>emptySpaceItem2</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem2.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;bsviSettings.Name" xml:space="preserve">
+    <value>bsviSettings</value>
+  </data>
+  <data name="&gt;&gt;bsviSettings.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Ribbon.BackstageViewTabItem, DevExpress.XtraBars.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;barToggleSwitchItem3.Name" xml:space="preserve">
     <value>barToggleSwitchItem3</value>
@@ -1565,7 +1565,7 @@
 </value>
   </data>
   <data name="SharedImageCollection.Timestamp" type="System.DateTime, mscorlib">
-    <value>03/04/2022 10:51:07</value>
+    <value>03/08/2022 09:53:47</value>
   </data>
   <data name="SharedImageCollection.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>

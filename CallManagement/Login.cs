@@ -19,6 +19,7 @@ namespace CallManagement
     {
         public SqlConnection conn = new SqlConnection();
         private SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+        userSettings userSettings = new userSettings();
 
         public Login()
         {
@@ -88,20 +89,20 @@ namespace CallManagement
             if (comboBoxEditDatabase.EditValue != null)
                 builder.InitialCatalog = comboBoxEditDatabase.EditValue.ToString();
 
-            string connString = builder.ConnectionString.ToString();
+            userSettings.connString = builder.ConnectionString.ToString();
 
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(string));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(userSettings));
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Megasoft\CallManagement";
 
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
-            using (FileStream fs = new FileStream(path + "\\conStr.xml", FileMode.Create, FileAccess.Write, FileShare.None))
+            using (FileStream fs = new FileStream(path + "\\appSettings.xml", FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 bool saveSuccess = true;
                 try
                 {
-                    xmlSerializer.Serialize(fs, connString);
+                    xmlSerializer.Serialize(fs, userSettings);
                 }
                 catch
                 {

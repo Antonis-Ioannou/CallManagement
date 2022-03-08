@@ -15,6 +15,7 @@ namespace CallManagement
         public FormWindowState formWindowState ;
         public Size size;
         public Point location;
+        public string connString;
         public string language;
     }
 }
